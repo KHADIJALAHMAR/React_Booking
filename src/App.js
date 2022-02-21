@@ -1,7 +1,7 @@
 
 import React from 'react';
 // import {Router, Link } from 'react-router-dom';
-import './App.css';
+import "../src/css/AppLogin.css";
 import Login from './components/Login/Login';
 // import Register from './components/Register/Register';
 
