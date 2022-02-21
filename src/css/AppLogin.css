@@ -21,7 +21,7 @@
     z-index: -1;
     height: 104%;
     width: 104%;
-    /* background-image: url("../../R.jpg"); */
+    background-image: url("../assest/img/R.jpg");
     background-size: cover;
     filter: blur(8px);
     -webkit-filter: blur(8px);

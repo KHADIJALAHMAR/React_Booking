@@ -3,6 +3,7 @@ import { login } from "../../services/AuthService";
 import  world from "../../assest/img/world.svg";
 import  mail  from "../../assest/icon/mail.svg";
 import  key from "../../assest/icon/key.svg";
+import  R from "../../assest/img/R.jpg"
 
 // import ReactDOM  from "react-dom";
 
@@ -46,9 +47,11 @@ handlePassword(event) {
 
   render() {
     return (
-   
-      <div className="auth">
+      <div className="app" >
+      <div className="auth" >
+       
         <div className="auth_background" />
+        <img src={ R } alt="backgroundimag" className="auth_background" />
         {/* start login component */}
         <div className="auth_login panel_on">
           <div className="auth_login_right">
@@ -99,7 +102,7 @@ handlePassword(event) {
               <button type="submit">Login</button>
             </form>
           </div>
-        </div></div>
+        </div></div></div>
 
     );
   }
