@@ -36,7 +36,7 @@ handlePassword(event) {
     // login(email,password)
     login(email, password).then(response => {
         console.log("token : ", response.data);
-        window.localStorage.setItem('token',response.data.accessToken)
+        window.localStorage.setItem('token',response.data.accessToken);
         
     });
     
@@ -83,25 +83,23 @@ handlePassword(event) {
               <p>Welcome back!</p>
               <p>we hope you have a woderful day !</p>
             </div>
-            <form className="auth_login_form" method="POST" action>
+            <form className="auth_login_form" onSubmit={this.handleSubmit} >
               <div className="auth_form_element">
                 <div className="icon_container">
                 <img src= {mail} alt="mail"/>
                 </div>
-                <input type="email" name="email" id="email" placeholder="Email" />
+                <input type="text" email={this.state.value}  onChange={this.handleEmail} />
               </div>
               <div className="auth_form_element">
                 <div className="icon_container">
                 <img src= {key} alt="key"/>
                 </div>
-                <input type="password" name="password" id="password" placeholder="Password" />
+                <input type="password" password={this.state.value} onChange={this.handlePassword}/>
               </div>
               <button type="submit">Login</button>
             </form>
           </div>
         </div></div>
-
-
 
     );
   }
