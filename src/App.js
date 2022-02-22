@@ -1,7 +1,7 @@
 import React from "react";
 import "../src/css/AppLogin.css";
-import Login from "./components/Login/Login";
-import Register from "./components/Register/Register";
+import Login from "./components/Authontication/Login/Login";
+import Register from "./components/Authontication/Register/Register";
 function App() {
   return (
     <div className="app">

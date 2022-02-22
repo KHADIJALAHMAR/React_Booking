@@ -1,9 +1,9 @@
 import React from "react";
 import { login } from "../../../services/AuthService";
-import world from "../../assest/img/world.svg";
-import mail from "../../assest/icon/mail.svg";
-import key from "../../assest/icon/key.svg";
-import R from "../../assest/img/R.jpg";
+import world from "../../../assest/img/world.svg";
+import mail from "../../../assest/icon/mail.svg";
+import key from "../../../assest/icon/key.svg";
+import R from "../../../assest/img/R.jpg";
 
 // import ReactDOM  from "react-dom";
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import register from "../Register/Register";
-import readingTime from "../../assest/img/reading_time.svg";
-import emailIcon from "../../assest/icon/mail.svg";
-import userIcon from "../../assest/icon/user.svg";
-import keyIcon from "../../assest/icon/key.svg";
-import logoIcon from "../../assest/img/logo.svg";
+import register from "../../../services/AuthService";
+import readingTime from "../../../assest/img/reading_time.svg";
+import emailIcon from "../../../assest/icon/mail.svg";
+import userIcon from "../../../assest/icon/user.svg";
+import keyIcon from "../../../assest/icon/key.svg";
+import logoIcon from "../../../assest/img/logo.svg";
 
 const Register = () => {
   const [values, setValues] = useState({
