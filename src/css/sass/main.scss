@@ -1,0 +1,178 @@
+@import './_globalRules';
+@import './extends';
+@import './keyframes';
+
+
+// authentication style
+
+.auth {
+    $a : &;
+    #{$a}_login {
+        @extend .auth_panel;
+
+        #{$a}_login_right {
+            @extend .auth_right;
+
+            #{$a}_login_logo {
+                @extend .auth_logo;
+
+                #{$a}_login_icon {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            #{$a}_illustration {
+                width: 317.23px;
+                height: 227.36px;
+                align-self: center;
+            }
+
+            #{$a}_right_bot {
+                @extend .auth_right_bot_s;
+            }
+        }
+
+        #{$a}_login_left {
+            @extend .auth_left;
+
+            #{$a}_login_left_intro{
+                display: grid;
+                place-items: center;
+                gap: 3px;
+
+                p {
+                    cursor: default;
+                    &:first-child {
+                        font-family: 'poppins';
+                        font-size: 20px;
+                        font-weight: 700;
+                        color: #1D2671;
+                    }
+
+                    &:last-child {
+                        font-family: 'poppins';
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: #C33764;
+                    }
+                }
+            }
+
+            #{$a}_login_form {
+                width: 295px;
+                height: 126px;
+                @extend .form_details;
+                
+                #{$a}_form_element {
+                    @extend .auth_form_inputs;
+                }
+                
+                button {
+                    @extend .auth_submit;
+                    &::before {
+                        content: 'Login';
+                        display: grid;
+                        place-items: center;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border-radius: 8px;
+                        height: 100%;
+                        width: 100%;
+                        background: linear-gradient(45deg, #C33764, #1D2671);
+                        transition: .4s;
+                    }
+                    &:hover::before {
+                        opacity: 0;
+                    }
+                }
+                   
+            }
+        }
+
+
+    }
+
+    #{$a}_register {
+        @extend .auth_panel;
+
+        #{$a}_register_right {
+            @extend .auth_right;
+
+            #{$a}_register_logo {
+                @extend .auth_logo;
+
+                #{$a}_logo_icon{
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            #{$a}_illustration {
+                width: 317.02px;
+                height: 234.84px;
+                align-self: center;
+            }
+
+            #{$a}_right_bot {
+                @extend .auth_right_bot_s;
+            }
+        }
+
+        #{$a}_register_left {
+            @extend .auth_left;
+
+            #{$a}_register_left_intro{
+                display: grid;
+                place-items: center;
+                gap: 3px;
+
+                p {
+                    cursor: default;
+                    font-family: 'poppins';
+                    font-size: 20px;
+                    font-weight: 700;
+                    color: #1D2671;
+
+                }
+            }
+
+            #{$a}_register_form {
+                width: 295px;
+                height: fit-content;
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+                
+                #{$a}_form_element {
+                    @extend .auth_form_inputs;
+                }
+
+                button {
+                    @extend .auth_submit;
+
+                    &::before {
+                        content: 'Create account';
+                        display: grid;
+                        place-items: center;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border-radius: 8px;
+                        height: 100%;
+                        width: 100%;
+                        background: linear-gradient(45deg, #C33764, #1D2671);
+                        transition: .4s;
+                    }
+                    &:hover::before {
+                        opacity: 0;
+                    }
+                }
+                   
+            }
+        }
+
+    }
+
+}
