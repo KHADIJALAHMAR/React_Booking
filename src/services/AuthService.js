@@ -5,8 +5,8 @@ const APP_URL = "http://localhost:4000/auth";
 */
 
 export function login(email,password) {
-        return axios.post(`${APP_URL}/login`, {
-            email: email, 
-            password: password
-        })
+    return axios.post(`${APP_URL}/login`, {
+        email: email, 
+        password: password
+    })
 }

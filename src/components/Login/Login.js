@@ -4,13 +4,13 @@ import  world from "../../assest/img/world.svg";
 import  mail  from "../../assest/icon/mail.svg";
 import  key from "../../assest/icon/key.svg";
 import  R from "../../assest/img/R.jpg"
-
+// import Register from "../Register/Register";
 // import ReactDOM  from "react-dom";
 
 class Login extends React.Component {
 constructor(props) {
     super(props);
-    this.state = { data: { email: "", password: "" }, errors: {} };
+    this.state = { data: { email: "", password: "" }  ,errors: {} };
 
     this.handleEmail = this.handleEmail.bind(this);
     this.handlePassword = this.handlePassword.bind(this);
@@ -35,11 +35,15 @@ handlePassword(event) {
     let password = this.state.password;
 
     // login(email,password)
-    login(email, password).then(response => {
+    login(email ,password ).then(response => {
         console.log("token : ", response.data);
         window.localStorage.setItem('token',response.data.accessToken);
         
-    });
+    }) .catch(
+      err =>{
+        console.log(err.message);
+      }
+    );
     
     //   window.localStorage.setItem("token", data.data.token);
 
