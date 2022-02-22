@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import createUser from "../../services/CreateUser";
+import createuser from "../../services/CreateUser"
 
 const Adduser = () => {
   const [values, setValues] = useState({
@@ -54,7 +54,7 @@ const Adduser = () => {
       values.password &&
       values.repeated_password
     ) {
-      createUser(
+        createuser(
         values.username,
         values.email,
         values.gender,
