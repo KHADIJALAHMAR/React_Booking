@@ -1,15 +1,14 @@
 import React from "react";
 import "../src/css/main.css";
-import Login from "./components/Authontication/Login/Login";
-import Register from "./components/Authontication/Register/Register";
+import Dashboard from "./components/Admin_Dashboard/Dashboard";
+import Authentication from "./components/Authontication/Authentication";
 function App() {
   return (
     <div className="app">
-        <Login />
-        <div className="auth"> 
-            <Register />
-        </div>
+      <Authentication />
+      <Dashboard />
     </div>
+        
   );
 }
 
