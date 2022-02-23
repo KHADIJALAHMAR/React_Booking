@@ -30,12 +30,11 @@ class Login extends React.Component {
     event.preventDefault();
 
     console.log(this.state);
-    let email = this.state.emasil;
+    let email = this.state.email;
     let password = this.state.password;
 
     // login(email,password)
     login(email, password).then((response) => {
-      console.log("token : ", response.data);
       window.localStorage.setItem("token", response.data.accessToken);
     });
 
