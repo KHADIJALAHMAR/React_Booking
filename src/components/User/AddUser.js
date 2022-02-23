@@ -60,9 +60,7 @@ const Adduser = () => {
         values.role,
         values.password,
         values.repeated_password
-      ).then((response) => {
-        console.log(response.data);
-      });
+      )
     }
 
     setSubmitted(true);
