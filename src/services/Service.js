@@ -8,17 +8,14 @@ const create_hotel = async (
     image_cover, 
     images,
     stars,
-    status,
-    userId
+    status
 ) => {
     return await axios.post(`${APP_URL}/hotels`, {
         name,
         descreption,
         image_cover, 
         images,
-        stars,
-        status,
-        userId
+        stars
     });
 };
 export default  create_hotel;
