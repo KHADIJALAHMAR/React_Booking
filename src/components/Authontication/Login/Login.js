@@ -16,7 +16,7 @@ class Login extends React.Component {
     this.handlePassword = this.handlePassword.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
+  
   handleEmail(event) {
     this.setState({ email: event.target.value });
   }
@@ -35,7 +35,6 @@ class Login extends React.Component {
 
     // login(email,password)
     login(email, password).then((response) => {
-      console.log("token : ", response.data);
       window.localStorage.setItem("token", response.data.accessToken);
     });
 
