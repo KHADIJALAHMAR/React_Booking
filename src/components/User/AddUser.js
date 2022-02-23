@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import createuser from "../../services/CreateUser"
+import createuser from "../../services/CreateUser";
 
 const Adduser = () => {
   const [values, setValues] = useState({
@@ -46,7 +46,6 @@ const Adduser = () => {
   };
 
   const handleSubmit = (e) => {
-    let errors = {};
     e.preventDefault();
     if (
       values.username &&
@@ -54,7 +53,7 @@ const Adduser = () => {
       values.password &&
       values.repeated_password
     ) {
-        createuser(
+      createuser(
         values.username,
         values.email,
         values.gender,
@@ -63,26 +62,9 @@ const Adduser = () => {
         values.repeated_password
       ).then((response) => {
         console.log(response.data);
-        if (response.data.errorsObject) {
-          errors = {
-            username: response.data.errorsObject.username,
-            email: response.data.errorsObject.email,
-            gender: response.data.errorsObject.gender,
-            role: response.data.errorsObject.role,
-            password: response.data.errorsObject.password,
-            repeated_password: response.data.errorsObject.repeated_password,
-          };
-          handleErrors(errors);
-          setValid(true);
-          values.username = "";
-          values.email = "";
-          values.gender = "";
-          values.role = "";
-          values.password = "";
-          values.repeated_password = "";
-        }
       });
     }
+
     setSubmitted(true);
   };
 
