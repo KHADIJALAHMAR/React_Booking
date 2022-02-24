@@ -3,7 +3,8 @@ import Card from './Card'
 
 function Cards() {
   return (
-    <div className='admin_dash_cards'>
+    
+    <div className='row'>
         <Card title='Hotels' />
         <Card title='Customers' />
         <Card title='Owners' />
