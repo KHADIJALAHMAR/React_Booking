@@ -1,17 +1,18 @@
 import React , { useState}from 'react';
 import create_hotel from "../../../../services/HotelService";
 
-const Add = () => {
+const AddHotel= () => {
     // creation state initialisation  
     const [AddHotel , setAddHotel ] = useState({
         name : "",
         descreption : "",
         image_cover : "", 
         images :"",
-        stars : "",
-        status : "",
+        stars : ""
     });
+    
     const [submitted, setSubmitted] = useState(false);
+
     const handleName = (e) => {
         setAddHotel({ ...AddHotel, name: e.target.value });
     };
@@ -48,7 +49,7 @@ const Add = () => {
         
         ).then((response) => {
             console.log(response.data);
-        });
+        })
         }
         setSubmitted(true);
       };
@@ -64,12 +65,12 @@ const Add = () => {
         >
         <div className="auth_form_element">
           <input
-            value={AddHotel.username}
+            value={AddHotel.name}
             onChange={handleName}
             type="text"
             name="username"
             id="username"
-            placeholder="Username"
+            placeholder="NameHotel"
           />
         </div>
         <div className="auth_form_element">
@@ -121,4 +122,4 @@ const Add = () => {
     }
 
 
-export default Add;
+export default AddHotel;

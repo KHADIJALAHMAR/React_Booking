@@ -1,5 +1,5 @@
 import axios from "axios";
-const APP_URL = "http://localhost:4000"; 
+const APP_URL = "http://localhost:4000/hotels"; 
 
 const create_hotel = async (
     name,
@@ -8,7 +8,7 @@ const create_hotel = async (
     images,
     stars
 ) => {
-    return await axios.post(`${APP_URL}/hotels`, {
+    return await axios.post(`${APP_URL}`, {
         name,
         descreption,
         image_cover, 
