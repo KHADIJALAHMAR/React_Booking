@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { login } from "../../../services/AuthService";
 import world from "../../../assest/img/world.svg";
 import mail from "../../../assest/icon/mail.svg";
@@ -6,42 +6,40 @@ import key from "../../../assest/icon/key.svg";
 import R from "../../../assest/img/R.jpg";
 
 // import ReactDOM  from "react-dom";
+const Login = ()=>{
 
-class Login extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { data: { email: "", password: "" }, errors: {} };
+    const [data , setData] = useState({
+    email : "",
+    password : ""
+});
 
-    this.handleEmail = this.handleEmail.bind(this);
-    this.handlePassword = this.handlePassword.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-  
-  handleEmail(event) {
-    this.setState({ email: event.target.value });
-  }
+    const [submitted, setSubmitted] = useState(false);
 
-  handlePassword(event) {
-    this.setState({ password: event.target.value });
-  }
+    const handleEmail = (e) => {
+      setData({ ...data, email: e.target.value });
+    };
+
+
+    const handlePassword = (e) => {
+    setData({ ...data,password: e.target.value });
+  };
   // console.log(handleChange)
 
-  handleSubmit(event) {
-    event.preventDefault();
-
-    console.log(this.state);
-    let email = this.state.email;
-    let password = this.state.password;
+    const handleSubmit =(e)=> {
+    e.preventDefault();
+    console.log(data);
 
     // login(email,password)
-    login(email, password).then((response) => {
+    login( data.email, data.password).then((response) => {
       window.localStorage.setItem("token", response.data.accessToken);
+      console.log(response.data);
     });
-
+    setSubmitted(true);
     //   window.localStorage.setItem("token", data.data.token);
-  }
+  };
 
-  render() {
+ 
+  
     return (
       <div className="app">
         <div className="auth">
@@ -106,15 +104,15 @@ class Login extends React.Component {
                 <p>Welcome back!</p>
                 <p>we hope you have a woderful day !</p>
               </div>
-              <form className="auth_login_form" onSubmit={this.handleSubmit}>
+              <form className="auth_login_form" onSubmit={handleSubmit}>
                 <div className="auth_form_element">
                   <div className="icon_container">
                     <img src={mail} alt="mail" />
                   </div>
                   <input
                     type="text"
-                    email={this.state.value}
-                    onChange={this.handleEmail}
+                    email={data.email}
+                    onChange={handleEmail}
                   />
                 </div>
                 <div className="auth_form_element">
@@ -123,8 +121,8 @@ class Login extends React.Component {
                   </div>
                   <input
                     type="password"
-                    password={this.state.value}
-                    onChange={this.handlePassword}
+                    password={data.password}
+                    onChange={handlePassword}
                   />
                 </div>
                 <button type="submit">Login</button>
@@ -134,7 +132,7 @@ class Login extends React.Component {
         </div>
       </div>
     );
-  }
+  
 }
 
 export default Login;
