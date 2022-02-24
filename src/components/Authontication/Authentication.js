@@ -1,11 +1,9 @@
 import React from 'react'
 import { Outlet } from 'react-router';
-import Login from "../Authontication/Login/Login";
-import Register from "../Authontication/Register/Register";
-function Authentication({panel}) {
+function Authentication() {
 
   return (
-    <div className="auth"> 
+    <div className="auth">
         <Outlet />
     </div>
   )
