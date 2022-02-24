@@ -9,7 +9,9 @@ import Register from "./components/Authontication/Register/Register";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel" ;
 function App() {
 
-  const [isAdmin , setIsAdmin] = useState(true);{/*remeber to change it to false later*/}
+  const [role , setRole] = useState('admin');
+
+  const handleRole = (role) => {setRole(role)}
 
   return (
     <div className="app">
@@ -17,12 +19,13 @@ function App() {
         <Routes>
           <Route path="/" element={<div>Hello</div>} />
           <Route path="auth" element={<Authentication />} >
-              <Route path="login" element={<Login />} />
+              <Route path="login" element={<Login handleRole={handleRole} />} />
               <Route path="register" element={<Register/>} />
               <Route path="login/admin/owner/create" element={<AddHotel />} />
 
           </Route>
-          {(isAdmin) && <Route path="dashboard" element={<Dashboard />} />}
+       
+          {(role === 'admin') && <Route path="dashboard" element={<Dashboard />} />}
 
         </Routes>
       </BrowserRouter>
