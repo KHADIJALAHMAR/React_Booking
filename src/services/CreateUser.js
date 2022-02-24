@@ -18,7 +18,7 @@ const Createuser = (
       password,
       repeated_password,
     })
-    .then((response) => console.log(response))
+    .then((response) => console.log(response.data))
     .catch((error) => console.log({ error }));
 };
 

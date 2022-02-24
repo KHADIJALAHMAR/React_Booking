@@ -6,6 +6,7 @@ import Dashboard from "./components/Admin_Dashboard/Dashboard";
 import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
+import AddUser from "./components/User/AddUser";
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(true);
@@ -23,6 +24,7 @@ function App() {
             <Route path="register" element={<Register />} />
           </Route>
           {isAdmin && <Route path="dashboard" element={<Dashboard />} />}
+          <Route path="admin/owner/create" element={<AddUser />} />
         </Routes>
       </BrowserRouter>
     </div>
