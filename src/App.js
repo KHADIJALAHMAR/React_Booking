@@ -6,6 +6,7 @@ import Dashboard from "./components/Admin_Dashboard/Dashboard";
 import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
+import Add from "./components/Admin_Dashboard/Crud/Hotel/Add" ;
 function App() {
 
   const [isAdmin , setIsAdmin] = useState(true);{/*remeber to change it to false later*/}
@@ -18,8 +19,11 @@ function App() {
           <Route path="auth" element={<Authentication />} >
               <Route path="login" element={<Login />} />
               <Route path="register" element={<Register/>} />
+              <Route path="admin/owner/create" element={<Add />} />
+
           </Route>
           {(isAdmin) && <Route path="dashboard" element={<Dashboard />} />}
+
         </Routes>
       </BrowserRouter>
     </div>

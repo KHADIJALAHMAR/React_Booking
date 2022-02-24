@@ -1,4 +1,5 @@
 import React , { useState}from 'react';
+import create_hotel from "../../../../services/HotelService";
 
 const Add = () => {
     // creation state initialisation  
@@ -43,7 +44,7 @@ const Add = () => {
             AddHotel.descreption,
             AddHotel.image_cover,
             AddHotel.images,
-            AddHotel.stars,
+            AddHotel.stars
         
         ).then((response) => {
             console.log(response.data);
@@ -54,104 +55,68 @@ const Add = () => {
 
 
     return (
-        <div className="form-container">
-        {/* start register component */}
-        <div className="auth_register panel_on">
-          <div className="auth_register_right">
-            <div className="auth_register_logo">
-              <div className="auth_register_icon">
         
-            <div className="auth_illustration">
-            
-            </div>
-            <div className="auth_right_bot">
+        <form
+        className="auth_register_form"
+        method="POST"
+        action=""
+        onSubmit={handleSubmit}
+        >
+        <div className="auth_form_element">
+          <input
+            value={AddHotel.username}
+            onChange={handleName}
+            type="text"
+            name="username"
+            id="username"
+            placeholder="Username"
+          />
+        </div>
+        <div className="auth_form_element">
+          <input
+            value={AddHotel.descreption}
+            onChange={handleDescreption}
+            type="text"
+            name="text"
+            id="text"
+            placeholder="descreption Hotel "
+          />
+        </div>
+        <div className="auth_form_element">
+          <input
+            value={AddHotel.image_cover}
+            onChange={handleImage_cover}
+            type="text"
+            name="image_cover"
+            id="image_cover"
+            placeholder="image_cover"
+          />
+        </div>
+        <div className="auth_form_element">
+          <input
+            value={AddHotel.images}
+            onChange={handleImages}
+            type="text"
+            name="image"
+            id="repeat_password"
+            placeholder="image"
+          />
+        </div>
         
-            </div>
-          </div>
-          <div className="auth_register_left">
-            <div className="auth_register_left_intro">
-              <p>Create an account!</p>
-            </div>
-            <form
-              className="auth_register_form"
-              method="POST"
-              action=""
-              onSubmit={handleSubmit} />
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={userIcon} alt="" />
-                </div>
-                <input
-                  value={AddHotel.name}
-                  onChange={handleName}
-                  type="text"
-                  name="username"
-                  id="name"
-                  placeholder="name"
-                />
-              </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-                </div>
-                <input
-                  value={AddHotel.descreption}
-                  onChange={handleDescreption}
-                  type="text"
-                  name="email"
-                  id="email"
-                  placeholder="descreption"
-                />
-              </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-                </div>
-                <input
-                  value={AddHotel.image_cover}
-                  onChange={handleImage_cover}
-                  type="text"
-                  name="imag_cover"
-                  id="password"
-                  placeholder="image_cover"
-                />
-              </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-               
-                </div>
-                <input
-                  value={AddHotel.images}
-                  
-                 onChange={handleImages}
-                type="text"
-                  name="image"
-                  id="repeat_password"
-                  placeholder="image"
-                  />
-                
-              </div>
-              <div className="auth_form_element">
-                
-                
-              </div>
-              <div className="auth_form_element">
-                
-                </div>
-                <select name="stars" id="role" onChange={handleStars}>
-                  <option selected disabled>
-                    Choose a starts
-                  </option>
-                  <option value="customer">1</option>
-                  <option value="owner">2</option>
-                  <option value="owner">3</option>
-                  <option value="owner">4</option>
-                  <option value="owner">5</option>
-                </select>
-              </div>
-              <button type="submit">Create  Hotel</button>
-            </form>
-          </div>
+        <div className="auth_form_element">
+          <select name="star" id="star" onChange={handleStars}>
+            <option selected disabled>
+              Choose a Stars
+            </option>
+            <option value="star1">1</option>
+            <option value="star2">2</option>
+            <option value="star3">3</option>
+            <option value="star4">4</option>
+          </select>
         </div>
-        </div>
+        <button type="submit">Create  Hotel</button>
+        </form>
+        
     )
     }
 
