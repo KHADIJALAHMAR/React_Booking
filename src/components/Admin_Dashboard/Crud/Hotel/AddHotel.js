@@ -56,67 +56,70 @@ const AddHotel= () => {
 
 
     return (
+
+      
+
         
-        <form
-        className="auth_register_form"
-        method="POST"
-        action=""
-        onSubmit={handleSubmit}
-        >
-        <div className="auth_form_element">
-          <input
-            value={AddHotel.name}
-            onChange={handleName}
-            type="text"
-            name="username"
-            id="username"
-            placeholder="NameHotel"
-          />
-        </div>
-        <div className="auth_form_element">
-          <input
-            value={AddHotel.descreption}
-            onChange={handleDescreption}
-            type="text"
-            name="text"
-            id="text"
-            placeholder="descreption Hotel "
-          />
-        </div>
-        <div className="auth_form_element">
-          <input
-            value={AddHotel.image_cover}
-            onChange={handleImage_cover}
-            type="text"
-            name="image_cover"
-            id="image_cover"
-            placeholder="image_cover"
-          />
-        </div>
-        <div className="auth_form_element">
-          <input
-            value={AddHotel.images}
-            onChange={handleImages}
-            type="text"
-            name="image"
-            id="repeat_password"
-            placeholder="image"
-          />
-        </div>
+        // <form
+        // className="auth_register_form"
+        // method="POST"
+        // action=""
+        // onSubmit={handleSubmit}
+        // >
+        // <div className="auth_form_element">
+        //   <input
+        //     value={AddHotel.name}
+        //     onChange={handleName}
+        //     type="text"
+        //     name="username"
+        //     id="username"
+        //     placeholder="NameHotel"
+        //   />
+        // </div>
+        // <div className="auth_form_element">
+        //   <input
+        //     value={AddHotel.descreption}
+        //     onChange={handleDescreption}
+        //     type="text"
+        //     name="text"
+        //     id="text"
+        //     placeholder="descreption Hotel "
+        //   />
+        // </div>
+        // <div className="auth_form_element">
+        //   <input
+        //     value={AddHotel.image_cover}
+        //     onChange={handleImage_cover}
+        //     type="text"
+        //     name="image_cover"
+        //     id="image_cover"
+        //     placeholder="image_cover"
+        //   />
+        // </div>
+        // <div className="auth_form_element">
+        //   <input
+        //     value={AddHotel.images}
+        //     onChange={handleImages}
+        //     type="text"
+        //     name="image"
+        //     id="repeat_password"
+        //     placeholder="image"
+        //   />
+        // </div>
         
-        <div className="auth_form_element">
-          <select name="star" id="star" onChange={handleStars}>
-            <option selected disabled>
-              Choose a Stars
-            </option>
-            <option value="star1">1</option>
-            <option value="star2">2</option>
-            <option value="star3">3</option>
-            <option value="star4">4</option>
-          </select>
-        </div>
-        <button type="submit">Create  Hotel</button>
-        </form>
+        // <div className="auth_form_element">
+        //   <select name="star" id="star" onChange={handleStars}>
+        //     <option selected disabled>
+        //       Choose a Stars
+        //     </option>
+        //     <option value="star1">1</option>
+        //     <option value="star2">2</option>
+        //     <option value="star3">3</option>
+        //     <option value="star4">4</option>
+        //   </select>
+        // </div>
+        // <button type="submit">Create  Hotel</button>
+        // </form>
         
     )
     }

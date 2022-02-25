@@ -26,12 +26,12 @@ function App() {
             <Route path="register" element={<Register />} />
             <Route path="login/admin/owner/create" element={<AddHotel />} />
           </Route>
-          {role === "admin" && (
-            <>
+          {/* {role === "admin" && ( */}
+            {/* <> */}
               <Route path="dashboard" element={<Dashboard />}/>
               <Route path="dashboard/addUser" element={<AddUser />} />
-            </>
-            )}
+            {/* </> */}
+            {/* )} */}
         </Routes>
       </BrowserRouter>
     </div>
