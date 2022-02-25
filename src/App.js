@@ -7,6 +7,8 @@ import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
+import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
+
 function App() {
   const [role, setRole] = useState("admin");
 
@@ -25,8 +27,11 @@ function App() {
             <Route path="login/admin/owner/create" element={<AddHotel />} />
           </Route>
           {role === "admin" && (
-            <Route path="dashboard" element={<Dashboard />} />
-          )}
+            <>
+              <Route path="dashboard" element={<Dashboard />}/>
+              <Route path="dashboard/addUser" element={<AddUser />} />
+            </>
+            )}
         </Routes>
       </BrowserRouter>
     </div>
