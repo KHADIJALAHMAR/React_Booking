@@ -21,11 +21,10 @@ function App() {
           <Route path="auth" element={<Authentication />} >
               <Route path="login" element={<Login handleRole={handleRole} />} />
               <Route path="register" element={<Register/>} />
-              <Route path="login/admin/owner/create" element={<AddHotel />} />
 
           </Route>
-       
-          {(role === 'admin') && <Route path="dashboard" element={<Dashboard />} />}
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashboard/create" element={<AddHotel />} />
 
         </Routes>
       </BrowserRouter>

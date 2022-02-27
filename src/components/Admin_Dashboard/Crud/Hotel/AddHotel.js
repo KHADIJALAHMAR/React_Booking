@@ -85,7 +85,7 @@ const AddHotel= () => {
                   </div>
 
                   <div className="text-center">
-                    <button type="button" className="btn bg-gradient-dark w-100 my-4 mb-2">Sign up</button>
+                    <button type="button" className="btn bg-gradient-dark w-100 my-4 mb-2">Add Hotel</button>
                   </div>
               </form>
 
