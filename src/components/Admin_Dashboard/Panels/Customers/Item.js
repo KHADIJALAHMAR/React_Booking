@@ -1,19 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import GetCustomers from "../../../../services/GetCustomer";
+import getCustomer from "../../../../services/GetCustomer";
 
 const Item = () => {
-  const API_URL = "http://localhost:4000/admin";
-  const [APIData, setAPIData] = useState([]);
-  useEffect(() => {
-    axios.get(`${API_URL}/customers`).then((response) => {
-      //   setAPIData(response.data);
-      console.log(response.data);
-    });
-  }, []);
+  useEffect(() => getCustomer(), []);
   return (
     <>
-      <tr>
+      <tr key={customer.id}>
         <td>
           <div class="d-flex px-2 py-1">
             <div>
@@ -24,7 +17,7 @@ const Item = () => {
               />
             </div>
             <div class="d-flex flex-column justify-content-center">
-              <h6 class="mb-0 text-sm">Soft UI XD Version</h6>
+              <h6 class="mb-0 text-sm"></h6>
             </div>
           </div>
         </td>
@@ -73,13 +66,13 @@ const Item = () => {
           </div>
         </td>
         <td class="align-middle text-center text-sm">
-          <span class="text-xs font-weight-bold"> $14,000 </span>
+          <span class="text-xs font-weight-bold"></span>
         </td>
         <td class="align-middle">
           <div class="progress-wrapper w-75 mx-auto">
             <div class="progress-info">
               <div class="progress-percentage">
-                <span class="text-xs font-weight-bold">60%</span>
+                <span class="text-xs font-weight-bold"></span>
               </div>
             </div>
             <div class="progress">
@@ -95,18 +88,6 @@ const Item = () => {
         </td>
       </tr>
     </>
-
-    // <tbody>
-    //   {APIData.map((data) => {
-    //     return (
-    //       <tr>
-    //         <td>{data.username}</td>
-    //         <td>{data.email}</td>
-    //         <td>{data.role.name}</td>
-    //       </tr>
-    //     );
-    //   })}
-    // </tbody>
   );
 };
 

@@ -27,11 +27,11 @@ function App() {
             <Route path="login/admin/owner/create" element={<AddHotel />} />
           </Route>
           {/* {role === "admin" && ( */}
-            {/* <> */}
-              <Route path="dashboard" element={<Dashboard />}/>
-              <Route path="dashboard/addUser" element={<AddUser />} />
-            {/* </> */}
-            {/* )} */}
+          {/* <> */}
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="dashboard/addUser" element={<AddUser />} />
+          {/* </> */}
+          {/* )} */}
         </Routes>
       </BrowserRouter>
     </div>
