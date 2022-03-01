@@ -3,27 +3,36 @@ import axios from "axios";
 import getCustomer from "../../../../services/GetCustomer";
 
 const Item = () => {
-  useEffect(() => getCustomer(), []);
+  const [customers, setCustomers] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:4000/admin/customers/`)
+      .then((res) => {
+        setCustomers(res.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
   return (
     <>
-      <tr key={customer.id}>
-        <td>
-          <div class="d-flex px-2 py-1">
-            <div>
-              <img
-                src="../assets/img/small-logos/logo-xd.svg"
-                class="avatar avatar-sm me-3"
-                alt="xd"
-              />
+      {customers.map((customer, index) => (
+        <tr key={index}>
+          <td>
+            <div class="d-flex px-2 py-1">
+              <div>
+                <img />
+              </div>
+              <div class="d-flex flex-column justify-content-center">
+                {/* <h6 class="mb-0 text-sm"></h6> */}
+                <span>{customer.username}</span>
+              </div>
             </div>
-            <div class="d-flex flex-column justify-content-center">
-              <h6 class="mb-0 text-sm"></h6>
-            </div>
-          </div>
-        </td>
-        <td>
-          <div class="avatar-group mt-2">
-            <a
+          </td>
+          {/* <td> */}
+          {/* <div class="avatar-group mt-2"> */}
+          {/* <a
               href="javascript:;"
               class="avatar avatar-xs rounded-circle"
               data-bs-toggle="tooltip"
@@ -62,14 +71,15 @@ const Item = () => {
               data-bs-original-title="Jessica Doe"
             >
               <img src="../assets/img/team-4.jpg" alt="team4" />
-            </a>
-          </div>
-        </td>
-        <td class="align-middle text-center text-sm">
-          <span class="text-xs font-weight-bold"></span>
-        </td>
-        <td class="align-middle">
-          <div class="progress-wrapper w-75 mx-auto">
+            </a> */}
+          {/* </div> */}
+          {/* </td> */}
+          <td class="align-middle text-center text-sm">
+            <span class="text-xs font-weight-bold">{customer.email}</span>
+          </td>
+          <td class="align-middle">
+            <span>{customer.role.name}</span>
+            {/* <div class="progress-wrapper w-75 mx-auto">
             <div class="progress-info">
               <div class="progress-percentage">
                 <span class="text-xs font-weight-bold"></span>
@@ -84,9 +94,10 @@ const Item = () => {
                 aria-valuemax="100"
               ></div>
             </div>
-          </div>
-        </td>
-      </tr>
+          </div> */}
+          </td>
+        </tr>
+      ))}
     </>
   );
 };

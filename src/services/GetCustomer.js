@@ -1,15 +1,13 @@
 import axios from "axios";
-import { useState } from "react";
 const API_URL = "http://localhost:3000/admin";
 
-const [customer, setCustomer] = useState([]);
-
-const getCustomer = () => {
-  return axios.get(`${API_URL}/customers`).then((response) => {
-    console.log(response.data);
-  });
+const getCustomers = () => {
+  return axios
+    .get(`${API_URL}/customers`)
+    .then((res) => {
+      const customers = res.data;
+    })
+    .catch((err) => console.log(`Error: ${err}`));
 };
 
-useEffect(() => getCustomer);
-
-export default getCustomer;
+export default getCustomers;

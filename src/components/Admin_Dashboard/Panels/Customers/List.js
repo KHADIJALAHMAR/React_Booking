@@ -10,21 +10,20 @@ const List = () => {
             <thead>
               <tr>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                  Companies
+                  Customer name
                 </th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                  Members
+                  
                 </th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                  Budget
+                  Customer email
                 </th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                  Completion
+                  Role
                 </th>
               </tr>
             </thead>
             <tbody>
-              <Item />
               <Item />
             </tbody>
           </table>
