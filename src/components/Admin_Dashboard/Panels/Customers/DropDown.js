@@ -21,7 +21,7 @@ export default function DropDown() {
             aria-labelledby="dropdownTable"
           >
             <li>
-              <a className="dropdown-item border-radius-md" href="javascript:;">
+              <a className="dropdown-item border-radius-md" href="http://localhost:3000/dashboard/addUser">
                 Add customer
               </a>
             </li>
