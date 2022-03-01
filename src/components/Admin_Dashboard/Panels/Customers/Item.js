@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import getCustomer from "../../../../services/GetCustomer";
 
 const Item = () => {
   const [customers, setCustomers] = useState([]);
