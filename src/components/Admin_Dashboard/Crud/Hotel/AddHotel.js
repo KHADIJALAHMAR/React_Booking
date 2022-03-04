@@ -6,8 +6,8 @@ const AddHotel= () => {
     const [AddHotel , setAddHotel ] = useState({
         name : "",
         descreption : "",
-        image_cover : "", 
-        images :"",
+        // image_cover : "", 
+        // images :"",
         stars : ""
     });
 
@@ -19,38 +19,22 @@ const AddHotel= () => {
     const handleDescreption = (e) => {
         setAddHotel({ ...AddHotel, descreption: e.target.value });
     };
-    const handleFileSelect = (e) => {
-      setAddHotel({...AddHotel , image_cover: e.target.files[0]})
-    }
-    const handleImages= (e) => {
-        setAddHotel({ ...AddHotel, images: e.target.value });
-    };
+    // const handleFileSelect = (e) => {
+    //   setAddHotel({...AddHotel , image_cover: e.target.files[0]})
+    // }
+    // const handleImages= (e) => {
+    //     setAddHotel({ ...AddHotel, images: e.target.value });
+    // };
     const handleStars= (e) => {
         setAddHotel({ ...AddHotel, stars: e.target.value });
     };
-
+    
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (
-        AddHotel.name &&
-        AddHotel.descreption &&
-        AddHotel.image_cover &&
-        AddHotel.images &&
-        AddHotel.stars 
-        ) {
-        create_hotel(
-            AddHotel.name,
-            AddHotel.descreption,
-            AddHotel.image_cover,
-            AddHotel.images,
-            AddHotel.stars
-        
-        ).then((response) => {
-            console.log(response.data);
-        })
-        }
+       
         setSubmitted(true);
+        console.log('hello')
       };
     return (
         <div>
@@ -63,14 +47,14 @@ const AddHotel= () => {
                   <div className="mb-3">
                     <input type="text" className="form-control" placeholder="Descreption" aria-label="Email" aria-describedby="email-addon" alue={AddHotel.descreption } onChange={handleDescreption} />
                   </div>
-
+{/* 
                   <div className="mb-3">
                     <input type="file" className="form-control" placeholder="image_cover" aria-label="Password" aria-describedby="password-addon"  value={AddHotel.image_cover} onChange={handleFileSelect} />
-                  </div>
+                  </div> */}
 
-                  <div className="mb-3">
+                  {/* <div className="mb-3">
                     <input type="text" className="form-control" placeholder="image_cover" aria-label="Email" aria-describedby="password-addon"  value={AddHotel.images} onChange={handleImages} />
-                  </div>  
+                  </div>   */}
 
                   <div className="mb-3">
                   <select  className="form-control"  aria-label="Email"   aria-describedby="email-addon" name="star" id="star" onChange={handleStars} placeholder="Star">

@@ -56,7 +56,9 @@
         cursor: default;
     }
 
-    button {
+    a {
+        display: grid;
+        place-items: center;
         background-color: transparent;
         border-radius: 10px;
         border: solid 2px #FAFAFA;
@@ -64,6 +66,7 @@
         outline: none;
         width: 210px;
         height: 45px;
+        text-decoration: none;
         @extend .auth_right_bot_font;
         transition: .4s;
 
