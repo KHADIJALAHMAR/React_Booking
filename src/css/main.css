@@ -26,6 +26,43 @@
   -webkit-filter: blur(8px);
 }
 
+.popup {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.267);
+}
+.popup .popup_delete {
+  background-color: aliceblue;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.confirm_button {
+  width: fit-content !important;
+  border: none;
+  outline: none;
+  box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+}
+
+.cancel_button {
+  width: fit-content !important;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background-color: rgba(201, 15, 15, 0);
+  color: black;
+  font-weight: 600;
+}
+
 .auth_right_bot_font, .auth_right_bot_s a, .auth .auth_register .auth_register_right .auth_right_bot a, .auth .auth_login .auth_login_right .auth_right_bot a, .auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
   font-size: 13px;
   font-weight: 500;

@@ -11,20 +11,19 @@ import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 
 
-  const [authenticated , setAuthenticated] = useState(jwt(window.localStorage.getItem('token')));
-  const [role , setRole] = useState(jwt(window.localStorage.getItem('token')).role.name);
-  
+  const [authenticated , setAuthenticated] = useState(false);
+  const [role , setRole] = useState(false);
+
   return (
     <div className="app">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<div>{role}</div>} />
           <Route path="auth" element={authenticated ?  <Navigate to='/' /> : <Authentication />} >
-              <Route path="login" element={<Login />} />
+              <Route path="login" element={<Login/>} />
               <Route path="register" element={<Register/>} />
-              <Route path="login/admin/owner/create" element={<AddHotel />} />
           </Route>
-          <Route path="dashboard" element={ authenticated && role === 'admin' ? <Dashboard /> : <Navigate to='/' /> } />
+          <Route path="dashboard" element={ !authenticated && !role ? <Dashboard /> : <Navigate to='/' /> } />
         </Routes>
       </BrowserRouter>
     </div>

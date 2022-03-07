@@ -1,6 +1,19 @@
-import React from "react";
-import List from "./Customers/List";
+
+import React from 'react'
+import ListHotel from './Hotels/List'
+import ListOwner from './Owners/List'
+import ListCustomer from './Customers/List'
 import Header from "./Customers/Header";
+
+// function Panel({title}) {
+//   return (
+//     <>
+//     {title === 'Owners' && <ListOwner />}
+//     {title === 'Hotels' && <ListHotel/>}
+//     {title === 'Customers' && <ListCustomer />}
+//     </>
+//   )
+// }
 
 const Panel = () => {
   return (

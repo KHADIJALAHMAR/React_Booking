@@ -6,7 +6,7 @@ import key from "../../../assest/icon/key.svg";
 import R from "../../../assest/img/R.jpg";
 import { Link } from "react-router-dom";
 
-const Login = ()=>{
+const Login = ({handleAuth})=>{
 
     const [data , setData] = useState({
     email : "",
@@ -24,9 +24,7 @@ const Login = ()=>{
       setData({ ...data,password: e.target.value });
     };
 
-    const handleSubmit =(e)=> {
-      e.preventDefault();
-      
+    const handleSubmit =()=> {
       login( data.email, data.password).then((response) => {
         window.localStorage.setItem("token", response.data.accessToken);
       });
@@ -99,7 +97,11 @@ const Login = ()=>{
                 <p>Welcome back!</p>
                 <p>we hope you have a woderful day !</p>
               </div>
-              <form className="auth_login_form" onSubmit={handleSubmit}>
+              <form className="auth_login_form" onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit();
+                handleAuth();
+              }}>
                 <div className="auth_form_element">
                   <div className="icon_container">
                     <img src={mail} alt="mail" />
