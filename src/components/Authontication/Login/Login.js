@@ -29,6 +29,7 @@ const Login = ()=>{
       
       login( data.email, data.password).then((response) => {
         window.localStorage.setItem("token", response.data.accessToken);
+        window.location = '/dashboard'
       });
       setSubmitted(true);
     };
