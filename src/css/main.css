@@ -26,7 +26,7 @@
   -webkit-filter: blur(8px);
 }
 
-.auth_right_bot_font, .auth_right_bot_s button, .auth .auth_register .auth_register_right .auth_right_bot button, .auth .auth_login .auth_login_right .auth_right_bot button, .auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
+.auth_right_bot_font, .auth_right_bot_s a, .auth .auth_register .auth_register_right .auth_right_bot a, .auth .auth_login .auth_login_right .auth_right_bot a, .auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
   font-size: 13px;
   font-weight: 500;
   font-family: "poppins";
@@ -81,7 +81,9 @@
 .auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
   cursor: default;
 }
-.auth_right_bot_s button, .auth .auth_register .auth_register_right .auth_right_bot button, .auth .auth_login .auth_login_right .auth_right_bot button {
+.auth_right_bot_s a, .auth .auth_register .auth_register_right .auth_right_bot a, .auth .auth_login .auth_login_right .auth_right_bot a {
+  display: grid;
+  place-items: center;
   background-color: transparent;
   border-radius: 10px;
   border: solid 2px #FAFAFA;
@@ -89,9 +91,10 @@
   outline: none;
   width: 210px;
   height: 45px;
+  text-decoration: none;
   transition: 0.4s;
 }
-.auth_right_bot_s button:hover, .auth .auth_register .auth_register_right .auth_right_bot button:hover, .auth .auth_login .auth_login_right .auth_right_bot button:hover {
+.auth_right_bot_s a:hover, .auth .auth_register .auth_register_right .auth_right_bot a:hover, .auth .auth_login .auth_login_right .auth_right_bot a:hover {
   background-color: #FAFAFA;
   color: black;
 }

@@ -4,8 +4,8 @@ import world from "../../../assest/img/world.svg";
 import mail from "../../../assest/icon/mail.svg";
 import key from "../../../assest/icon/key.svg";
 import R from "../../../assest/img/R.jpg";
+import { Link } from "react-router-dom";
 
-// import ReactDOM  from "react-dom";
 const Login = ()=>{
 
     const [data , setData] = useState({
@@ -21,18 +21,17 @@ const Login = ()=>{
 
 
     const handlePassword = (e) => {
-    setData({ ...data,password: e.target.value });
-  };
+      setData({ ...data,password: e.target.value });
+    };
 
     const handleSubmit =(e)=> {
-    e.preventDefault();
-    login( data.email, data.password).then((response) => {
-      window.localStorage.setItem("token", response.data.accessToken);
-      console.log(response.data);
-    });
-    setSubmitted(true);
-    //   window.localStorage.setItem("token", data.data.token);
-  };
+      e.preventDefault();
+      
+      login( data.email, data.password).then((response) => {
+        window.localStorage.setItem("token", response.data.accessToken);
+      });
+      setSubmitted(true);
+    };
 
  
   
@@ -92,7 +91,7 @@ const Login = ()=>{
               </div>
               <div className="auth_right_bot">
                 <p>You don't have an account ?</p>
-                <button id="to_register">Create one now</button>
+                <Link to='/auth/register' id="to_register">Create one now</Link>
               </div>
             </div>
             <div className="auth_login_left">

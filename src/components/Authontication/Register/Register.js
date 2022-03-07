@@ -5,7 +5,7 @@ import emailIcon from "../../../assest/icon/mail.svg";
 import userIcon from "../../../assest/icon/user.svg";
 import keyIcon from "../../../assest/icon/key.svg";
 import logoIcon from "../../../assest/img/logo.svg";
-
+import { Link } from "react-router-dom";
 const Register = () => {
   const [values, setValues] = useState({
     username: "",
@@ -109,7 +109,7 @@ const Register = () => {
             </div>
             <div className="auth_right_bot">
               <p>You already have an account ?</p>
-              <button id="to_login">Login now</button>
+              <Link to='/auth/login' id="to_login">Login now</Link>
             </div>
           </div>
           <div className="auth_register_left">
