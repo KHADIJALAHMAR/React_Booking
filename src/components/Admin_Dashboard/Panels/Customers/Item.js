@@ -18,16 +18,11 @@ const Item = () => {
     <>
       {customers.map((customer, index) => (
         <tr key={index}>
-          <td>
-            <div class="d-flex px-2 py-1">
-              <div>
-                <img />
-              </div>
-              <div class="d-flex flex-column justify-content-center">
-                {/* <h6 class="mb-0 text-sm"></h6> */}
-                <span>{customer.username}</span>
-              </div>
-            </div>
+          <td className="align-middle text-center text-sm">
+            {/* <h6 class="mb-0 text-sm"></h6> */}
+            <span className="text-xs font-weight-bold">
+              {customer.username}
+            </span>
           </td>
           {/* <td> */}
           {/* <div class="avatar-group mt-2"> */}
@@ -73,11 +68,13 @@ const Item = () => {
             </a> */}
           {/* </div> */}
           {/* </td> */}
-          <td class="align-middle text-center text-sm">
-            <span class="text-xs font-weight-bold">{customer.email}</span>
+          <td className="align-middle text-center text-sm">
+            <span className="text-xs font-weight-bold">{customer.email}</span>
           </td>
-          <td class="align-middle">
-            <span>{customer.role.name}</span>
+          <td className="align-middle text-center">
+            <span className="text-xs font-weight-bold">
+              {customer.role.name}
+            </span>
             {/* <div class="progress-wrapper w-75 mx-auto">
             <div class="progress-info">
               <div class="progress-percentage">
