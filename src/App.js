@@ -10,7 +10,7 @@ import Register from "./components/Authontication/Register/Register";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 
-
+function App() {
   const [authenticated , setAuthenticated] = useState(false);
   const [role , setRole] = useState(false);
 
