@@ -11,10 +11,9 @@ const List = () => {
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                   Customer name
                 </th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2"></th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                   Customer email
                 </th>

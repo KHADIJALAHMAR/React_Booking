@@ -19,7 +19,7 @@ const Panel = ({ title }) => {
     <div>
       <div className="container-fluid py-4">
         <div className="row my-4">
-          <div className="col-lg-8 col-md-6 mb-md-0 mb-4">
+          <div className="col-lg-8 col-md-6 mb-md-0 mb-4 mx-auto">
             <div class="card">
               {title === "Owners" && <ListOwner />}
               {title === "Hotels" && <ListHotel />}
