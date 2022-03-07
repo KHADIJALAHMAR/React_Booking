@@ -1,3 +1,4 @@
+
 import React, {useState} from 'react'
 import Cards from './Cards/Cards'
 import Delete from './Crud/Delete'
@@ -23,7 +24,7 @@ function Dashboard() {
         <Panel title={panel}/>
         <Delete type="hotel" visible={visible_popup} handlePopupVisibility={handlePopupVisibility} />
     </div>
-  )
+  );
 }
 
-export default Dashboard
+export default Dashboard;
