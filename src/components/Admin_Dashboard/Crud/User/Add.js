@@ -48,44 +48,45 @@ const Adduser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("hello");
-    // if (
-    //   values.username &&
-    //   values.email &&
-    //   values.password &&
-    //   values.repeated_password
-    // ) {
-    //   createuser(
-    //     values.username,
-    //     values.email,
-    //     values.gender,
-    //     values.role,
-    //     values.password,
-    //     values.repeated_password
-    //   );
-    // }
+    if (
+      values.username &&
+      values.email &&
+      values.password &&
+      values.repeated_password
+    ) {
+      createuser(
+        values.username,
+        values.email,
+        values.gender,
+        values.role,
+        values.password,
+        values.repeated_password
+      );
+      window.location = "/dashboard";
+    }
 
     setSubmitted(true);
   };
 
   return (
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-xl-4 col-lg-5 col-md-7 mx-auto">
-          <div class="card z-index-0">
-            <div class="card-header text-center pt-4">
+    <div className="container mt-5">
+      <div className="row">
+        <div className="col-xl-4 col-lg-5 col-md-7 mx-auto">
+          <div className="card z-index-0">
+            <div className="card-header text-center pt-4">
               <h5>Add user</h5>
             </div>
-            <div class="card-body">
+            <div className="card-body">
               <form
                 role="form text-left"
                 method="POST"
                 action=""
                 onSubmit={handleSubmit}
               >
-                <div class="mb-3">
+                <div className="mb-3">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Name"
                     aria-label="Name"
                     aria-describedby="email-addon"
@@ -95,10 +96,10 @@ const Adduser = () => {
                     onChange={handleName}
                   />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                   <input
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Email"
                     aria-label="Email"
                     aria-describedby="email-addon"
@@ -108,10 +109,10 @@ const Adduser = () => {
                     onChange={handleEmail}
                   />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                   <input
                     type="password"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Password"
                     aria-label="Password"
                     aria-describedby="password-addon"
@@ -121,10 +122,10 @@ const Adduser = () => {
                     onChange={handlePassword}
                   />
                 </div>
-                <div class="mb-3">
+                <div className="mb-3">
                   <input
                     type="password"
-                    class="form-control"
+                    className="form-control"
                     placeholder="Repeated password"
                     aria-label="Password"
                     aria-describedby="password-addon"
@@ -134,10 +135,42 @@ const Adduser = () => {
                     onChange={handleRepeatedPassword}
                   />
                 </div>
-                <div class="text-center">
+                <div className="mb-3">
+                  <select
+                    aria-label="Gender"
+                    aria-describedby="gender-addon"
+                    name="gender"
+                    id="gender"
+                    className="form-control text-secondary"
+                    onChange={handleGender}
+                  >
+                    <option selected disabled>
+                      Choose a gender
+                    </option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+                <div className="mb-3">
+                  <select
+                    aria-label="Role"
+                    aria-describedby="role-addon"
+                    name="role"
+                    id="role"
+                    className="form-control text-secondary"
+                    onChange={handleRole}
+                  >
+                    <option selected disabled>
+                      Choose a role
+                    </option>
+                    <option value="customer">Customer</option>
+                    <option value="owner">Owner</option>
+                  </select>
+                </div>
+                <div className="text-center">
                   <button
-                    type="button"
-                    class="btn bg-gradient-dark w-100 my-4 mb-2"
+                    type="submit"
+                    className="btn bg-gradient-dark w-100 my-4 mb-2"
                   >
                     Add user
                   </button>
@@ -147,28 +180,6 @@ const Adduser = () => {
           </div>
         </div>
       </div>
-      {/*<div className="auth_form_element">
-                <select name="gender" id="gender" onChange={handleGender}>
-                  <option selected disabled>
-                    Choose a gender
-                  </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
-              </div>
-              <div className="auth_form_element">
-                <select name="role" id="role" onChange={handleRole}>
-                  <option selected disabled>
-                    Choose a role
-                  </option>
-                  <option value="customer">Customer</option>
-                  <option value="owner">Owner</option>
-                </select>
-              </div>
-              <button type="submit">Create user</button>
-            </form>
-          </div>
-        </div> */}
     </div>
   );
 };
