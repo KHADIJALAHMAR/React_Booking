@@ -86,6 +86,8 @@ const Register = () => {
           values.role = "";
           values.password = "";
           values.repeated_password = "";
+        } else {
+          window.location = "login";
         }
       });
     }
