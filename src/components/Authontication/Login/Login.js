@@ -23,13 +23,9 @@ const Login = ()=>{
     const handlePassword = (e) => {
     setData({ ...data,password: e.target.value });
   };
-  // console.log(handleChange)
 
     const handleSubmit =(e)=> {
     e.preventDefault();
-    console.log(data);
-
-    // login(email,password)
     login( data.email, data.password).then((response) => {
       window.localStorage.setItem("token", response.data.accessToken);
       console.log(response.data);
