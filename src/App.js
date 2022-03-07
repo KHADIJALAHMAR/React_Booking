@@ -24,6 +24,7 @@ function App() {
               <Route path="register" element={<Register/>} />
           </Route>
           <Route path="dashboard" element={ !authenticated && !role ? <Dashboard /> : <Navigate to='/' /> } />
+          <Route path="dashboard/addUser" element={ !authenticated && !role ? <AddUser /> : <Navigate to='/' /> } />
         </Routes>
       </BrowserRouter>
     </div>
