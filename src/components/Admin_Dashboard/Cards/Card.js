@@ -1,8 +1,8 @@
 import React from 'react'
 
-function Card({title}) {
+function Card({title,setPanel}) {
   return (
-    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4" onClick={() => {setPanel(title)}} style={{cursor : 'pointer'}}>
       <div className="card">
         <div className="card-body p-3">
           <div className="row">
