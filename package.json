@@ -13,8 +13,8 @@
     "react-dom": "^17.0.2",
     "react-router": "^6.2.1",
     "react-script": "^2.0.5",
-    "react-scripts": "5.0.0",
-    "sass": "^1.49.8",
+    "react-scripts": "^5.0.0",
+    "sass": "^1.49.9",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -43,5 +43,18 @@
   },
   "devDependencies": {
     "react-router-dom": "^6.2.1"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KHADIJALAHMAR/React_Booking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KHADIJALAHMAR/React_Booking/issues"
+  },
+  "homepage": "https://github.com/KHADIJALAHMAR/React_Booking#readme",
+  "description": ""
 }

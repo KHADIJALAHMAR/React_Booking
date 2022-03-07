@@ -7,8 +7,9 @@ import Dashboard from "./components/Admin_Dashboard/Dashboard";
 import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
-import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel" ;
-function App() {
+import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
+import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
+
 
   const [authenticated , setAuthenticated] = useState(jwt(window.localStorage.getItem('token')));
   const [role , setRole] = useState(jwt(window.localStorage.getItem('token')).role.name);
