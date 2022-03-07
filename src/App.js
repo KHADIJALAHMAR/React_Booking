@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter , Routes, Route} from "react-router-dom";
+import { BrowserRouter as Router , Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import "../src/css/main.css";
 import Dashboard from "./components/Admin_Dashboard/Dashboard";
@@ -14,8 +14,8 @@ function App() {
   // const handleRole = (role) => {setRole(role)}
 
   return (
-    <div className="app">
-      <BrowserRouter>
+    <React.Fragment>
+      <Router>
         <Routes>
           <Route path="/" element={<div>Hello</div>} />
           <Route path="auth" element={<Authentication />} >
@@ -27,8 +27,8 @@ function App() {
           <Route path="dashboard/create" element={<AddHotel />} />
 
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Router>
+    </React.Fragment>
   );
 }
 

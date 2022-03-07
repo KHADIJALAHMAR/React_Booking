@@ -1,81 +1,31 @@
-import { useEffect ,useState } from "react";
 import axios from "axios";
+
+axios.defaults.headers = {
+    'Content-Type': 'application/json',
+    Authorization: window.localStorage.getItem("token") ?? ''
+}
+
 // import FetchHotel from "../components/Admin_Dashboard/Crud/Hotel/getHotel";
 const APP_URL = "http://localhost:4000/hotels";
-// const API_URL = "https://jsonplaceholder.typicode.com/posts";
 
+export function createhotel(hotel) {
+    console.log("createhotel : ", hotel.image_cover);
 
+    const formData = new FormData();
 
-// function DataFetching (){
-//     const [posts , setposts] = useState([]);
+    formData.append("hotel-image", hotel.image_cover, hotel.image_cover.name);
 
-//     useEffect(() => {
-//         axios.get('http://localhost:4000/hotels')
-//         .then(res => {
-//             console.log(res)
-//         }).catch (err => {
-//             console.log(err);
-//         }) 
-//     })
-//     return (
-//         <div>
-//             <ul>
-//                 {
-//                     posts.map(post => <li key={post.id}> post.title</li>)
-//                 }
-//             </ul>
-//         </div>
-//     )
-// }
+    // for (let i = 0; i <  hotel.images.length; i++) {
+    // formData.append("image["+ i +"]",  hotel.images[i],  hotel.images[i].name);
+    // }
 
-// function Parent (){
-//     const [Hotels, setHotels] = useState(''); 
-//     useEffect(() => { 
-//         getHotels()
-//         ;}, []);
+    formData.append("name", hotel.name);
+    formData.append("description", hotel.descreption);
+    formData.append("star", hotel.stars);
 
+    console.log(formData);
 
-//     const getHotels = () => {
-//         axios.get(`${APP_URL}`)
-//         .then((response) => {
-//             const dataHotels= response.data;
-//             setHotels (dataHotels);
-//         }).catch(error => console.error(`Error hahahahah : ${error}`));
-//     }
+    return axios.post(APP_URL , formData);
+}
 
-//     return(
-//         <FetchHotel dataHotels ={Hotels} />
-        
-//     )
-// }
-
-const  create_hotel = async(
-    name,
-    descreption,
-     // image_cover, 
-    // images,
-    stars
-)=> {
-   try {
-       const response = await axios.post(`${APP_URL}`, {
-        name,
-        descreption,
-         // image_cover, 
-        // images,
-        stars
-       });
-       return console.log(response.data);
-   } catch (error) {
-       return console.log(error);
-   }
-}; 
-
-
-export default create_hotel;
-
-
-
-
-
-
-
+export default createhotel;
