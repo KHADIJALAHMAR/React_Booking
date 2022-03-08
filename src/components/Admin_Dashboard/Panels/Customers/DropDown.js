@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function DropDown() {
+export default function DropDown({title}) {
   return (
     <>
       <div className="col-lg-6 col-5 my-auto text-end">
@@ -22,7 +22,7 @@ export default function DropDown() {
           >
             <li>
               <a className="dropdown-item border-radius-md" href="http://localhost:3000/dashboard/addUser">
-                Add customer
+                Add {title}
               </a>
             </li>
           </ul>
