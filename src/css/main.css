@@ -26,67 +26,124 @@
   -webkit-filter: blur(8px);
 }
 
-.auth_right_bot_font, .auth_right_bot_s a, .auth .auth_register .auth_register_right .auth_right_bot a, .auth .auth_login .auth_login_right .auth_right_bot a, .auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
+.popup {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.267);
+}
+.popup .popup_delete {
+  background-color: aliceblue;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.confirm_button {
+  width: fit-content !important;
+  border: none;
+  outline: none;
+  box-shadow: 0 20px 27px 0 rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+}
+
+.cancel_button {
+  width: fit-content !important;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  background-color: rgba(201, 15, 15, 0);
+  color: black;
+  font-weight: 600;
+}
+
+.auth_right_bot_font,
+.auth_right_bot_s a,
+.auth .auth_register .auth_register_right .auth_right_bot a,
+.auth .auth_login .auth_login_right .auth_right_bot a,
+.auth_right_bot_s p,
+.auth .auth_register .auth_register_right .auth_right_bot p,
+.auth .auth_login .auth_login_right .auth_right_bot p {
   font-size: 13px;
   font-weight: 500;
   font-family: "poppins";
-  color: #FAFAFA;
+  color: #fafafa;
 }
 
-.auth_panel, .auth .auth_register, .auth .auth_login {
+.auth_panel,
+.auth .auth_register,
+.auth .auth_login {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 865px;
   height: 451px;
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   border-radius: 10px;
   display: flex;
   -webkit-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
-.auth_right, .auth .auth_register .auth_register_right, .auth .auth_login .auth_login_right {
+.auth_right,
+.auth .auth_register .auth_register_right,
+.auth .auth_login .auth_login_right {
   width: 100%;
   max-width: 491px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(45deg, #C33764, #1D2671);
+  background: linear-gradient(45deg, #c33764, #1d2671);
   border-radius: 10px 0 0 10px;
   padding: 20px;
 }
 
-.auth_logo, .auth .auth_register .auth_register_right .auth_register_logo, .auth .auth_login .auth_login_right .auth_login_logo {
+.auth_logo,
+.auth .auth_register .auth_register_right .auth_register_logo,
+.auth .auth_login .auth_login_right .auth_login_logo {
   display: flex;
   gap: 5px;
   align-items: center;
 }
-.auth_logo p, .auth .auth_register .auth_register_right .auth_register_logo p, .auth .auth_login .auth_login_right .auth_login_logo p {
+.auth_logo p,
+.auth .auth_register .auth_register_right .auth_register_logo p,
+.auth .auth_login .auth_login_right .auth_login_logo p {
   font-size: 20px;
   font-family: "poppins";
   font-weight: 700;
-  color: #FAFAFA;
+  color: #fafafa;
   cursor: default;
 }
 
-.auth_right_bot_s, .auth .auth_register .auth_register_right .auth_right_bot, .auth .auth_login .auth_login_right .auth_right_bot {
+.auth_right_bot_s,
+.auth .auth_register .auth_register_right .auth_right_bot,
+.auth .auth_login .auth_login_right .auth_right_bot {
   align-self: center;
   display: grid;
   place-items: center;
   gap: 5px;
 }
-.auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
+.auth_right_bot_s p,
+.auth .auth_register .auth_register_right .auth_right_bot p,
+.auth .auth_login .auth_login_right .auth_right_bot p {
   cursor: default;
 }
-.auth_right_bot_s a, .auth .auth_register .auth_register_right .auth_right_bot a, .auth .auth_login .auth_login_right .auth_right_bot a {
+.auth_right_bot_s a,
+.auth .auth_register .auth_register_right .auth_right_bot a,
+.auth .auth_login .auth_login_right .auth_right_bot a {
   display: grid;
   place-items: center;
   background-color: transparent;
   border-radius: 10px;
-  border: solid 2px #FAFAFA;
+  border: solid 2px #fafafa;
   cursor: pointer;
   outline: none;
   width: 210px;
@@ -94,12 +151,16 @@
   text-decoration: none;
   transition: 0.4s;
 }
-.auth_right_bot_s a:hover, .auth .auth_register .auth_register_right .auth_right_bot a:hover, .auth .auth_login .auth_login_right .auth_right_bot a:hover {
-  background-color: #FAFAFA;
+.auth_right_bot_s a:hover,
+.auth .auth_register .auth_register_right .auth_right_bot a:hover,
+.auth .auth_login .auth_login_right .auth_right_bot a:hover {
+  background-color: #fafafa;
   color: black;
 }
 
-.auth_left, .auth .auth_register .auth_register_left, .auth .auth_login .auth_login_left {
+.auth_left,
+.auth .auth_register .auth_register_left,
+.auth .auth_login .auth_login_left {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,10 +170,24 @@
   max-width: 376px;
 }
 
-.auth_form_inputs, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element {
+.auth_form_inputs,
+.auth .auth_register .auth_register_left .auth_register_form .auth_form_element,
+.auth .auth_login .auth_login_left .auth_login_form .auth_form_element {
   position: relative;
 }
-.auth_form_inputs .icon_container, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element .icon_container, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element .icon_container {
+.auth_form_inputs .icon_container,
+.auth
+  .auth_register
+  .auth_register_left
+  .auth_register_form
+  .auth_form_element
+  .icon_container,
+.auth
+  .auth_login
+  .auth_login_left
+  .auth_login_form
+  .auth_form_element
+  .icon_container {
   display: grid;
   place-items: center;
   position: absolute;
@@ -120,10 +195,17 @@
   left: 0;
   height: 28px;
   width: 38px;
-  background: linear-gradient(45deg, #1D2671, #C33764);
+  background: linear-gradient(45deg, #1d2671, #c33764);
   border-radius: 8px 0 0 8px;
 }
-.auth_form_inputs input, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element input, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element input {
+.auth_form_inputs input,
+.auth
+  .auth_register
+  .auth_register_left
+  .auth_register_form
+  .auth_form_element
+  input,
+.auth .auth_login .auth_login_left .auth_login_form .auth_form_element input {
   height: 28px;
   width: 100%;
   border: none;
@@ -133,12 +215,31 @@
   -webkit-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
 }
-.auth_form_inputs input::placeholder, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element input::placeholder, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element input::placeholder {
+.auth_form_inputs input::placeholder,
+.auth
+  .auth_register
+  .auth_register_left
+  .auth_register_form
+  .auth_form_element
+  input::placeholder,
+.auth
+  .auth_login
+  .auth_login_left
+  .auth_login_form
+  .auth_form_element
+  input::placeholder {
   font-family: "poppins";
   font-size: 12px;
-  color: #8F8F8F;
+  color: #8f8f8f;
 }
-.auth_form_inputs select, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element select, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element select {
+.auth_form_inputs select,
+.auth
+  .auth_register
+  .auth_register_left
+  .auth_register_form
+  .auth_form_element
+  select,
+.auth .auth_login .auth_login_left .auth_login_form .auth_form_element select {
   height: 28px;
   width: 100%;
   border: none;
@@ -150,10 +251,12 @@
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
-.auth_submit, .auth .auth_register .auth_register_left .auth_register_form button, .auth .auth_login .auth_login_left .auth_login_form button {
+.auth_submit,
+.auth .auth_register .auth_register_left .auth_register_form button,
+.auth .auth_login .auth_login_left .auth_login_form button {
   height: 34px;
   width: 295px;
-  background: linear-gradient(45deg, #1D2671, #C33764);
+  background: linear-gradient(45deg, #1d2671, #c33764);
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -165,7 +268,8 @@
   position: relative;
 }
 
-.form_details, .auth .auth_login .auth_login_left .auth_login_form {
+.form_details,
+.auth .auth_login .auth_login_left .auth_login_form {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -204,13 +308,13 @@
   font-family: "poppins";
   font-size: 20px;
   font-weight: 700;
-  color: #1D2671;
+  color: #1d2671;
 }
 .auth .auth_login .auth_login_left .auth_login_left_intro p:last-child {
   font-family: "poppins";
   font-size: 16px;
   font-weight: 500;
-  color: #C33764;
+  color: #c33764;
 }
 .auth .auth_login .auth_login_left .auth_login_form {
   width: 295px;
@@ -226,7 +330,7 @@
   border-radius: 8px;
   height: 100%;
   width: 100%;
-  background: linear-gradient(45deg, #C33764, #1D2671);
+  background: linear-gradient(45deg, #c33764, #1d2671);
   transition: 0.4s;
 }
 .auth .auth_login .auth_login_left .auth_login_form button:hover::before {
@@ -251,7 +355,7 @@
   font-family: "poppins";
   font-size: 20px;
   font-weight: 700;
-  color: #1D2671;
+  color: #1d2671;
 }
 .auth .auth_register .auth_register_left .auth_register_form {
   width: 295px;
@@ -270,10 +374,14 @@
   border-radius: 8px;
   height: 100%;
   width: 100%;
-  background: linear-gradient(45deg, #C33764, #1D2671);
+  background: linear-gradient(45deg, #c33764, #1d2671);
   transition: 0.4s;
 }
-.auth .auth_register .auth_register_left .auth_register_form button:hover::before {
+.auth
+  .auth_register
+  .auth_register_left
+  .auth_register_form
+  button:hover::before {
   opacity: 0;
 }
 

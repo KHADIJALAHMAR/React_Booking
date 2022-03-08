@@ -5,6 +5,7 @@ import emailIcon from "../../../assest/icon/mail.svg";
 import userIcon from "../../../assest/icon/user.svg";
 import keyIcon from "../../../assest/icon/key.svg";
 import logoIcon from "../../../assest/img/logo.svg";
+import R from "../../../assest/img/R.jpg";
 import { Link } from "react-router-dom";
 const Register = () => {
   const [values, setValues] = useState({
@@ -85,6 +86,8 @@ const Register = () => {
           values.role = "";
           values.password = "";
           values.repeated_password = "";
+        } else {
+          window.location = "login";
         }
       });
     }
@@ -94,118 +97,119 @@ const Register = () => {
   return (
     <div className="form-container">
       {/* start register component */}
-      <div className="auth">
-        <div className="auth_background"></div>
-        <div className="auth_register panel_on">
-          <div className="auth_register_right">
-            <div className="auth_register_logo">
-              <div className="auth_register_icon">
-                <img src={logoIcon} alt="" />
-              </div>
-              <p>Booking Star</p>
+      <div className="auth_background" />
+      <img src={R} alt="backgroundimag" className="auth_background" />
+      <div className="auth_register panel_on">
+        <div className="auth_register_right">
+          <div className="auth_register_logo">
+            <div className="auth_register_icon">
+              <img src={logoIcon} alt="" />
             </div>
-            <div className="auth_illustration">
-              <img src={readingTime} alt="" />
-            </div>
-            <div className="auth_right_bot">
-              <p>You already have an account ?</p>
-              <Link to='/auth/login' id="to_login">Login now</Link>
-            </div>
+            <p>Booking Star</p>
           </div>
-          <div className="auth_register_left">
-            <div className="auth_register_left_intro">
-              <p>Create an account!</p>
-            </div>
-            {/* <p>
+          <div className="auth_illustration">
+            <img src={readingTime} alt="" />
+          </div>
+          <div className="auth_right_bot">
+            <p>You already have an account ?</p>
+            <Link to="/auth/login" id="to_login">
+              Login now
+            </Link>
+          </div>
+        </div>
+        <div className="auth_register_left">
+          <div className="auth_register_left_intro">
+            <p>Create an account!</p>
+          </div>
+          {/* <p>
             {errors.username
               ? console.log(errors.usernameError)
               : console.log("not error here")}
           </p> */}
-            <form
-              className="auth_register_form"
-              method="POST"
-              action=""
-              onSubmit={handleSubmit}
-            >
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={userIcon} alt="" />
-                </div>
-                <input
-                  value={values.username}
-                  onChange={handleName}
-                  type="text"
-                  name="username"
-                  id="username"
-                  placeholder="Username"
-                />
+          <form
+            className="auth_register_form"
+            method="POST"
+            action=""
+            onSubmit={handleSubmit}
+          >
+            <div className="auth_form_element">
+              <div className="icon_container">
+                <img src={userIcon} alt="" />
               </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={emailIcon} alt="" />
-                </div>
-                <input
-                  value={values.email}
-                  onChange={handleEmail}
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                />
+              <input
+                value={values.username}
+                onChange={handleName}
+                type="text"
+                name="username"
+                id="username"
+                placeholder="Username"
+              />
+            </div>
+            <div className="auth_form_element">
+              <div className="icon_container">
+                <img src={emailIcon} alt="" />
               </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={keyIcon} alt="" />
-                </div>
-                <input
-                  value={values.password}
-                  onChange={handlePassword}
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                />
+              <input
+                value={values.email}
+                onChange={handleEmail}
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+              />
+            </div>
+            <div className="auth_form_element">
+              <div className="icon_container">
+                <img src={keyIcon} alt="" />
               </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={keyIcon} alt="" />
-                </div>
-                <input
-                  value={values.repeated_password}
-                  onChange={handleRepeatedPassword}
-                  type="password"
-                  name="repeat_password"
-                  id="repeat_password"
-                  placeholder="Repeat Password"
-                />
+              <input
+                value={values.password}
+                onChange={handlePassword}
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+              />
+            </div>
+            <div className="auth_form_element">
+              <div className="icon_container">
+                <img src={keyIcon} alt="" />
               </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={userIcon} alt="" />
-                </div>
-                <select name="gender" id="gender" onChange={handleGender}>
-                  <option selected disabled>
-                    Choose a gender
-                  </option>
-                  <option value="male">Male</option>
-                  <option value="female">Female</option>
-                </select>
+              <input
+                value={values.repeated_password}
+                onChange={handleRepeatedPassword}
+                type="password"
+                name="repeat_password"
+                id="repeat_password"
+                placeholder="Repeat Password"
+              />
+            </div>
+            <div className="auth_form_element">
+              <div className="icon_container">
+                <img src={userIcon} alt="" />
               </div>
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={userIcon} alt="" />
-                </div>
-                <select name="role" id="role" onChange={handleRole}>
-                  <option selected disabled>
-                    Choose a role
-                  </option>
-                  <option value="customer">Customer</option>
-                  <option value="owner">Owner</option>
-                </select>
+              <select name="gender" id="gender" onChange={handleGender}>
+                <option selected disabled>
+                  Choose a gender
+                </option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div className="auth_form_element">
+              <div className="icon_container">
+                <img src={userIcon} alt="" />
               </div>
-              <button type="submit">Create account</button>
-            </form>
-          </div>
+              <select name="role" id="role" onChange={handleRole}>
+                <option selected disabled>
+                  Choose a role
+                </option>
+                <option value="customer">Customer</option>
+                <option value="owner">Owner</option>
+              </select>
+            </div>
+            <button type="submit">Create account</button>
+          </form>
         </div>
       </div>
       {/* end register component */}

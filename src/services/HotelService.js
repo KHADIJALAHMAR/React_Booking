@@ -1,12 +1,17 @@
 import axios from "axios";
+const APP_URL = "http://localhost:4000/hotels"; 
+
+export async function deleteHotel(id) {
+    await axios.delete(`${APP_URL}/delete`, {
+        id
+    });
+}
+
 
 axios.defaults.headers = {
     'Content-Type': 'application/json',
     Authorization: window.localStorage.getItem("token") ?? ''
 }
-
-// import FetchHotel from "../components/Admin_Dashboard/Crud/Hotel/getHotel";
-const APP_URL = "http://localhost:4000/hotels";
 
 export function createhotel(hotel) {
     console.log("createhotel : ", hotel.image_cover);
