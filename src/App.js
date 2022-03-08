@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter , Routes, Route, Navigate} from "react-router-dom";
 import { useState } from "react";
-import jwt from 'jwt-decode';
 import "../src/css/main.css";
 import Dashboard from "./components/Admin_Dashboard/Dashboard";
 import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
-import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 
 function App() {
@@ -15,7 +13,7 @@ function App() {
   const [role , setRole] = useState(false);
 
   return (
-    <div className="app">
+    <div className="app" style={{backgroundColor: "#f8f9fa"}}>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<div>{role}</div>} />

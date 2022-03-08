@@ -4,15 +4,6 @@ import ListOwner from "./Owners/List";
 import ListCustomer from "./Customers/List";
 import Header from "./Customers/Header";
 
-// function Panel({title}) {
-//   return (
-//     <>
-//     {title === 'Owners' && <ListOwner />}
-//     {title === 'Hotels' && <ListHotel/>}
-//     {title === 'Customers' && <ListCustomer />}
-//     </>
-//   )
-// }
 
 const Panel = ({ title }) => {
   return (
