@@ -38,7 +38,7 @@ const AddHotel = () => {
       });
       if (AddHotel.status ==200) {
         console.log("Done : ");
-        // window.location = "/hotel";
+        window.location = "/dashboard";
       } else {
         console.log("madaztch");
       }

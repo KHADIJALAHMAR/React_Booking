@@ -7,9 +7,11 @@ function Item (){
     useEffect(() => {
         axios.get('http://localhost:4000/hotels')
         .then(res => {
-            console.log(res)
+            console.log(res.data);
+            setHotels(res.data);
         }).catch (err => {
             console.log(err);
+            console.log('makin walo');
         }) 
     })
   return (
@@ -28,7 +30,7 @@ function Item (){
           </td>
           <td className="align-middle text-center">
             <span className="text-xs font-weight-bold">
-              {hotel.star}
+              {hotel.stars}
             </span>
           
           </td>
