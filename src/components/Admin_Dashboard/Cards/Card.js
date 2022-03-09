@@ -2,16 +2,14 @@ import React from 'react'
 
 function Card({title,setPanel}) {
   return (
-    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4" onClick={() => {setPanel(title)}} style={{cursor : 'pointer'}}>
-      <div className="card">
+    <div className="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+      <div className="card" onClick={() => {setPanel(title)}} style={{cursor : 'pointer'}}>
         <div className="card-body p-3">
           <div className="row">
             <div className="col-8">
               <div className="numbers">
-                <p className="text-sm mb-0 text-capitalize font-weight-bold">{title}</p>
                 <h5 className="font-weight-bolder mb-0">
-                  $53,000
-                  <span className="text-success text-sm font-weight-bolder">+55%</span>
+                  {title}
                 </h5>
               </div>
             </div>
