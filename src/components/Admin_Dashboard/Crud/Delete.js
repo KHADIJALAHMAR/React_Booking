@@ -1,6 +1,7 @@
 import React from 'react'
 import {deleteHotel} from '../../../services/HotelService'
 import {deleteUser} from '../../../services/UserService'
+
 function Delete({type,id, visible , handlePopupVisibility}) {
 
     const handleDelete = () => {
