@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "./Item";
-import Header from "./Header";
+import Header from "../Header";
 
 const List = () => {
   return (

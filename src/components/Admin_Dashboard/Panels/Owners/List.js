@@ -1,8 +1,9 @@
 import React from 'react'
+import Header from "../Header";
 
-function List() {
+function List({title}) {
   return (
-    <div>List owners</div>
+    <div><Header  title = {title} /></div>
   )
 }
 
