@@ -2,7 +2,7 @@ import React from "react";
 import Item from "./Item";
 import Header from "./Header";
 
-const List = () => {
+const List = ({setPopupVisibility, handleDeleteObject}) => {
   return (
     <div>
       <Header />
@@ -26,7 +26,7 @@ const List = () => {
               </tr>
             </thead>
             <tbody>
-              <Item />
+              <Item setPopupVisibility={setPopupVisibility} handleDeleteObject={handleDeleteObject} />
             </tbody>
           </table>
         </div>
