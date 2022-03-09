@@ -1,7 +1,6 @@
 import React from "react";
-import { BrowserRouter , Routes, Route, Navigate} from "react-router-dom";
+import { BrowserRouter as Router , Routes, Route, Navigate } from "react-router-dom";
 import { useState } from "react";
-import jwt from 'jwt-decode';
 import "../src/css/main.css";
 import Dashboard from "./components/Admin_Dashboard/Dashboard";
 import Authentication from "./components/Authontication/Authentication";
@@ -15,8 +14,8 @@ function App() {
   const [role , setRole] = useState(false);
 
   return (
-    <div className="app">
-      <BrowserRouter>
+    <React.Fragment>
+      <Router>
         <Routes>
           <Route path="/" element={<div>{role}</div>} />
           <Route path="auth" element={authenticated ?  <Navigate to='/' /> : <Authentication />} >
@@ -25,9 +24,10 @@ function App() {
           </Route>
           <Route path="dashboard" element={ !authenticated && !role ? <Dashboard /> : <Navigate to='/' /> } />
           <Route path="dashboard/addUser" element={ !authenticated && !role ? <AddUser /> : <Navigate to='/' /> } />
+          <Route path="dashboard/create" element={ !authenticated && !role ? <AddHotel /> : <Navigate to='/' /> } />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Router>
+    </React.Fragment>
   );
 }
 
