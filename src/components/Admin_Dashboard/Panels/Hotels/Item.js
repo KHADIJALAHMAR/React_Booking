@@ -7,7 +7,7 @@ function Item (){
     useEffect(() => {
         axios.get('http://localhost:4000/hotels')
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             setHotels(res.data);
         }).catch (err => {
             console.log(err);
@@ -16,8 +16,20 @@ function Item (){
     })
   return (
     <>
-      {Hotels.map((hotel, index) => (
-        <tr key={index}>
+      {Hotels.map((hotel, index) => {
+        let src = "http://localhost:4000/assets/uploads/images/hotel_images/"+ hotel.image_cover;
+        return (
+          <tr key={index}>
+          <td>
+          <div className="d-flex px-2 py-1">
+                          <div>
+                            <img src={src} className="avatar avatar-sm me-3" alt="hotel" />
+                              {/* <span className="text-xs font-weight-bold">
+                                {hotel.image_cover}
+                              </span> */}
+                          </div>
+                        </div>
+          </td>
           <td className="align-middle text-center text-sm">
             {/* <h6 class="mb-0 text-sm"></h6> */}
             <span className="text-xs font-weight-bold">
@@ -40,7 +52,8 @@ function Item (){
           </td>
           
         </tr>
-      ))}
+        )
+      })}
     </>
   );
 };

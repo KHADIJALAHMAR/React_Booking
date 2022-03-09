@@ -11,6 +11,9 @@ const List = () => {
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
+              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
+                  Hotel image
+                </th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                   Hotel name
                 </th>
