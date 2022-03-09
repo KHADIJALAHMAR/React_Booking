@@ -3,7 +3,7 @@ import ListHotel from "./Hotels/List";
 import ListOwner from "./Owners/List";
 import ListCustomer from "./Customers/List";
 
-const Panel = ({ title ,title_Header }) => {
+const Panel = ({ title  }) => {
   return (
     <div>
       <div className="container-fluid py-4">
