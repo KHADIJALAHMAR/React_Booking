@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-const Item = () => {
+const Item = ({setPopupVisibility,handleDeleteObject}) => {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
@@ -93,19 +93,15 @@ const Item = () => {
           </div> */}
           </td>
           <td className="align-middle text-center">
-            <a
-              class="btn btn-link text-danger text-gradient px-3 mb-0"
-              href="javascript:;"
-            >
+          <a class="btn btn-link text-danger text-gradient px-3 mb-0" 
+              onClick={(e) => {
+                e.preventDefault();
+                handleDeleteObject("user", customer._id);
+              }} 
+              href="javascript:;">
               <i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete
-            </a>
-            <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;">
-              <i
-                class="fas fa-pencil-alt text-dark me-2"
-                aria-hidden="true"
-              ></i>
-              Edit
-            </a>
+          </a>
+          <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
           </td>
         </tr>
       ))}
