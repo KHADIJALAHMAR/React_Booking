@@ -4,8 +4,8 @@ import Card from './Card'
 function Cards({setPanel}) {
   return (
     <div>
-      <div className='container-fluid py-4'>
-        <div className='row my-4 mx-auto justify-content-center'>
+      <div className='container-fluid'>
+        <div className='row mx-auto justify-content-center'>
             <Card title='Hotels' setPanel={setPanel} />
             <Card title='Customers' setPanel={setPanel} />
             <Card title='Owners' setPanel={setPanel} />
