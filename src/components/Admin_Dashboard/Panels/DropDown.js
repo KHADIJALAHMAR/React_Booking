@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function DropDown({title}) {
+export default function DropDown({ title }) {
   return (
     <>
       <div className="col-lg-6 col-5 my-auto text-end">
@@ -21,15 +22,30 @@ export default function DropDown({title}) {
             aria-labelledby="dropdownTable"
           >
             <li>
-              { title === 'Hotels' && <a className="dropdown-item border-radius-md"  href="http://localhost:3000/dashboard/create">
-                Add {title}
-              </a>}
-              { title === 'Customers' && <a className="dropdown-item border-radius-md"  href="http://localhost:3000/dashboard/addUser">
-                Add {title}
-              </a>}
-              { title === 'Owners' && <a className="dropdown-item border-radius-md"  href="http://localhost:3000/dashboard/addUser">
-                Add {title}
-              </a>}
+              {title === "Hotels" && (
+                <Link
+                  className="dropdown-item border-radius-md"
+                  to="/dashboard/create"
+                >
+                  Add {title}
+                </Link>
+              )}
+              {title === "Customers" && (
+                <Link
+                  className="dropdown-item border-radius-md"
+                  to="/dashboard/addUser"
+                >
+                  Add {title}
+                </Link>
+              )}
+              {title === "Owners" && (
+                <Link
+                  className="dropdown-item border-radius-md"
+                  to="/dashboard/addUser"
+                >
+                  Add {title}
+                </Link>
+              )}
             </li>
           </ul>
         </div>
