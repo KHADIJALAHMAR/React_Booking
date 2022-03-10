@@ -21,38 +21,41 @@ function App() {
 
   return (
     <React.Fragment>
-      <div className="vw-100 vh-100 pt-4" style={{backgroundColor: "#f8f9fa"}}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<div>{role}</div>} />
-          <Route
-            path="auth"
-            element={authenticated ? <Navigate to="/" /> : <Authentication />}
-          >
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-          </Route>
-          <Route
-            path="dashboard"
-            element={
-              !authenticated && !role ? <Dashboard /> : <Navigate to="/" />
-            }
-          />
-          <Route
-            path="dashboard/addUser"
-            element={
-              !authenticated && !role ? <AddUser /> : <Navigate to="/" />
-            }
-          />
-          <Route
-            path="dashboard/create"
-            element={
-              !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
-            }
-          />
-          <Route path="dashbordOwner" element={<OwnerDashbord />}></Route>
-        </Routes>
-      </Router>
+      <div
+        className="vw-100 vh-100 pt-4"
+        style={{ backgroundColor: "#f8f9fa" }}
+      >
+        <Router>
+          <Routes>
+            <Route path="/" element={<div>{role}</div>} />
+            <Route
+              path="auth"
+              element={authenticated ? <Navigate to="/" /> : <Authentication />}
+            >
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+            </Route>
+            <Route
+              path="dashboard"
+              element={
+                !authenticated && !role ? <Dashboard /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="dashboard/addUser"
+              element={
+                !authenticated && !role ? <AddUser /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="dashboard/create"
+              element={
+                !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
+              }
+            />
+            <Route path="dashboardOwner" element={<OwnerDashbord />}></Route>
+          </Routes>
+        </Router>
       </div>
     </React.Fragment>
   );

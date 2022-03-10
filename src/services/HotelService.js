@@ -1,36 +1,44 @@
 import axios from "axios";
-const APP_URL = "http://localhost:4000/hotels"; 
+const APP_URL = "http://localhost:4000/hotels";
 
-export async function deleteHotel(id) {
-    await axios.delete(`${APP_URL}/delete`, {
-        id
-    });
+export async function deleteHotel(HotelId) {
+  await axios
+    .delete(`${APP_URL}/delete`, {
+      data: {
+        HotelId,
+      },
+    })
+    .then((response) => console.log(response.data));
 }
-
 
 axios.defaults.headers = {
-    'Content-Type': 'application/json',
-    Authorization: window.localStorage.getItem("token") ?? ''
-}
+  "Content-Type": "application/json",
+  Authorization: window.localStorage.getItem("token") ?? "",
+};
 
 export function createhotel(hotel) {
-    console.log("createhotel : ", hotel.image_cover);
+  console.log("createhotel : ", hotel.image_cover);
 
-    const formData = new FormData();
+  const formData = new FormData();
 
-    formData.append("hotel-image", hotel.image_cover,hotel.images, hotel.image_cover.name);
+  formData.append(
+    "hotel-image",
+    hotel.image_cover,
+    hotel.images,
+    hotel.image_cover.name
+  );
 
-    for (let i = 0; i <  hotel.images.length; i++) {
+  for (let i = 0; i < hotel.images.length; i++) {
     formData.append("image", hotel.images[i]);
-    }
+  }
 
-    formData.append("name", hotel.name);
-    formData.append("description", hotel.descreption);
-    formData.append("star", hotel.stars);
+  formData.append("name", hotel.name);
+  formData.append("description", hotel.descreption);
+  formData.append("star", hotel.stars);
 
-    console.log(formData);
+  console.log(formData);
 
-    return axios.post(APP_URL , formData);
+  return axios.post(APP_URL, formData);
 }
 
 export default createhotel;
