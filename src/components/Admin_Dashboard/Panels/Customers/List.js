@@ -2,10 +2,10 @@ import React from "react";
 import Item from "./Item";
 import Header from "../Header";
 
-const List = ({setPopupVisibility, handleDeleteObject}) => {
+const List = ({title ,handleDeleteObject}) => {
   return (
     <div>
-      <Header />
+      <Header title ={title}/>
       <div className="card-body px-0 pb-2">
         <div className="table-responsive">
           <table class="table align-items-center mb-0">
@@ -26,7 +26,7 @@ const List = ({setPopupVisibility, handleDeleteObject}) => {
               </tr>
             </thead>
             <tbody>
-              <Item setPopupVisibility={setPopupVisibility} handleDeleteObject={handleDeleteObject} />
+              <Item handleDeleteObject={handleDeleteObject} />
             </tbody>
           </table>
         </div>
