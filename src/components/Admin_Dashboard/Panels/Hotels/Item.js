@@ -17,16 +17,13 @@ function Item (){
   return (
     <>
       {Hotels.map((hotel, index) => {
-        // let src = "http://localhost:4000/assets/uploads/images/hotel_images/"+ hotel.image_cover;
+        let src = "http://localhost:4000/assets/uploads/images/hotel_images/"+ hotel.image_cover;
         return (
           <tr key={index}>
           <td>
           <div className="d-flex px-2 py-1">
                           <div>
-                            {/* <img src={src} className="avatar avatar-sm me-3" alt="hotel" /> */}
-                              {/* <span className="text-xs font-weight-bold">
-                                {hotel.image_cover}
-                              </span> */}
+                            <img src={src} className="avatar avatar-sm me-3" alt="hotel" />
                           </div>
                         </div>
           </td>
