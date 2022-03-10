@@ -1,35 +1,33 @@
+
 import React from "react";
 import Item from "./Item";
-import Header from "./Header";
+import Header from "../Header";
 
-const List = () => {
+const List = ({setPopupVisibility, handleDeleteObject}) => {
   return (
     <div>
       <Header />
       <div className="card-body px-0 pb-2">
         <div className="table-responsive">
-          <table className="table align-items-center mb-0">
+          <table class="table align-items-center mb-0">
             <thead>
               <tr>
-                <th className="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
-                  Owner name
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
+                  Customer name
                 </th>
-                <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                  Owner email
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                  Customer email
                 </th>
-                <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                  Gender
-                </th>
-                <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                   Role
                 </th>
-                <th className="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                   Actions
                 </th>
               </tr>
             </thead>
             <tbody>
-              <Item />
+              <Item setPopupVisibility={setPopupVisibility} handleDeleteObject={handleDeleteObject} />
             </tbody>
           </table>
         </div>
@@ -37,13 +35,5 @@ const List = () => {
     </div>
   );
 };
-// import React from 'react'
-// import Header from "../Header";
-
-// function List({title}) {
-//   return (
-//     <div><Header  title = {title} /></div>
-//   )
-// }
 
 export default List;
