@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UpdateItem from "../../Crud/User/Update";
 
-const Item = ({setPopupVisibility,handleDeleteObject}) => {
+const Item = ({handleDeleteObject}) => {
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {

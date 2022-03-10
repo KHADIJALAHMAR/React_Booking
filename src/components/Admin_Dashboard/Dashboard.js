@@ -24,7 +24,7 @@ function Dashboard() {
   return (
     <div className="admin_dash">
       <Cards setPanel={handlePanel} />
-      <Panel title={panel} setPopupVisibility={setPopupVisibility} handleDeleteObject={handleDeleteObject} />
+      <Panel title={panel} handleDeleteObject={handleDeleteObject} />
       <Delete
         type={deleteObject[0]}
         id={deleteObject[1]}
