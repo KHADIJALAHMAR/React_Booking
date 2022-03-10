@@ -6,7 +6,7 @@ const Item = ({setPopupVisibility,handleDeleteObject}) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/admin/customers/5`)
+      .get(`http://localhost:4000/admin/customers/`)
       .then((res) => {
         setCustomers(res.data);
       })
