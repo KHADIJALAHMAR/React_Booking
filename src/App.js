@@ -20,6 +20,7 @@ function App() {
 
   return (
     <React.Fragment>
+      <div className="vw-100 vh-100 pt-4" style={{backgroundColor: "#f8f9fa"}}>
       <Router>
         <Routes>
           <Route path="/" element={<div>{role}</div>} />
@@ -50,6 +51,7 @@ function App() {
           />
         </Routes>
       </Router>
+      </div>
     </React.Fragment>
   );
 }
