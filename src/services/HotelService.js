@@ -35,11 +35,11 @@ export function createhotel(hotel) {
 
     const formData = new FormData();
 
-    formData.append("hotel-image", hotel.image_cover, hotel.image_cover.name);
+    formData.append("hotel-image", hotel.image_cover,hotel.images, hotel.image_cover.name);
 
-    // for (let i = 0; i <  hotel.images.length; i++) {
-    // formData.append("image["+ i +"]",  hotel.images[i],  hotel.images[i].name);
-    // }
+    for (let i = 0; i <  hotel.images.length; i++) {
+    formData.append("image", hotel.images[i]);
+    }
 
     formData.append("name", hotel.name);
     formData.append("description", hotel.descreption);

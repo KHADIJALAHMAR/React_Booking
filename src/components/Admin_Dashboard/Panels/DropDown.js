@@ -21,9 +21,15 @@ export default function DropDown({title}) {
             aria-labelledby="dropdownTable"
           >
             <li>
-              <a className="dropdown-item border-radius-md" href="http://localhost:3000/dashboard/addUser">
+              { title === 'Hotels' && <a className="dropdown-item border-radius-md"  href="http://localhost:3000/dashboard/create">
                 Add {title}
-              </a>
+              </a>}
+              { title === 'Customers' && <a className="dropdown-item border-radius-md"  href="http://localhost:3000/dashboard/addUser">
+                Add {title}
+              </a>}
+              { title === 'Owners' && <a className="dropdown-item border-radius-md"  href="http://localhost:3000/dashboard/addUser">
+                Add {title}
+              </a>}
             </li>
           </ul>
         </div>
