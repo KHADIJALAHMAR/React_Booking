@@ -38,7 +38,7 @@ const AddHotel = () => {
       });
       if (AddHotel.status ==200) {
         console.log("Done : ");
-        // window.location = "/hotel";
+        window.location = "/dashboard";
       } else {
         console.log("madaztch");
       }
@@ -94,10 +94,11 @@ const AddHotel = () => {
           <input
             type="file"
             className="form-control"
-            placeholder="image_cover"
+            placeholder="images"
             aria-label="Email"
             aria-describedby="password-addon"
-            onChange={handleImages}
+            multiple
+            onChange={handleImages} 
           />
         </div>
 
