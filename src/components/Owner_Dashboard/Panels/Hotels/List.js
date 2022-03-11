@@ -2,16 +2,16 @@ import React from "react";
 import Item from "./Item";
 import Header from "../Header";
 
-const List = () => {
+const List = ({ title, handleDeleteObject }) => {
   return (
     <div>
-      {/* <Header title ={title} /> */}
+      <Header title={title} />
       <div className="card-body px-0 pb-2">
         <div className="table-responsive">
           <table class="table align-items-center mb-0">
             <thead>
               <tr>
-              <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
+                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
                   Hotel image
                 </th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 text-center">
@@ -29,7 +29,7 @@ const List = () => {
               </tr>
             </thead>
             <tbody>
-              <Item />
+              <Item handleDeleteObject={handleDeleteObject} />
             </tbody>
           </table>
         </div>
