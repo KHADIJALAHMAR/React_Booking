@@ -1,8 +1,10 @@
 import axios from "axios";
-const APP_URL = "http://localhost:4000/rooms"; 
+const APP_URL = "http://localhost:4000/owners"; 
 
-export async function deleteRoom(id) {
-    await axios.delete(`${APP_URL}/room/:roomId`, {
-        id
+export default async function deleteRoom(roomId) {
+    await axios.delete(`${APP_URL}/room`, {
+        data :{
+            roomId,
+        }
     });
 }

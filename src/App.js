@@ -13,6 +13,7 @@ import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
+import OwnerDashbord from './components/Owner_Dashboard/Dashboard';
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -49,6 +50,8 @@ function App() {
               !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
             }
           />
+          <Route path="dashboardOwner" element={<OwnerDashbord />}></Route>
+
         </Routes>
       </Router>
       </div>
