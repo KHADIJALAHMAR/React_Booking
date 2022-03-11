@@ -7,7 +7,7 @@ const Item = ({handleDeleteObject}) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/admin/customers/`)
+      .get(`http://localhost:4000/admin/customers/5`)
       .then((res) => {
         setCustomers(res.data);
       })
@@ -42,7 +42,10 @@ const Item = ({handleDeleteObject}) => {
                 href="javascript:;">
                 <i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete
             </a>
-            <a class="btn btn-link text-dark px-3 mb-0"href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+            <a class="btn btn-link text-dark px-3 mb-0"
+                
+            href="javascript:;">
+            <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
           </td>
         </tr>
         

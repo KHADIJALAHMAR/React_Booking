@@ -14,6 +14,8 @@ import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
+import Update from "./components/Admin_Dashboard/Crud/Hotel/Update";
+
 import Addhotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 
 function App() {
@@ -57,7 +59,14 @@ function App() {
               !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
             }
           />
+            <Route
+            path="dashboard/update"
+            element={
+              !authenticated && !role ? <Update /> : <Navigate to="/" />
+            }
+          />
         </Routes>
+        
       </Router>
       </div>
     </React.Fragment>
