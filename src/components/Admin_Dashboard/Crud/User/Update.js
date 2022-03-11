@@ -9,6 +9,7 @@ const UpdateUser = () => {
     email: "",
     gender: "",
     role: "",
+    password: ""
   });
 
   const [user , setUser] = useState({});
@@ -20,7 +21,7 @@ const UpdateUser = () => {
     (async () => {
       await getUserById(id).then((user) => {
         setUser(user)
-        setValues({...values, username: user.data.username, email: user.data.email})
+        setValues({...values, username: user.data.username, email: user.data.email, password: user.data.password})
         if (user.data.role.name === "owner") {
           setRole('owner');
         }
@@ -42,6 +43,9 @@ const UpdateUser = () => {
   };
 
   const handleEmail = (e) => {
+    setValues({ ...values, email: e.target.value });
+  };
+  const handlePassword = (e) => {
     setValues({ ...values, email: e.target.value });
   };
 
