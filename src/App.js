@@ -14,7 +14,6 @@ import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
-import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import Addhotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 
 function App() {
