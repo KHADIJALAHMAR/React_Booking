@@ -13,6 +13,7 @@ import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
+import UpdateUser from "./components/Admin_Dashboard/Crud/User/Update";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -47,6 +48,12 @@ function App() {
             path="dashboard/create"
             element={
               !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
+            }
+          />
+          <Route
+            path="dashboard/user/update/:id"
+            element={
+              !authenticated && !role ? <UpdateUser /> : <Navigate to="/" />
             }
           />
         </Routes>
