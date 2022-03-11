@@ -8,12 +8,14 @@ import {
 import { useState } from "react";
 import "../src/css/main.css";
 import Dashboard from "./components/Admin_Dashboard/Dashboard";
+import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
-import OwnerDashbord from "./components/Owner_Dashboard/Dashboard";
+import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
+import Addhotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -53,7 +55,26 @@ function App() {
                 !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
               }
             />
-            <Route path="dashboardOwner" element={<OwnerDashbord />}></Route>
+            <Route
+              path="dashboardowner"
+              element={
+                !authenticated && !role ? (
+                  <DashboardOwner />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
+              path="dashboardowner"
+              element={
+                !authenticated && !role ? (
+                  <DashboardOwner />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
           </Routes>
         </Router>
       </div>

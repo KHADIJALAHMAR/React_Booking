@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Delete from "./Crud/Delete";
+import List from '../Admin_Dashboard/Panels/Hotels/List'
 
 function Dashboard() {
   const [visible_popup, setPopupVisibility] = useState(false);
@@ -16,6 +17,8 @@ function Dashboard() {
 
   return (
     <div>
+      <List/>
+      <div>
       <a
         class="btn btn-link text-danger text-gradient px-3 mb-0"
         onClick={(e) => {
@@ -32,6 +35,7 @@ function Dashboard() {
         visible={visible_popup}
         handlePopupVisibility={handlePopupVisibility}
       />
+      </div>
     </div>
   );
 }
