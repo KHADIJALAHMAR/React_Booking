@@ -1,5 +1,5 @@
 import React from 'react'
-import List from '../Admin_Dashboard/Panels/Hotels/List'
+import List from '../Owner_Dashboard/Panels/Hotels/List'
 
 function Dashboard() {
   return (
