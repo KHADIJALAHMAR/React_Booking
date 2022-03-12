@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UpdateItem from "../../Crud/User/Update";
-
-const Item = ({ handleDeleteObject }) => {
+import {Link} from 'react-router-dom';
+const Item = ({handleDeleteObject}) => {
+  
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
@@ -51,10 +52,7 @@ const Item = ({ handleDeleteObject }) => {
               ></i>
               Edit
             </a>
-            <a class="btn btn-link text-dark px-3 mb-0"
-                
-            href="javascript:;">
-            <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+            <Link class="btn btn-link text-dark px-3 mb-0" to={"/dashboard/user/update/" + customer._id}><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</Link>
           </td>
         </tr>
       ))}
