@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Item({ handleDeleteObject }) {
   const [Hotels, setHotels] = useState([]);
@@ -66,13 +67,18 @@ function Item({ handleDeleteObject }) {
               >
                 <i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete
               </a>
-              <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;">
+              <Link
+                  to="/dashboardowner/updateHotel/{hotel._id}"
+                >
+                  <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;">
                 <i
                   class="fas fa-pencil-alt text-dark me-2"
                   aria-hidden="true"
                 ></i>
                 Edit
               </a>
+                </Link>
+              
             </td>
           </tr>
         );

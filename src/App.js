@@ -8,13 +8,14 @@ import {
 import { useState } from "react";
 import "../src/css/main.css";
 import Dashboard from "./components/Admin_Dashboard/Dashboard";
-import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
 import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
 import Update from "./components/Admin_Dashboard/Crud/Hotel/Update";
+import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
+import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
 
 import Addhotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 
@@ -55,6 +56,7 @@ function App() {
               !authenticated && !role ? <Update /> : <Navigate to="/" />
             }
           />
+          <Route path="/dashboardowner/updateHotel" element={!authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />} />
         </Routes>
         
       </Router>
