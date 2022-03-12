@@ -12,10 +12,11 @@ import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
+import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
 import UpdateUser from "./components/Admin_Dashboard/Crud/User/Update";
 import Update from "./components/Admin_Dashboard/Crud/Hotel/Update";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
-import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
+import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel";
 import Addhotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 
 function App() {
@@ -32,39 +33,47 @@ function App() {
           <Routes>
             <Route path="/" element={<div>{role}</div>} />
             <Route
-            path="dashboardowner"
-            element={
-              !authenticated && !role ? <DashboardOwner /> : <Navigate to="/" />
-            }
-          />
-          <Route
-            path="dashboard/addUser"
-            element={
-              !authenticated && !role ? <AddUser /> : <Navigate to="/" />
-            }
-          />
-          <Route
-            path="dashboard/create"
-            element={
-              !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
-            }
-          />
-          <Route
-            path="dashboard/user/update/:id"
-            element={
-              !authenticated && !role ? <UpdateUser /> : <Navigate to="/" />
-            }
+              path="dashboardowner"
+              element={
+                !authenticated && !role ? (
+                  <DashboardOwner />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
             />
             <Route
-            path="dashboard/update"
-            element={
-              !authenticated && !role ? <Update /> : <Navigate to="/" />
-            }
-          />
-          <Route path="/dashboardowner/updateHotel" element={!authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />} />
-        </Routes>
-        
-      </Router>
+              path="dashboard/addUser"
+              element={
+                !authenticated && !role ? <AddUser /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="dashboard/create"
+              element={
+                !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="dashboard/user/update/:id"
+              element={
+                !authenticated && !role ? <UpdateUser /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="dashboard/update"
+              element={
+                !authenticated && !role ? <Update /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="/dashboardowner/updateHotel"
+              element={
+                !authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />
+              }
+            />
+          </Routes>
+        </Router>
       </div>
     </React.Fragment>
   );
