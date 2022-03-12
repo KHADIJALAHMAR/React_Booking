@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import UpdateItem from "../../Crud/User/Update";
-
+import {Link} from 'react-router-dom';
 const Item = ({handleDeleteObject}) => {
+  
   const [customers, setCustomers] = useState([]);
 
   useEffect(() => {
@@ -34,21 +35,26 @@ const Item = ({handleDeleteObject}) => {
             </span>
           </td>
           <td className="align-middle text-center">
-            <a class="btn btn-link text-danger text-gradient px-3 mb-0" 
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleDeleteObject("user", customer._id);
-                }} 
-                href="javascript:;">
-                <i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete
+            <a
+              class="btn btn-link text-danger text-gradient px-3 mb-0"
+              onClick={(e) => {
+                e.preventDefault();
+                handleDeleteObject("user", customer._id);
+              }}
+              href="javascript:;"
+            >
+              <i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete
             </a>
-            <a class="btn btn-link text-dark px-3 mb-0"
-                
-            href="javascript:;">
-            <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+            <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;">
+              <i
+                class="fas fa-pencil-alt text-dark me-2"
+                aria-hidden="true"
+              ></i>
+              Edit
+            </a>
+            <Link class="btn btn-link text-dark px-3 mb-0" to={"/dashboard/user/update/" + customer._id}><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</Link>
           </td>
         </tr>
-        
       ))}
     </>
   );
