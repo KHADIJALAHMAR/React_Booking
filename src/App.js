@@ -67,7 +67,7 @@ function App() {
               }
             />
             <Route
-              path="/dashboardowner/updateHotel"
+              path="dashboardowner/hotel/update/:HotelId"
               element={
                 !authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />
               }

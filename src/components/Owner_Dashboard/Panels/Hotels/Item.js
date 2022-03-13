@@ -68,17 +68,15 @@ function Item({ handleDeleteObject }) {
                 <i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete
               </a>
               <Link
-                  to="/dashboardowner/updateHotel/{hotel._id}"
-                >
-                  <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;">
+                class="btn btn-link text-dark px-3 mb-0"
+                to={"/dashboardowner/hotel/update/" + hotel._id}
+              >
                 <i
                   class="fas fa-pencil-alt text-dark me-2"
                   aria-hidden="true"
                 ></i>
                 Edit
-              </a>
-                </Link>
-              
+              </Link>
             </td>
           </tr>
         );

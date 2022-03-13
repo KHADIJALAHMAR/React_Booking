@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import { getHotelById, updateHotel } from "../../../../services/HotelService";
+import { useParams } from "react-router-dom";
 
 function UpdateHotel() {
+  const { HotelId } = useParams();
+
+  const [hotel, setHotel] = useState({});
+  useEffect(() => {
+    (async () => {
+      await getHotelById(HotelId).then((hotel) => {
+        setHotel(hotel);
+        // console.log(hotel);
+      });
+    })();
+  }, []);
+
   return (
     <div>
-        <form
-        className="auth_register_form"
-        method="POST"
-        action=""
-      >
+      <form className="auth_register_form" method="POST" action="">
         <div className="mb-3">
           <input
             type="text"
@@ -78,7 +88,7 @@ function UpdateHotel() {
         </div>
       </form>
     </div>
-  )
+  );
 }
 
-export default UpdateHotel
+export default UpdateHotel;
