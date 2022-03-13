@@ -7,6 +7,19 @@ export async function deleteHotel(HotelId) {
     .then((response) => console.log(response.data));
 }
 
+export async function updateHotel(hotelId, values) {
+    await axios.put(`${APP_URL}/update/${hotelId}`, {
+        data: {
+            ...values
+        }
+    });
+}
+
+export async function getHotelById(HotelId) {
+    let res = await axios.get(`${APP_URL}/hotels/${HotelId}`);
+    return res;
+}
+
 // export const Updatehotel = async (
 //     name,
 //     descreption,

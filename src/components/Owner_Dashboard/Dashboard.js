@@ -3,6 +3,7 @@ import Delete from "./Crud/Delete";
 import List from "../Owner_Dashboard/Panels/Hotels/List";
 import Panel from "./Panels/Panel";
 
+
 function Dashboard() {
   const [visible_popup, setPopupVisibility] = useState(false);
   const [deleteObject, setDeleteObject] = useState([]);
