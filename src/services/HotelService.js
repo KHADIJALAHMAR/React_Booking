@@ -3,11 +3,7 @@ const APP_URL = "http://localhost:4000/hotels";
 
 export async function deleteHotel(HotelId) {
   await axios
-    .delete(`${APP_URL}/delete`, {
-      data: {
-        HotelId,
-      },
-    })
+    .delete(`${APP_URL}/${HotelId}`)
     .then((response) => console.log(response.data));
 }
 
@@ -27,20 +23,19 @@ export async function getHotelById(HotelId) {
 // export const Updatehotel = async (
 //     name,
 //     descreption,
-//     image_cover, 
+//     image_cover,
 //     images,
 //     stars
 // ) => {
 //     return await axios.put(`${APP_URL}/update`, {
 //         name,
 //         descreption,
-//         image_cover, 
+//         image_cover,
 //         images,
 //         stars
 //     });
 // };
 // export default Updatehotel;
-
 
 axios.defaults.headers = {
   "Content-Type": "application/json",

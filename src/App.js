@@ -12,6 +12,7 @@ import Authentication from "./components/Authontication/Authentication";
 import Login from "./components/Authontication/Login/Login";
 import Register from "./components/Authontication/Register/Register";
 import AddUser from "./components/Admin_Dashboard/Crud/User/Add";
+import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
 import UpdateUser from "./components/Admin_Dashboard/Crud/User/Update";
 import Update from "./components/Admin_Dashboard/Crud/Hotel/Update";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
@@ -62,12 +63,12 @@ function App() {
               !authenticated && !role ? <UpdateUser /> : <Navigate to="/" />
             }
             />
-            <Route
-            path="dashboard/update/:id"
-            element={
-              !authenticated && !role ? <Update /> : <Navigate to="/" />
-            }
-          />
+           <Route
+              path="dashboard/update"
+              element={
+                !authenticated && !role ? <Update /> : <Navigate to="/" />
+              }
+            />
           <Route path="/dashboardowner/updateHotel" element={!authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />} />
         </Routes>
         
