@@ -9,7 +9,6 @@ function UpdateHotel() {
     descreption: "",
     stars: "",
   });
-  
 
   const [hotel, setHotel] = useState({});
   const [stars, setStars] = useState(1);
@@ -33,7 +32,7 @@ function UpdateHotel() {
           setStars(3);
         }
         if (hotel.data.stars === 4) {
-          setStars(4)
+          setStars(4);
         }
         if (hotel.data.stars === 5) {
           setStars(5);
@@ -53,6 +52,27 @@ function UpdateHotel() {
     setValues({ ...values, stars: e.target.value });
   };
 
+  const [submitted, setSubmitted] = useState(false);
+
+  const [valid, setValid] = useState(false);
+
+  const getUpdatedValues = (values) => {
+    let res = {};
+    Object.keys(values).map((key) => {
+      if (values[key] !== "") {
+        res[key] = values[key];
+      }
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    getUpdatedValues(values);
+    await updateHotel(HotelId, getUpdatedValues(values));
+    window.location = "/dashboardOwner";
+    setSubmitted(true);
+  };
+
   return (
     <div className="container mt-5">
       <div className="row">
@@ -62,7 +82,12 @@ function UpdateHotel() {
               <h5>Update Hotel</h5>
             </div>
             <div className="card-body">
-              <form role="form text-left" method="POST" action="">
+              <form
+                role="form text-left"
+                method="POST"
+                action=""
+                onSubmit={setSubmitted}
+              >
                 <div className="mb-3">
                   <input
                     type="text"
@@ -102,34 +127,19 @@ function UpdateHotel() {
                     <option selected disabled>
                       Choose a Stars
                     </option>
-                    <option
-                      value="star1"
-                      selected={stars === 1 ? true : false}
-                    >
+                    <option value="star1" selected={stars === 1 ? true : false}>
                       1
                     </option>
-                    <option
-                      value="star2"
-                      selected={stars === 2 ? true : false}
-                    >
+                    <option value="star2" selected={stars === 2 ? true : false}>
                       2
                     </option>
-                    <option
-                      value="star3"
-                      selected={stars === 3 ? true : false}
-                    >
+                    <option value="star3" selected={stars === 3 ? true : false}>
                       3
                     </option>
-                    <option
-                      value="star4"
-                      selected={stars === 4 ? true : false}
-                    >
+                    <option value="star4" selected={stars === 4 ? true : false}>
                       4
                     </option>
-                    <option
-                      value="star4"
-                      selected={stars === 5 ? true : false}
-                    >
+                    <option value="star4" selected={stars === 5 ? true : false}>
                       5
                     </option>
                   </select>

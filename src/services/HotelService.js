@@ -61,3 +61,8 @@ export async function getHotelById(HotelId) {
   let res = await axios.get(`${APP_URL}/${HotelId}`);
   return res;
 }
+
+//
+export async function updateHotel(HotelId, values) {
+  await axios.put(`${APP_URL}`);
+}
