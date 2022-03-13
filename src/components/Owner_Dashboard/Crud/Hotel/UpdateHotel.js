@@ -4,89 +4,149 @@ import { useParams } from "react-router-dom";
 
 function UpdateHotel() {
   const { HotelId } = useParams();
+  const [values, setValues] = useState({
+    name: "",
+    descreption: "",
+    stars: "",
+  });
+  
 
   const [hotel, setHotel] = useState({});
+  const [stars, setStars] = useState(1);
+
   useEffect(() => {
     (async () => {
       await getHotelById(HotelId).then((hotel) => {
         setHotel(hotel);
-        // console.log(hotel);
+        setValues({
+          ...values,
+          name: hotel.data.name,
+          descreption: hotel.data.descreption,
+        });
+        if (hotel.data.stars === 1) {
+          setStars(1);
+        }
+        if (hotel.data.stars === 2) {
+          setStars(2);
+        }
+        if (hotel.data.stars === 3) {
+          setStars(3);
+        }
+        if (hotel.data.stars === 4) {
+          setStars(4)
+        }
+        if (hotel.data.stars === 5) {
+          setStars(5);
+        }
       });
     })();
   }, []);
 
+  const handleName = (e) => {
+    setValues({ ...values, name: e.target.value });
+  };
+  const handleDescreption = (e) => {
+    setValues({ ...values, descreption: e.target.value });
+  };
+
+  const handleStars = (e) => {
+    setValues({ ...values, stars: e.target.value });
+  };
+
   return (
-    <div>
-      <form className="auth_register_form" method="POST" action="">
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Name"
-            aria-label="Name"
-            aria-describedby="email-addon"
-          />
+    <div className="container mt-5">
+      <div className="row">
+        <div className="col-xl-4 col-lg-5 col-md-7 mx-auto">
+          <div className="card z-index-0">
+            <div className="card-header text-center pt-4">
+              <h5>Update Hotel</h5>
+            </div>
+            <div className="card-body">
+              <form role="form text-left" method="POST" action="">
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Name"
+                    aria-label="Name"
+                    aria-describedby="email-addon"
+                    name="name"
+                    id="name"
+                    value={values.name}
+                    onChange={handleName}
+                  />
+                </div>
+                <div className="mb-3">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Descreption"
+                    aria-label="Email"
+                    aria-describedby="email-addon"
+                    name="descreption"
+                    id="descreption"
+                    value={values.descreption}
+                    onChange={handleDescreption}
+                  />
+                </div>
+                <div className="mb-3">
+                  <select
+                    className="form-control"
+                    aria-label="Stars"
+                    aria-describedby="stars-addon"
+                    name="stars"
+                    id="stars"
+                    placeholder="Stars"
+                    onChange={handleStars}
+                  >
+                    <option selected disabled>
+                      Choose a Stars
+                    </option>
+                    <option
+                      value="star1"
+                      selected={stars === 1 ? true : false}
+                    >
+                      1
+                    </option>
+                    <option
+                      value="star2"
+                      selected={stars === 2 ? true : false}
+                    >
+                      2
+                    </option>
+                    <option
+                      value="star3"
+                      selected={stars === 3 ? true : false}
+                    >
+                      3
+                    </option>
+                    <option
+                      value="star4"
+                      selected={stars === 4 ? true : false}
+                    >
+                      4
+                    </option>
+                    <option
+                      value="star4"
+                      selected={stars === 5 ? true : false}
+                    >
+                      5
+                    </option>
+                  </select>
+                </div>
+                <div className="text-center">
+                  <button
+                    type="submit"
+                    className="btn bg-gradient-dark w-100 my-4 mb-2"
+                  >
+                    Update Hotel
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Descreption"
-            aria-label="Email"
-            aria-describedby="email-addon"
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="file"
-            className="form-control"
-            placeholder="image_cover"
-            aria-label="Password"
-            aria-describedby="password-addon"
-          />
-        </div>
-
-        <div className="mb-3">
-          <input
-            type="file"
-            className="form-control"
-            placeholder="images"
-            aria-label="Email"
-            aria-describedby="password-addon"
-            multiple
-          />
-        </div>
-
-        <div className="mb-3">
-          <select
-            className="form-control"
-            aria-label="Email"
-            aria-describedby="email-addon"
-            name="star"
-            id="star"
-            placeholder="Star"
-          >
-            <option selected disabled>
-              Choose a Stars
-            </option>
-            <option value="star1">1</option>
-            <option value="star2">2</option>
-            <option value="star3">3</option>
-            <option value="star4">4</option>
-          </select>
-        </div>
-
-        <div className="text-center">
-          <button
-            type="submit"
-            className="btn bg-gradient-dark w-100 my-4 mb-2"
-          >
-            Add Hotel
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 }

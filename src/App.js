@@ -33,6 +33,16 @@ function App() {
           <Routes>
             <Route path="/" element={<div>{role}</div>} />
             <Route
+              path="dashboard"
+              element={
+                !authenticated && !role ? (
+                  <Dashboard />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
               path="dashboardowner"
               element={
                 !authenticated && !role ? (
