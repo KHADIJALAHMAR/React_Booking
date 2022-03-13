@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {Link} from 'react-router-dom';
 
 function Item ({handleDeleteObject}){
     const [Hotels , setHotels] = useState([]);
@@ -14,6 +15,11 @@ function Item ({handleDeleteObject}){
             console.log('makin walo');
         }) 
     })
+
+    function Update(id){
+      console.log(id);
+      props.history.push("/dashboard/update"+id)
+    }
   return (
     <>
       {Hotels.map((hotel, index) => {
@@ -53,7 +59,10 @@ function Item ({handleDeleteObject}){
               handleDeleteObject("hotel", hotel._id);
             }} 
           href="javascript:;"><i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete</a>
-          <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+          <Link class="btn btn-link text-dark px-3 mb-0"
+          onClick={() => Update(hotel.id) }
+           to="/dashboard/update">
+           <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</Link>
           </td>
           
         </tr>

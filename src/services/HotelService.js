@@ -9,6 +9,23 @@ export async function deleteHotel(HotelId) {
     });
 }
 
+// export const Updatehotel = async (
+//     name,
+//     descreption,
+//     image_cover, 
+//     images,
+//     stars
+// ) => {
+//     return await axios.put(`${APP_URL}/update`, {
+//         name,
+//         descreption,
+//         image_cover, 
+//         images,
+//         stars
+//     });
+// };
+// export default Updatehotel;
+
 
 axios.defaults.headers = {
     'Content-Type': 'application/json',
