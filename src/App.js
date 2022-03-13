@@ -16,7 +16,8 @@ import UpdateUser from "./components/Admin_Dashboard/Crud/User/Update";
 import Update from "./components/Admin_Dashboard/Crud/Hotel/Update";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
-import Addhotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
+import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel"
+import Add from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 
 function App() {
   const [authenticated, setAuthenticated] = useState(false);
@@ -49,6 +50,12 @@ function App() {
               !authenticated && !role ? <AddHotel /> : <Navigate to="/" />
             }
           />
+           <Route
+            path="dashboard/createHotel"
+            element={
+              !authenticated && !role ? <Add /> : <Navigate to="/" />
+            }
+          />
           <Route
             path="dashboard/user/update/:id"
             element={
@@ -56,7 +63,7 @@ function App() {
             }
             />
             <Route
-            path="dashboard/update"
+            path="dashboard/update/:id"
             element={
               !authenticated && !role ? <Update /> : <Navigate to="/" />
             }
