@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {Link} from 'react-router-dom';
 
-function Item (props){
+function Item ({handleDeleteObject}){
     const [Hotels , setHotels] = useState([]);
 
     useEffect(() => {
@@ -18,7 +18,7 @@ function Item (props){
 
     function Update(id){
       console.log(id);
-      props.history.push("/dashboard/update"+id)
+      // props.history.push("/dashboard/update"+id)
     }
   return (
     <>
@@ -53,7 +53,12 @@ function Item (props){
           
           </td>
           <td className="align-middle text-center">
-          <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete</a>
+          <a class="btn btn-link text-danger text-gradient px-3 mb-0" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleDeleteObject("hotel", hotel._id);
+            }} 
+          href="javascript:;"><i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete</a>
           <Link class="btn btn-link text-dark px-3 mb-0"
           onClick={() => Update(hotel.id) }
            to="/dashboard/update">

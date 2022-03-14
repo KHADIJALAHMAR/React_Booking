@@ -1,12 +1,18 @@
-import React, { useState } from "react";
-import Delete from "./Crud/Delete";
-import List from "../Owner_Dashboard/Panels/Hotels/List";
+import React, {useState} from 'react'
+import List from '../Owner_Dashboard/Panels/Hotels/List'
+import Cards from './Cards/Cards';
 import Panel from "./Panels/Panel";
-
+import Delete from "./Crud/Delete";
 
 function Dashboard() {
+
+  const [panel, setPanel] = useState("Hotels");
   const [visible_popup, setPopupVisibility] = useState(false);
   const [deleteObject, setDeleteObject] = useState([]);
+
+  const handlePanel = (panel) => {
+    setPanel(panel);
+  };
 
   const handleDeleteObject = async (type, id) => {
     await setDeleteObject([type, id]);
@@ -16,9 +22,10 @@ function Dashboard() {
   const handlePopupVisibility = () => {
     setPopupVisibility(!visible_popup);
   };
-
+  
   return (
     <div>
+      <Cards setPanel={handlePanel} />
       <Panel title={'Hotels'} handleDeleteObject={handleDeleteObject} />
       <Delete
         type={deleteObject[0]}

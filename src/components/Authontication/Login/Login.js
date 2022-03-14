@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { login } from "../../../services/AuthService";
+import jwtDecode from "jwt-decode";
 import world from "../../../assest/img/world.svg";
 import mail from "../../../assest/icon/mail.svg";
 import key from "../../../assest/icon/key.svg";
@@ -22,14 +23,14 @@ const Login = ({ handleAuth }) => {
     setData({ ...data, password: e.target.value });
   };
 
-  const handleSubmit = () => {
-    login(data.email, data.password).then((response) => {
-      window.localStorage.setItem("token", response.data.accessToken);
-      window.location = "/dashboard";
+  const handleSubmit =()=> {
+    login( data.email, data.password).then((response) => {
+      // auth.setAuthenticated(true)
+      // auth.setRole(jwtDecode(response.data.accessToken).role.name);
+      window.location = '/authenticated/'+jwtDecode(response.data.accessToken).role.name
     });
     setSubmitted(true);
   };
-
   return (
     <div className="app">
       <div className="auth">
@@ -101,14 +102,16 @@ const Login = ({ handleAuth }) => {
               onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit();
-                handleAuth();
-              }}
-            >
-              <div className="auth_form_element">
-                <div className="icon_container">
-                  <img src={mail} alt="mail" />
-                </div>
-                <input type="text" email={data.email} onChange={handleEmail} />
+              }}>
+                <div className="auth_form_element">
+                  <div className="icon_container">
+                    <img src={mail} alt="mail" />
+                  </div>
+                  <input
+                    type="text"
+                    email={data.email}
+                    onChange={handleEmail}
+                  />
               </div>
               <div className="auth_form_element">
                 <div className="icon_container">

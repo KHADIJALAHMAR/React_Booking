@@ -11,7 +11,6 @@ const UpdateUser = () => {
     role: "",
     password: ""
   });
-
   const [user , setUser] = useState({});
   const [gender , setGender] = useState('male');
   const [role , setRole] = useState('customer');
@@ -45,9 +44,6 @@ const UpdateUser = () => {
   const handleEmail = (e) => {
     setValues({ ...values, email: e.target.value });
   };
-  const handlePassword = (e) => {
-    setValues({ ...values, email: e.target.value });
-  };
 
   const handleRole = (e) => {
     setValues({ ...values, role: e.target.value });
@@ -64,7 +60,7 @@ const UpdateUser = () => {
   const getUpdatedValues = (values) => {
     let res = {};
     Object.keys(values).map(key => {
-      if (values[key] !== "") {
+      if (values[key] !== user[key]) {
         res[key] = values[key];
       }
     })
@@ -73,7 +69,6 @@ const UpdateUser = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    getUpdatedValues(values);
     await updateUser(id, getUpdatedValues(values))
     window.location = "/dashboard";
     setSubmitted(true);

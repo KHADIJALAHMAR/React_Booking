@@ -2,7 +2,7 @@ import React from "react";
 import Item from "./Item";
 import Header from "../Header";
 
-const List = ({title}) => {
+const List = ({title ,handleDeleteObject}) => {
   return (
     <div>
       <Header title ={title} />
@@ -26,7 +26,7 @@ const List = ({title}) => {
               </tr>
             </thead>
             <tbody>
-              <Item />
+              <Item handleDeleteObject={handleDeleteObject} />
             </tbody>
           </table>
         </div>
