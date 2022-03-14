@@ -1,17 +1,15 @@
-import React, {useState} from "react";
+import React, {useContext, useState} from "react";
 import { login } from "../../../services/AuthService";
+import jwtDecode from "jwt-decode";
 import world from "../../../assest/img/world.svg";
 import mail from "../../../assest/icon/mail.svg";
 import key from "../../../assest/icon/key.svg";
 import R from "../../../assest/img/R.jpg";
 import { Link } from "react-router-dom";
 
-const Login = ({handleAuth})=>{
+const Login = ()=>{
 
-    const [data , setData] = useState({
-    email : "",
-    password : ""
-});
+  const [data , setData] = useState({email : "", password : ""});
 
     const [submitted, setSubmitted] = useState(false);
 
@@ -26,8 +24,9 @@ const Login = ({handleAuth})=>{
 
     const handleSubmit =()=> {
       login( data.email, data.password).then((response) => {
-        window.localStorage.setItem("token", response.data.accessToken);
-        window.location = '/dashboard'
+        // auth.setAuthenticated(true)
+        // auth.setRole(jwtDecode(response.data.accessToken).role.name);
+        window.location = '/authenticated/'+jwtDecode(response.data.accessToken).role.name
       });
       setSubmitted(true);
     };
@@ -101,7 +100,6 @@ const Login = ({handleAuth})=>{
               <form className="auth_login_form" onSubmit={(e) => {
                 e.preventDefault();
                 handleSubmit();
-                handleAuth();
               }}>
                 <div className="auth_form_element">
                   <div className="icon_container">

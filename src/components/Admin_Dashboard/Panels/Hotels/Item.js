@@ -18,7 +18,7 @@ function Item ({handleDeleteObject}){
 
     function Update(id){
       console.log(id);
-      props.history.push("/dashboard/update"+id)
+      // props.history.push("/dashboard/update"+id)
     }
   return (
     <>
