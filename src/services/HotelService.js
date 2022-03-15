@@ -8,36 +8,14 @@ export async function deleteHotel(HotelId) {
       }
   });
 }
-export async function updateHotel(hotelId, values) {
-  await axios.put(`${APP_URL}/update/${hotelId}`, {
-      data: {
-          ...values
-        }
+
+export async function updateHotel(HotelId, values) {
+  await axios.put(`${APP_URL}/${HotelId}`, {
+    data: {
+      ...values,
+    },
   });
 }
-
-
-export async function getHotelById(HotelId) {
-    let res = await axios.get(`${APP_URL}/hotels/${HotelId}`);
-    return res;
-}
-
-// export const Updatehotel = async (
-//     name,
-//     descreption,
-//     image_cover,
-//     images,
-//     stars
-// ) => {
-//     return await axios.put(`${APP_URL}/update`, {
-//         name,
-//         descreption,
-//         image_cover,
-//         images,
-//         stars
-//     });
-// };
-// export default Updatehotel;
 
 axios.defaults.headers = {
   "Content-Type": "application/json",
@@ -75,13 +53,4 @@ export default createhotel;
 export async function getHotelById(HotelId) {
   let res = await axios.get(`${APP_URL}/${HotelId}`);
   return res;
-}
-
-//
-export async function updateHotel(HotelId, values) {
-  await axios.put(`${APP_URL}/${HotelId}`, {
-    data: {
-      ...values,
-    },
-  });
 }
