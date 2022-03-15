@@ -1,8 +1,5 @@
 import React from "react";
 import DropDown from "./DropDown";
-import Adduser from "../Crud/User/Add";
-// import AddHotel from "../../Crud/Hotel/AddHotel";
-
 
 export default function Header({title }) {
   return (
