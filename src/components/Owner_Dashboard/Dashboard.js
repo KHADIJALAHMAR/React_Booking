@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import Delete from "./Crud/Delete";
-import List from "../Owner_Dashboard/Panels/Hotels/List";
 import Panel from "./Panels/Panel";
 
 function Dashboard() {
   const [visible_popup, setPopupVisibility] = useState(false);
+  const [panel, setPanel] = useState("Hotels")
   const [deleteObject, setDeleteObject] = useState([]);
 
   const handleDeleteObject = async (type, id) => {
@@ -18,7 +18,7 @@ function Dashboard() {
 
   return (
     <div>
-      <Panel title={'Hotels'} handleDeleteObject={handleDeleteObject} />
+      <Panel title={panel} handleDeleteObject={handleDeleteObject} />
       <Delete
         type={deleteObject[0]}
         id={deleteObject[1]}
