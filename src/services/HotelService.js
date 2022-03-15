@@ -2,32 +2,42 @@ import axios from "axios";
 const APP_URL = "http://localhost:4000/hotels";
 
 export async function deleteHotel(HotelId) {
-  await axios
-    .delete(`${APP_URL}/delete`, {
+  await axios.delete(`${APP_URL}/delete`, {
+      data :{
+          HotelId
+      }
+  });
+}
+export async function updateHotel(hotelId, values) {
+  await axios.put(`${APP_URL}/update/${hotelId}`, {
       data: {
-        HotelId,
-      },
-    })
-    .then((response) => console.log(response.data));
+          ...values
+        }
+  });
+}
+
+
+export async function getHotelById(HotelId) {
+    let res = await axios.get(`${APP_URL}/hotels/${HotelId}`);
+    return res;
 }
 
 // export const Updatehotel = async (
 //     name,
 //     descreption,
-//     image_cover, 
+//     image_cover,
 //     images,
 //     stars
 // ) => {
 //     return await axios.put(`${APP_URL}/update`, {
 //         name,
 //         descreption,
-//         image_cover, 
+//         image_cover,
 //         images,
 //         stars
 //     });
 // };
 // export default Updatehotel;
-
 
 axios.defaults.headers = {
   "Content-Type": "application/json",
