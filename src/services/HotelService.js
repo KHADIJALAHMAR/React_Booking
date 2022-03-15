@@ -64,5 +64,9 @@ export async function getHotelById(HotelId) {
 
 //
 export async function updateHotel(HotelId, values) {
-  await axios.put(`${APP_URL}`);
+  await axios.put(`${APP_URL}/${HotelId}`, {
+    data: {
+      ...values,
+    },
+  });
 }

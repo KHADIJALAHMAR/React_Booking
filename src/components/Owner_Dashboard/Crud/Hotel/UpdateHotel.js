@@ -63,6 +63,7 @@ function UpdateHotel() {
         res[key] = values[key];
       }
     });
+    return res;
   };
 
   const handleSubmit = async (e) => {
@@ -86,7 +87,7 @@ function UpdateHotel() {
                 role="form text-left"
                 method="POST"
                 action=""
-                onSubmit={setSubmitted}
+                onSubmit={handleSubmit}
               >
                 <div className="mb-3">
                   <input
@@ -127,19 +128,19 @@ function UpdateHotel() {
                     <option selected disabled>
                       Choose a Stars
                     </option>
-                    <option value="star1" selected={stars === 1 ? true : false}>
+                    <option value="1" selected={stars === 1 ? true : false}>
                       1
                     </option>
-                    <option value="star2" selected={stars === 2 ? true : false}>
+                    <option value="2" selected={stars === 2 ? true : false}>
                       2
                     </option>
-                    <option value="star3" selected={stars === 3 ? true : false}>
+                    <option value="3" selected={stars === 3 ? true : false}>
                       3
                     </option>
-                    <option value="star4" selected={stars === 4 ? true : false}>
+                    <option value="4" selected={stars === 4 ? true : false}>
                       4
                     </option>
-                    <option value="star4" selected={stars === 5 ? true : false}>
+                    <option value="5" selected={stars === 5 ? true : false}>
                       5
                     </option>
                   </select>
