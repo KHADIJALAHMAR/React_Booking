@@ -44,6 +44,16 @@ function App() {
               }
             />
             <Route
+              path="dashboard"
+              element={
+                !authenticated && !role ? (
+                  <Dashboard />
+                ) : (
+                  <Navigate to="/" />
+                )
+              }
+            />
+            <Route
               path="dashboardowner"
               element={
                 !authenticated && !role ? <DashboardOwner /> : <Navigate to="/" />
@@ -76,7 +86,14 @@ function App() {
             <Route
               path="dashboard/update"
               element={
-                !authenticated && !role ? <Update /> : <Navigate to="/" /> } 
+                !authenticated && !role ? <Update /> : <Navigate to="/" />
+              }
+            />
+            <Route
+              path="dashboardowner/hotel/update/:HotelId"
+              element={
+                !authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />
+              }
             />
             <Route path="/dashboardowner/updateHotel" element={!authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />} />
           </Routes>
