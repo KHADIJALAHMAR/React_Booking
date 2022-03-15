@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import {Link} from 'react-router-dom';
 
-function Item (){
+function Item (props){
     const [Hotels , setHotels] = useState([]);
 
     useEffect(() => {
@@ -14,6 +15,11 @@ function Item (){
             console.log('makin walo');
         }) 
     })
+
+    function Update(id){
+      console.log(id);
+      props.history.push("/dashboard/update"+id)
+    }
   return (
     <>
       {Hotels.map((hotel, index) => {
@@ -45,7 +51,10 @@ function Item (){
           </td>
           <td className="align-middle text-center">
           <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2" aria-hidden="true"></i>Delete</a>
-          <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+          <Link class="btn btn-link text-dark px-3 mb-0"
+          onClick={() => Update(hotel.id) }
+           to="/dashboard/update">
+           <i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</Link>
           </td>
           
         </tr>
