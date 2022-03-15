@@ -8,3 +8,14 @@ export default async function deleteRoom(roomId) {
         }
     });
 }
+export async function updateRoom(roomId, values) {
+    await axios.put(`${APP_URL}/room/${roomId}`, {
+        data: {
+            ...values
+        }
+    });
+}
+export async function getRoomById(roomId) {
+    let getOneRoom = await axios.get(`${APP_URL}/room/${roomId}`);
+    return getOneRoom;
+}
