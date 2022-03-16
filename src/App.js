@@ -18,6 +18,7 @@ import OwnerAddHotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 import Home from "./components/Home";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
+import UpdateRoom from "./components/Owner_Dashboard/Crud/Room/UpdateRoom";
 
 function App() {
 
@@ -78,6 +79,7 @@ function App() {
                 !authenticated && !role ? <Update /> : <Navigate to="/" /> } 
             />
             <Route path="/dashboardowner/updateHotel" element={!authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />} />
+            <Route path="/dashboardowner/Room/update/:roomId" element={!authenticated && !role ? <UpdateRoom /> : <Navigate to="/" />} />
           </Routes>
         </Router>
         </div>

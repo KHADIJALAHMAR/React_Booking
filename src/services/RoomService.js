@@ -13,6 +13,7 @@ export async function updateRoom(roomId, values) {
         data: {
             ...values
         }
+        
     });
 }
 export async function getRoomById(roomId) {

@@ -1,15 +1,15 @@
-import React,{useEffect} from "react";
+import React,{ useState ,useEffect} from "react";
 import{ getRoomById} from "../../../../services/RoomService"
 import{ updateRoom} from "../../../../services/RoomService"
 import { useParams } from "react-router";
 
 const UpdateRoom = () => {
 
-    const {id} = useParams();
+    const {roomId} = useParams();
     const [values, setValues] = useState({
       room_quantity: "",
       description: "",
-      images: "",
+    //   images: "",
       price: ""
     });
     const [room , setRoom] = useState({});
@@ -17,9 +17,9 @@ const UpdateRoom = () => {
   
     useEffect( () => {
       (async () => {
-        await getRoomById(id).then((room) => {
+        await getRoomById(roomId).then((room) => {
          setRoom(room)
-          setValues({...values, room_quantity: room.data.room_quantity, description: room.data.description, images: room.data.images , price :room.data.price})
+          setValues({...values, room_quantity: room.data.room_quantity, description: room.data.description, price :room.data.price})
         });
       })();
     }, []);
@@ -33,7 +33,6 @@ const UpdateRoom = () => {
     const handleRoom_quantity = (e) => {
       setValues({ ...values, room_quantity: e.target.value });
     };
-  
     const handleDescription = (e) => {
       setValues({ ...values, description: e.target.value });
     };
@@ -56,23 +55,21 @@ const UpdateRoom = () => {
         if (values[key] !== room[key]) {
           res[key] = values[key];
         }
-      })    
+      })   
+      console.log(res);
       return res;
     }
   
     const handleSubmit = async (e) => {
       e.preventDefault();
-      await updateRoom(id, getUpdatedValues(values))
+      await updateRoom(roomId, getUpdatedValues(values))
       window.location = "/dashboardOwner";
       setSubmitted(true);
     };
   
-    if (room.status !== 200) {
-      return (<div>loading...</div>)
-    }else {
+  
       return (
         <div className="container mt-5">
-          {console.log( price)}
           <div className="row">
             <div className="col-xl-4 col-lg-5 col-md-7 mx-auto">
               <div className="card z-index-0">
@@ -112,7 +109,7 @@ const UpdateRoom = () => {
                         onChange={handleDescription}
                       />
                     </div>
-                    <div className="mb-3">
+                    {/* <div className="mb-3">
                       <input
                         type="file"
                         className="form-control"
@@ -124,24 +121,20 @@ const UpdateRoom = () => {
                         value={values.images}
                         onChange={handleImages}
                       />
-                    </div>
+                    </div> */}
                     
                     <div className="mb-3">
-                      <select
+                      <input
                         aria-label="price"
                         aria-describedby="price-addon"
                         name=""
                         id="price"
                         className="form-control text-secondary"
                         onChange={handlePrice}
+                        value={values.price}
                       >
-                        <option value="100 DH" >100 DH</option>
-                        <option value="200 DH" >200 DH</option>
-                        <option value="300 DH" >300 DH</option>
-                        <option value="400 DH" >400 DH</option>
-                        <option value="500 DH" >500 DH</option>
                         
-                      </select>
+                      </input>
                     </div>
                     <div className="text-center">
                       <button
@@ -158,7 +151,7 @@ const UpdateRoom = () => {
           </div>
         </div>
       );
-    }
+    
   };
   
   export default UpdateRoom;
