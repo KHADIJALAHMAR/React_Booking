@@ -25,9 +25,12 @@ const Login = ({ handleAuth }) => {
 
   const handleSubmit =()=> {
     login( data.email, data.password).then((response) => {
+      window.localStorage.setItem("token", response.data.accessToken);
+      console.log(response.data);
+      window.location= "/dashboard";
       // auth.setAuthenticated(true)
       // auth.setRole(jwtDecode(response.data.accessToken).role.name);
-      window.location = '/authenticated/'+jwtDecode(response.data.accessToken).role.name
+      // window.location = '/authenticated/'+jwtDecode(response.data.accessToken).role.name
     });
     setSubmitted(true);
   };
