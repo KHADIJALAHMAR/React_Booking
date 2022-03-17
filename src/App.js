@@ -32,7 +32,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route
               path="auth"
-              element={!authenticated ? <Navigate to="/" /> : <Authentication />}
+              element={authenticated ? <Navigate to="/" /> : <Authentication />}
             >
               <Route path="login" element={<Login setAuthenticated={setAuthenticated} setRole={setRole} />} />
               <Route path="register" element={<Register />} />
