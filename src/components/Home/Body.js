@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import Panel from "./ListHotels/Panel";
 
 function Body() {
   return (
-    <div>Body</div>
-  )
+    <>
+      <Panel />
+    </>
+  );
 }
 
-export default Body
+export default Body;
