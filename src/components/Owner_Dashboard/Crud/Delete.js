@@ -5,6 +5,7 @@ function Delete({ type, id, visible, handlePopupVisibility }) {
   const handleDelete = () => {
     if (type === "hotel") {
       deleteHotel(id);
+      window.location = "dashboardowner"
     }
   };
 

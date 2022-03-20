@@ -76,3 +76,9 @@ export function createhotel(hotel) {
 }
 
 export default createhotel;
+
+// Get hotel by id
+export async function getHotelById(HotelId) {
+  let res = await axios.get(`${APP_URL}/${HotelId}`);
+  return res;
+}

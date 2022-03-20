@@ -1,6 +1,6 @@
 import React from "react";
 import ListHotel from "./Hotels/List";
-import ListRoom from "./Rooms/List";
+import ListRoom from "./Rooms/List"
 
 const Panel = ({title, handleDeleteObject}) => {
   return (

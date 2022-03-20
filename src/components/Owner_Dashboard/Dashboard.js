@@ -4,9 +4,8 @@ import Panel from "./Panels/Panel";
 import Delete from "./Crud/Delete";
 
 function Dashboard() {
-
-  const [panel, setPanel] = useState("Hotels");
   const [visible_popup, setPopupVisibility] = useState(false);
+  const [panel, setPanel] = useState("Hotels")
   const [deleteObject, setDeleteObject] = useState([]);
 
   const handlePanel = (panel) => {
