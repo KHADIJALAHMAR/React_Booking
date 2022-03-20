@@ -1,15 +1,16 @@
 import axios from "axios";
-const APP_URL = "http://localhost:4000/hotels";
+const Hotels_URL = "http://localhost:4000/hotels";
+const Owners_URL = "http://localhost:4000/owners";
 
 export async function deleteHotel(HotelId) {
-  await axios.delete(`${APP_URL}/delete`, {
+  await axios.delete(`${Hotels_URL}/delete`, {
       data :{
           HotelId
       }
   });
 }
 export async function updateHotel(hotelId, values) {
-  await axios.put(`${APP_URL}/update/${hotelId}`, {
+  await axios.put(`${Hotels_URL}/update/${hotelId}`, {
       data: {
           ...values
         }
@@ -18,7 +19,12 @@ export async function updateHotel(hotelId, values) {
 
 
 export async function getHotelById(HotelId) {
-    let res = await axios.get(`${APP_URL}/hotels/${HotelId}`);
+    let res = await axios.get(`${Hotels_URL}/hotels/${HotelId}`);
+    return res;
+}
+
+export async function getHotelsByOwner(userId) {
+    let res = await axios.get(`${Owners_URL}/${userId}/hotels`);
     return res;
 }
 
@@ -29,7 +35,7 @@ export async function getHotelById(HotelId) {
 //     images,
 //     stars
 // ) => {
-//     return await axios.put(`${APP_URL}/update`, {
+//     return await axios.put(`${Hotels_URL}/update`, {
 //         name,
 //         descreption,
 //         image_cover,
@@ -66,7 +72,7 @@ export function createhotel(hotel) {
 
   console.log(formData);
 
-  return axios.post(APP_URL, formData);
+  return axios.post(Hotels_URL, formData);
 }
 
 export default createhotel;

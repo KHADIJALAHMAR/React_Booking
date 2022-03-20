@@ -25,7 +25,7 @@ export default function DropDown({ title }) {
               {title === "Hotels" && (
                 <Link
                   className="dropdown-item border-radius-md"
-                  to="/dashboardowner/createHotel"
+                  to="/owner/dashboard/createHotel"
                 >
                   Add {title}
                 </Link>
@@ -33,7 +33,7 @@ export default function DropDown({ title }) {
               {title === "Rooms" && (
                 <Link
                   className="dropdown-item border-radius-md"
-                  to="/dashboardowner/addRoom"
+                  to="/owner/dashboard/addRoom"
                 >
                   Add {title}
                 </Link>
