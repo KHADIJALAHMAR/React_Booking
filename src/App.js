@@ -50,7 +50,7 @@ function App() {
               path="owner/dashboard"
               element={
                 authenticated && role === 'owner'? (
-                  <Dashboard />
+                  <DashboardOwner />
                 ) : (
                   <Navigate to="/" />
                 )
