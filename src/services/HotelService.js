@@ -17,12 +17,6 @@ export async function updateHotel(hotelId, values) {
   });
 }
 
-
-export async function getHotelById(HotelId) {
-    let res = await axios.get(`${Hotels_URL}/hotels/${HotelId}`);
-    return res;
-}
-
 export async function getHotelsByOwner(userId) {
     let res = await axios.get(`${Owners_URL}/${userId}/hotels`);
     return res;
@@ -79,6 +73,6 @@ export default createhotel;
 
 // Get hotel by id
 export async function getHotelById(HotelId) {
-  let res = await axios.get(`${APP_URL}/${HotelId}`);
+  let res = await axios.get(`${Hotels_URL}/${HotelId}`);
   return res;
 }

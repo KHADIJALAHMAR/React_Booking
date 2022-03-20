@@ -49,17 +49,11 @@ function App() {
             <Route
               path="owner/dashboard"
               element={
-                !authenticated && !role ? (
+                authenticated && role === 'owner'? (
                   <Dashboard />
                 ) : (
                   <Navigate to="/" />
                 )
-              }
-            />
-            <Route
-              path="dashboardowner"
-              element={
-                authenticated && role === 'owner' ? <DashboardOwner /> : <Navigate to="/" />
               }
             />
             <Route
