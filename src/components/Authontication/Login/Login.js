@@ -6,8 +6,13 @@ import mail from "../../../assest/icon/mail.svg";
 import key from "../../../assest/icon/key.svg";
 import R from "../../../assest/img/R.jpg";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { loginAction , setRoleAction , setIdAction } from "../../../actions/authActions";
 
-const Login = ({ handleAuth }) => {
+const Login = () => {
+
+  const dispatch = useDispatch();
+
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -25,9 +30,12 @@ const Login = ({ handleAuth }) => {
 
   const handleSubmit =()=> {
     login( data.email, data.password).then((response) => {
-      // auth.setAuthenticated(true)
-      // auth.setRole(jwtDecode(response.data.accessToken).role.name);
-      window.location = '/authenticated/'+jwtDecode(response.data.accessToken).role.name
+      (async () => {
+        await dispatch(loginAction());
+        await dispatch(setRoleAction(jwtDecode(response.data.accessToken).role.name));
+        await dispatch(setIdAction(jwtDecode(response.data.accessToken).id));
+        window.location = '/'
+      })()
     });
     setSubmitted(true);
   };
