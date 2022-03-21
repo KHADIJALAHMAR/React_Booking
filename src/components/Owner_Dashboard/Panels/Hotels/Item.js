@@ -14,7 +14,6 @@ function Item({ handleDeleteObject }) {
       })
       .catch((err) => {
         console.log(err);
-        console.log("makin walo");
       });
   }, []);
   return (

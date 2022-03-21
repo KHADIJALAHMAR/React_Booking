@@ -21,3 +21,7 @@ export async function getUserById(userId) {
     let res = await axios.get(`${APP_URL}/user/${userId}`);
     return res;
 }
+
+export async function getOwners() {
+   return await axios.get(`${APP_URL}/owners`)
+}
