@@ -70,7 +70,7 @@ function UpdateHotel() {
     e.preventDefault();
     getUpdatedValues(values);
     await updateHotel(HotelId, getUpdatedValues(values));
-    window.location = "/dashboardOwner";
+    window.location = "/owner/dashboard";
     setSubmitted(true);
   };
 
