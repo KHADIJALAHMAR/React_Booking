@@ -9,8 +9,8 @@ const Panel = ({title, handleDeleteObject}) => {
         <div className="row my-4">
           <div className="col-lg-8 col-md-6 mb-md-0 mb-4 mx-auto">
             <div class="card">
-               {title === "Hotels" && <ListHotel title={title} handleDeleteObject={handleDeleteObject} />}
-               {title === "Rooms" && <ListRoom title={title} />}
+              {title === 'Hotels' && <ListHotel title={title} handleDeleteObject={handleDeleteObject} />}
+              {title === 'Rooms' && <ListRoom title={title} handleDeleteObject={handleDeleteObject} />}
             </div>
           </div>
         </div>
