@@ -1,13 +1,12 @@
-import React from 'react'
-import Header from "./Header"
-import Footer from "./Footer"
+import React, { useContext } from 'react'
+import Body from './Home/Body'
+
 function Home() {
 
   return (
-    <>
-      <Header/>
-      <Footer/>
-    </>
+    <div>
+      <Body />
+    </div>
   )
 }
 

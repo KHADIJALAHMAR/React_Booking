@@ -8,7 +8,8 @@ const AddHotel = () => {
     descreption: "",
     image_cover: "",
     images: "",
-    stars: ""
+    stars: "",
+    id : ""
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -18,6 +19,9 @@ const AddHotel = () => {
   };
   const handleDescreption = (e) => {
     setAddHotel({ ...AddHotel, descreption: e.target.value });
+  };
+  const handleId = (e) => {
+    setAddHotel({ ...AddHotel, id: e.target.value });
   };
   const handleImageCover = (e) => {
     console.log("e.target.files[0]", e.target.files[0]);
@@ -40,12 +44,12 @@ const AddHotel = () => {
         console.log("Done : ");
         window.location = "/dashboard";
       } else {
-        console.log("madaztch");
+        console.log("error : not insert");
       }
     }
     setSubmitted(true);
   };
-
+  // 62052ee0217034ad84091402
   return (
     <div>
       
@@ -64,6 +68,17 @@ const AddHotel = () => {
             aria-describedby="email-addon"
             value={AddHotel.name}
             onChange={handleName}
+          />
+        </div>
+        <div className="mb-3">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Id"
+            aria-label="Name"
+            aria-describedby="email-addon"
+            value={AddHotel.id}
+            onChange={handleId}
           />
         </div>
 

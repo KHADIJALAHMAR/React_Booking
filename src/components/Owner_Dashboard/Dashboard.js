@@ -1,17 +1,16 @@
-import React ,{useState} from "react";
-import { Link } from "react-router-dom";
-import {Delete }from "./Crud/Delete";
-// import List from '../Owner_Dashboard/Panels/Hotels/List'
+import React, {useState} from 'react'
 import Cards from './Cards/Cards';
+import { Link } from "react-router-dom";
+import Delete from "./Crud/Delete";
 import Panel from "./Panels/Panel";
 import Update from "./Crud/Room/UpdateRoom";
 
 // import List from "../Owner_Dashboard/Panels/Hotels/List";
-  function Dashboard() {
 
 
-  const [panel, setPanel] = useState("Hotels");
+function Dashboard() {
   const [visible_popup, setPopupVisibility] = useState(false);
+  const [panel, setPanel] = useState("Hotels")
   const [deleteObject, setDeleteObject] = useState([]);
 
   const handlePanel = (panel) => {
@@ -41,6 +40,7 @@ import Update from "./Crud/Room/UpdateRoom";
                 ></i>
                 Edit
               </Link>
+      <Panel title={panel} handleDeleteObject={handleDeleteObject} />
       <Delete
         type={deleteObject[0]}
         id={deleteObject[1]}
@@ -50,5 +50,6 @@ import Update from "./Crud/Room/UpdateRoom";
     </div>
   );
 }
+
 
 export default Dashboard;
