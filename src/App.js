@@ -20,6 +20,7 @@ import Home from "./components/Home";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
 import AddRoom from "./components/Owner_Dashboard/Crud/Room/AddRoom";
+import NavBar from "./components/Shared_Elements/NavBar";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
   return (
       <React.Fragment>
         <div className="vw-100 vh-100 pt-4" style={{backgroundColor: "#f8f9fa"}}>
+          <NavBar />
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />

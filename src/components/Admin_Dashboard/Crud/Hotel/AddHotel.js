@@ -32,16 +32,9 @@ const AddHotel = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (AddHotel) {
-      console.log('AddHotel : ', AddHotel)
       createhotel(AddHotel).then((response) => {
-        console.log(response.data);
-      });
-      if (AddHotel.status ==200) {
-        console.log("Done : ");
         window.location = "/dashboard";
-      } else {
-        console.log("madaztch");
-      }
+      });
     }
     setSubmitted(true);
   };
