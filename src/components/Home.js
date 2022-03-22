@@ -1,18 +1,20 @@
 import React from 'react'
 import { useSelector , useDispatch} from 'react-redux'
 import Body from './Home/Body'
-import {logoutAction} from '../actions/authActions'
+import NavBar from './Shared_Elements/NavBar'
 
 function Home() {
   const authenticated = useSelector(state => state.authenticated);
+  const role = useSelector(state => state.role)
   const dispatch = useDispatch();
   return (
+    <>
+    <NavBar title='Home' dashboard={role} />
     <div>
-      {authenticated && <button onClick={() => {
-       console.log('here');
-       dispatch(logoutAction())}}>LOGOUT</button>}
       <Body />
     </div>
+    </>
+    
   )
 }
 
