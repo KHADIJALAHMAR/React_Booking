@@ -24,23 +24,6 @@ export async function getHotelsByOwner(userId) {
     return res;
 }
 
-// export const Updatehotel = async (
-//     name,
-//     descreption,
-//     image_cover,
-//     images,
-//     stars
-// ) => {
-//     return await axios.put(`${Hotels_URL}/update`, {
-//         name,
-//         descreption,
-//         image_cover,
-//         images,
-//         stars
-//     });
-// };
-// export default Updatehotel;
-
 axios.defaults.headers = {
   "Content-Type": "application/json",
   Authorization: window.localStorage.getItem("token") ?? "",
