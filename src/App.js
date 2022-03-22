@@ -94,7 +94,7 @@ function App() {
                 authenticated && role === 'admin' ? <AdminUpdateHotel /> : <Navigate to="/" /> } 
             />
             <Route
-              path="dashboardowner/hotel/update/:HotelId"
+              path="owner/dashboard/hotel/update/:HotelId"
               element={
                 authenticated && role === 'owner' ? <UpdateHotel /> : <Navigate to="/" />
               }

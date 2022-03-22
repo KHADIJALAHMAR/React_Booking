@@ -71,9 +71,7 @@ const UpdateUser = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(getUpdatedValues(values));
     await updateUser(id, getUpdatedValues(values))
-    console.log();
     window.location = "/dashboard";
     setSubmitted(true);
   };

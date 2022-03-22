@@ -12,17 +12,17 @@ function Item (handleDeleteObject){
     },[]);
 
     const getOwners = async () => {
-      await axios.get("http://localhost:4000/admin/owners")
+      await axios.get("http://localhost:4000/admin/owner/owners")
       .then(result => {
          setData(result.data.owners)
-        //  console.log(result.data.owners);
+         console.log(result.data.owners);
         })
       .catch(error => {
          console.error(error);
            throw error;
          });
     };
-    console.log(data);
+    // console.log(data);
 
   //  const testData = data.owners
       return (
