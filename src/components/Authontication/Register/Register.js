@@ -7,6 +7,7 @@ import keyIcon from "../../../assest/icon/key.svg";
 import logoIcon from "../../../assest/img/logo.svg";
 import R from "../../../assest/img/R.jpg";
 import { Link } from "react-router-dom";
+
 const Register = () => {
   const [values, setValues] = useState({
     username: "",
@@ -87,7 +88,7 @@ const Register = () => {
           values.password = "";
           values.repeated_password = "";
         } else {
-          window.location = "login";
+          window.location = "auth/login";
         }
       });
     }

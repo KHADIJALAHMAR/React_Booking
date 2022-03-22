@@ -11,7 +11,7 @@ function Item (handleDeleteObject){
     },[]);
 
     const getOwners = async () => {
-      await axios.get("http://localhost:4000/admin/owners")
+      await axios.get("http://localhost:4000/admin/owner/owners")
       .then(result => {
          setData(result.data.owners)
         })
