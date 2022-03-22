@@ -55,8 +55,6 @@ axios.defaults.headers = {
 };
 
 export function createhotel(hotel) {
-  console.log("createhotel : ", hotel.image_cover);
-
   const formData = new FormData();
 
   formData.append(

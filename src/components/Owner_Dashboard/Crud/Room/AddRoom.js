@@ -1,15 +1,25 @@
 import React , {useEffect, useState} from 'react'
+import { getHotelsByOwner } from '../../../../services/HotelService';
+import { getRoomTypes } from '../../../../services/RoomsService';
+import { useSelector } from 'react-redux';
+import { createRoomGroup } from '../../../../services/RoomsService';
 function AddRoom() {
 
     const [values, setValues] = useState({
         description: "",
         room_quantity: "",
         price: "",
-        hotel: "",
-        room_type: "",
+        hotel_id: "",
+        room_type_id: "",
         images: "",
     });
     
+    const userId = useSelector(state => state.id)
+
+    const [ownerHotels, setOwnerHotels] = useState({});
+
+    const [roomTypes, setRoomTypes] = useState({});
+
     const [errors, setErrors] = useState({});
 
     const [submitted, setSubmitted] = useState(false);
@@ -17,54 +27,68 @@ function AddRoom() {
     const [valid, setValid] = useState(false);
 
     useEffect(()=> {
-        
+      (async () => {
+        await getHotelsByOwner(userId).then(hotels => {
+          setOwnerHotels(hotels)
+        })
+        await getRoomTypes().then(room_types => {
+          console.log(room_types)
+          setRoomTypes(room_types)
+        })
+      })()
     }, [])
     
     const handleDescription = (e) => {
-    setValues({ ...values, description: e.target.value });
+      setValues({ ...values, description: e.target.value });
     };
 
     const handleRoomQuantity = (e) => {
-    setValues({ ...values, room_quantity: e.target.value });
+      setValues({ ...values, room_quantity: parseInt(e.target.value) });
     };
 
     const handlePrice = (e) => {
-    setValues({ ...values, price: e.target.value });
+      setValues({ ...values, price: parseInt(e.target.value) });
     };
 
     const handleHotel = (e) => {
-    setValues({ ...values, hotel: e.target.value });
+      setValues({ ...values, hotel_id: e.target.value });
     };
 
     const handleRoomType = (e) => {
-    setValues({ ...values, room_type: e.target.value });
+      setValues({ ...values, room_type_id: e.target.value });
     };
 
     const handleImages = (e) => {
-    setValues({ ...values, images: e.target.files });
+      const images = e.target.files.map(file => file.originalName);
+      setValues({ ...values, images: images });
     };
 
     const handleErrors = (errors) => {
-    setErrors({ ...errors });
+      setErrors({ ...errors });
     };
 
     const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("hello");
-    if (
-        values.description &&
-        values.room_quantity &&
-        values.price &&
-        values.hotel &&
-        values.room_type
-    ) {
-    //   here create a room
-        window.location = "/dashboard";
-    }
+      e.preventDefault();
+      if (
+          values.description &&
+          values.room_quantity &&
+          values.price &&
+          values.hotel_id &&
+          values.room_type_id
+      ) {
+        
+        (async () => {
+          await createRoomGroup(values);
+          window.location = "/owner/dashboard";
+        })()
 
-    setSubmitted(true);
+      }
+
+      setSubmitted(true);
     };
-
+if (ownerHotels.status !== 200 || roomTypes.status !== 201) {
+  return (<div>Loading...</div>)
+}else{
   return (
     <div className="container mt-5">
       <div className="row">
@@ -137,8 +161,13 @@ function AddRoom() {
                     <option selected disabled>
                       Choose an hotel
                     </option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
+                    {
+                      ownerHotels.data.map((hotel, index) => {
+                        return (
+                          <option value={hotel._id}>{hotel.name}</option>
+                        )
+                      })
+                    }
                   </select>
                 </div>
                 <div className="mb-3">
@@ -152,8 +181,13 @@ function AddRoom() {
                     <option selected disabled>
                       Choose a room type
                     </option>
-                    <option value="customer">Customer</option>
-                    <option value="owner">Owner</option>
+                    {
+                      roomTypes.data.map((roomType, index) => {
+                        return (
+                          <option value={roomType._id}>{roomType.name}</option>
+                        )
+                      })
+                    }
                   </select>
                 </div>
                 <div className="text-center">
@@ -171,6 +205,8 @@ function AddRoom() {
       </div>
     </div>
   );
+}
+  
 }
 
 export default AddRoom
