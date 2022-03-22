@@ -5,7 +5,7 @@ const Owners_URL = "http://localhost:4000/owners";
 
 // Delete Hotel 
 export async function deleteHotel(HotelId) {
-  await axios.delete(`${Hotels_URL}/delete`, {
+  await axios.delete(`${Hotels_URL}`, {
       data :{
           HotelId
       }
