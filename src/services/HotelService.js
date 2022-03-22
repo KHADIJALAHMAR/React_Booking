@@ -5,7 +5,7 @@ const Owners_URL = "http://localhost:4000/owners";
 
 // Delete Hotel 
 export async function deleteHotel(HotelId) {
-  await axios.delete(`${Hotels_URL}/delete`, {
+  await axios.delete(`${Hotels_URL}/`, {
       data :{
           HotelId
       }
@@ -19,27 +19,18 @@ export async function updateHotel(hotelId, values) {
   });
 }
 
+export async function updateHotelByOwner(HotelId, values) {
+  await axios.put(`${Hotels_URL}/${HotelId}`, {
+    data: {
+        ...values
+      }
+});
+}
+
 export async function getHotelsByOwner(userId) {
     let res = await axios.get(`${Owners_URL}/${userId}/hotels`);
     return res;
 }
-
-// export const Updatehotel = async (
-//     name,
-//     descreption,
-//     image_cover,
-//     images,
-//     stars
-// ) => {
-//     return await axios.put(`${Hotels_URL}/update`, {
-//         name,
-//         descreption,
-//         image_cover,
-//         images,
-//         stars
-//     });
-// };
-// export default Updatehotel;
 
 axios.defaults.headers = {
   "Content-Type": "application/json",
