@@ -10,16 +10,15 @@ const Createuser = async (
   repeated_password
 ) => {
   try {
-    const response = await axios
-      .post(`${APP_URL}/owner/create`, {
-        username,
-        email,
-        gender,
-        role,
-        password,
-        repeated_password,
-      });
-    return console.log(response.data);
+    const response = await axios.post(`${APP_URL}/owner/create`, {
+      username,
+      email,
+      gender,
+      role,
+      password,
+      repeated_password,
+    });
+    return response.data;
   } catch (error) {
     return console.log({ error });
   }

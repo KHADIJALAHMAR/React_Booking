@@ -48,7 +48,6 @@ const Adduser = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("hello");
     if (
       values.username &&
       values.email &&
