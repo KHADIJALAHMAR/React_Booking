@@ -1,9 +1,8 @@
 
-
 import React,{useState, useEffect} from "react";
 import {useNavigate} from "react-router-dom"
 import axios from "axios";
-// import { Toast } from "bootstrap";
+
 
 const inizialState = {
   name: "",
@@ -20,9 +19,7 @@ const Addhotel = () => {
   const Addhotel = async (data) => {
     const res = await axios.post("http://localhost:4000/hotels",data);
     if(res.status === 200){
-      alert(['dazt'])
-    }else{
-      console.log("makin walo ");
+      alert(['create hotels '])
     }
   }
 

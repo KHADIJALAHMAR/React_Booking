@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import {getOwners} from "../../../../services/UserService"
 
 
 function Item (handleDeleteObject){
@@ -21,7 +20,6 @@ function Item (handleDeleteObject){
            throw error;
          });
     };
-    console.log(data);
 
       return (
         <>
