@@ -19,7 +19,6 @@ import OwnerAddHotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 import Home from "./components/Home";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
-import ProfilOwner from "./components/Owner_Dashboard/Owner_Profile/Profile"
 import AddRoom from "./components/Owner_Dashboard/Crud/Room/AddRoom";
 
 
@@ -61,12 +60,6 @@ function App() {
               path="dashboard/addUser"
               element={
                 authenticated && role === 'admin' ? <AddUser /> : <Navigate to="/" />
-              }
-            />
-            <Route
-              path="profile"
-              element={
-                !authenticated && !role ? <ProfilOwner /> : <Navigate to="/" />
               }
             />
             <Route

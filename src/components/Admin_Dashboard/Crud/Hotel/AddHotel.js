@@ -20,9 +20,7 @@ const AddHotel = () => {
   const handleDescreption = (e) => {
     setAddHotel({ ...AddHotel, descreption: e.target.value });
   };
-  const handleId = (e) => {
-    setAddHotel({ ...AddHotel, id: e.target.value });
-  };
+ 
   const handleImageCover = (e) => {
     console.log("e.target.files[0]", e.target.files[0]);
     setAddHotel({ ...AddHotel, image_cover: e.target.files[0] });
@@ -49,7 +47,6 @@ const AddHotel = () => {
     }
     setSubmitted(true);
   };
-  // 62052ee0217034ad84091402
   return (
     <div>
       
@@ -68,17 +65,6 @@ const AddHotel = () => {
             aria-describedby="email-addon"
             value={AddHotel.name}
             onChange={handleName}
-          />
-        </div>
-        <div className="mb-3">
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Id"
-            aria-label="Name"
-            aria-describedby="email-addon"
-            value={AddHotel.id}
-            onChange={handleId}
           />
         </div>
 
