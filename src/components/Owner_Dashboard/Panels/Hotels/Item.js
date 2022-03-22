@@ -68,7 +68,7 @@ function Item({ handleDeleteObject }) {
               </a>
               <Link
                 class="btn btn-link text-dark px-3 mb-0"
-                to={"/dashboardowner/hotel/update/" + hotel._id}
+                to={"/owner/dashboard/hotel/update/" + hotel._id}
               >
                 <i
                   class="fas fa-pencil-alt text-dark me-2"

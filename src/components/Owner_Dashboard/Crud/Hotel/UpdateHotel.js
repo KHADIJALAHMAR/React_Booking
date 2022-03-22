@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { getHotelById, updateHotel } from "../../../../services/HotelService";
+import { getHotelById, updateHotelByOwner } from "../../../../services/HotelService";
 import { useParams } from "react-router-dom";
 
 function UpdateHotel() {
@@ -69,8 +69,8 @@ function UpdateHotel() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     getUpdatedValues(values);
-    await updateHotel(HotelId, getUpdatedValues(values));
-    window.location = "/dashboardOwner";
+    await updateHotelByOwner(HotelId, getUpdatedValues(values));
+    window.location = "/owner/dashboard";
     setSubmitted(true);
   };
 
