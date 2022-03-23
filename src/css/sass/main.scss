@@ -1,3 +1,14 @@
+// variables
+$cards_shadow :rgba(0, 0, 0, 0.1) 0px 4px 12px;
+$color60: #F8F9FA;
+$color30: #FFFFFF;
+$color10: #B83664;
+$color10Hover: #a12e56;
+$colorPara: #434343;
+$colorHeader: #0D0D0D;
+$colorButton: #F7F7F7;
+$underlineColor: linear-gradient(90deg, #272770, #B83664);
+
 @import './_globalRules';
 @import './extends';
 @import './keyframes';
@@ -175,4 +186,253 @@
 
     }
 
+}
+
+// Home Page
+
+.home_container {
+    padding: 0px 40px;
+    margin-top: 43px;
+    gap: 37px;
+
+    .hero_header {
+        height: 409px;
+        background: linear-gradient(45deg , #0D0D0D,#434343);
+        border-radius: 28px;
+        box-shadow: $cards_shadow;
+        padding: 62px 54px;
+
+        .left_side {
+            
+            .logo {
+                width: 331px;
+                .app_name {
+                    font-size: 40px;
+                    font-family: 'poppins';
+                    font-weight: 700;
+                    color: $colorButton;
+                    margin: 0;
+                }
+            }
+
+            .introduction {
+                font-size: 20px;
+                font-family: 'poppins';
+                font-weight: 500;
+                color: $colorButton;
+            }
+        }
+    }
+
+    .title {
+        color: $colorHeader;
+        font-size: 40px;
+        font-weight: 700;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background: $underlineColor;
+            height: 12px;
+            width: 160px;
+            border-radius: 10px;
+            bottom: -12px;
+        }
+        
+    }
+
+    .main_section {
+        gap: 55px;
+        padding-bottom: 37px;
+        .left_side {
+            width: calc(100% - 55px - 485px);
+
+            .search_container {
+                height: 330px;
+                background-color: $color30;
+                box-shadow: $cards_shadow;
+                border-radius: 28px;
+                padding: 20px 40px;
+
+                .title {
+                    color: $colorHeader;
+                    font-size: 30px;
+                    font-weight: 700;
+                    font-family: 'poppins';
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: $underlineColor;
+                        height: 8px;
+                        width: 230px;
+                        border-radius: 10px;
+                        bottom: -8px;
+                    }
+                }
+
+                .search_form {
+                    gap: 12px;
+
+                    .first_group {
+                        gap: 23px;
+                        flex-wrap: wrap;
+                    }
+
+                    .second_group {
+                        @extend .first_group
+                    }
+
+                    input {
+                        padding: 0px 17px;
+                        height: 40.4px;
+                        width: 247.34px;
+                        border-radius: 8px;
+                        outline: none;
+                        border: .5px solid #C7C7C7;
+                        box-shadow: $cards_shadow;
+
+                        &::placeholder{
+                            font-size: 14px;
+                            font-family: 'poppins';
+                            font-weight: 500;
+                            color: #9E9E9E;
+                        }
+                    }
+
+                    .price_line {
+                        gap: 10px;
+                        p {
+                            margin: 0;
+                            align-self: center;
+                            height: fit-content;
+                            font-size: 14px;
+                            font-family: 'poppins';
+                            font-weight: 500;
+                            color: $colorHeader;
+                        }
+
+                        hr {
+                            height: 1.2px;
+                        }
+                    }
+                }
+            }
+
+            .guide_paragraph {
+                color: $colorPara;
+                font-size: 16px;
+                font-weight: 600;
+            }
+
+            .hotels_list {
+                background-color: $color30;
+                box-shadow: $cards_shadow;
+                border-radius: 28px;
+                padding: 32px 40px;
+                gap: 21px;
+
+                .hotel_card {
+                    height: 176px;
+                    width: 100%;
+                    box-shadow: $cards_shadow;
+                    border-radius: 18px;
+                    background-color: $color60;
+                    overflow: hidden;
+                    gap: 20px;
+                    cursor: pointer;
+
+                    .image_container {
+                        background-color: #1b0909;
+                        width: 223px;
+                    }
+
+                    .hotel_informations {
+                        max-width: 502px;
+                        padding: 24px 0px;
+                        gap: 14px;
+
+                        .hotel_name {
+                            font-size: 20px;
+                            font-family: 'poppins';
+                            font-weight: 600;
+                            color: $colorHeader;
+                        }
+
+                        .hotel_description {
+                            font-size: 14px;
+                            font-family: 'poppins';
+                            font-weight: 500;
+                            color: $colorPara;
+                            margin: 0;
+                        }
+
+                        .tags_container {
+                            gap: 9px;
+                            
+                            .hotel_city_tag {
+                                background-color: $color10;
+                                padding: 3px 26px;
+                                border-radius: 20px;
+                                color: $colorButton;
+                                font-size: 12px;
+                                font-family: 'poppins';
+                                font-weight: 500;
+                            }
+
+                            .hotel_stars_tag {
+                                @extend .hotel_city_tag;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .right_side {
+
+            .premium_announcement{
+                background-color: $color30;
+                box-shadow: $cards_shadow;
+                border-radius: 28px;
+                width: 485px;
+                padding: 18px 35px;
+                gap: 35px;
+
+                .title {
+                    color: $colorHeader;
+                    font-size: 30px;
+                    font-weight: 700;
+                    font-family: 'poppins';
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        background: $underlineColor;
+                        height: 8px;
+                        width: 100px;
+                        border-radius: 10px;
+                        bottom: -8px;
+                    }
+                }
+
+                .premium_content {
+                    gap: 13px;
+
+                    .premium_description {
+                        color: $colorPara;
+                        font-size: 14px;
+                        font-weight: 500;
+                    }
+
+                    .premium_button {
+                        width: fit-content !important;
+                    }
+                }
+            }
+        }
+    }
 }
