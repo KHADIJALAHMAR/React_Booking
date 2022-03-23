@@ -1,13 +1,24 @@
 import React from 'react'
-import Header from "./Header"
-import Footer from "./Footer"
-function Home() {
 
+import { useSelector , useDispatch} from 'react-redux'
+import Body from './Home/Body'
+import NavBar from './Shared_Elements/NavBar'
+
+
+function Home() {
+  const authenticated = useSelector(state => state.authenticated);
+  const role = useSelector(state => state.role)
+  const dispatch = useDispatch();
   return (
     <>
-      <Header/>
-      <Footer/>
+
+    <NavBar title='Home' dashboard={role} />
+    <div>
+      <Body />
+    </div>
     </>
+    
+
   )
 }
 

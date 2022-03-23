@@ -3,10 +3,10 @@ import React from "react";
 import Item from "./Item";
 import Header from "../Header";
 
-const List = ({setPopupVisibility, handleDeleteObject}) => {
+const List = ({title, setPopupVisibility, handleDeleteObject}) => {
   return (
     <div>
-      <Header />
+      <Header title={title} />
       <div className="card-body px-0 pb-2">
         <div className="table-responsive">
           <table class="table align-items-center mb-0">
