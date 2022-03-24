@@ -19,6 +19,8 @@ import OwnerAddHotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 import Home from "./components/Home/Home";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
+import UpdateRoom from "./components/Owner_Dashboard/Crud/Room/UpdateRoom";
+import ProfilOwner from "./components/Owner_Dashboard/Owner_Profile/Profile"
 import AddRoom from "./components/Owner_Dashboard/Crud/Room/AddRoom";
 import SideBar from "./components/Shared_Elements/SideBar";
 
@@ -92,6 +94,8 @@ function App() {
                 authenticated && role === 'owner' ? <UpdateHotel /> : <Navigate to="/" />
               }
             />
+            <Route path="/dashboardowner/updateHotel" element={!authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />} />
+            <Route path="/dashboardowner/Room/update/:roomId" element={!authenticated && !role ? <UpdateRoom /> : <Navigate to="/" />} />
             <Route path="owner/dashboard/addRoom" element={authenticated && role === 'owner' ? <AddRoom /> : <Navigate to="/" />} />
           </Routes>
         </Router>

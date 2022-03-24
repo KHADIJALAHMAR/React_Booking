@@ -1,13 +1,9 @@
 import React, {useState} from 'react'
 import Cards from './Cards/Cards';
-import { Link } from "react-router-dom";
-import Delete from "./Crud/Delete";
 import Panel from "./Panels/Panel";
-import Update from "./Crud/Room/UpdateRoom";
-
-// import List from "../Owner_Dashboard/Panels/Hotels/List";
-
+import Delete from "./Crud/Delete";
 import NavBar from '../Shared_Elements/NavBar';
+
 
 function Dashboard() {
   const [visible_popup, setPopupVisibility] = useState(false);
