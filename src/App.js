@@ -22,6 +22,7 @@ import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
 import ProfilOwner from "./components/Owner_Dashboard/Owner_Profile/Profile"
 import AddRoom from "./components/Owner_Dashboard/Crud/Room/AddRoom";
 import SideBar from "./components/Shared_Elements/SideBar";
+import Search from "./components/Search";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="search" element={<Search />} />
             <Route
               path="auth"
               element={!authenticated ?   <Authentication /> : <Navigate to="/" />}
@@ -63,6 +65,7 @@ function App() {
                 authenticated && role === 'admin' ? <AddUser /> : <Navigate to="/" />
               }
             />
+           
             <Route
               path="profile"
               element={
