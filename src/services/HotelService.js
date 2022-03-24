@@ -17,23 +17,23 @@ export async function deleteHotel(HotelId) {
 }
 export async function updateHotel(hotelId, values) {
   await axios.put(`${Hotels_URL}/update/${hotelId}`, {
-      data: {
-          ...values
-        }
+    data: {
+      ...values,
+    },
   });
 }
 
 export async function updateHotelByOwner(HotelId, values) {
   await axios.put(`${Hotels_URL}/${HotelId}`, {
     data: {
-        ...values
-      }
-});
+      ...values,
+    },
+  });
 }
 
 export async function getHotelsByOwner(userId) {
-    let res = await axios.get(`${Owners_URL}/${userId}/hotels`);
-    return res;
+  let res = await axios.get(`${Owners_URL}/${userId}/hotels`);
+  return res;
 }
 
 axios.defaults.headers = {
@@ -69,5 +69,15 @@ export default createhotel;
 // Get hotel by id
 export async function getHotelById(HotelId) {
   let res = await axios.get(`${Hotels_URL}/${HotelId}`);
+  return res;
+}
+
+// Filter hotel by city
+export async function getHotelByCity(city) {
+  let res = await axios.post(`${Hotels_URL}/filterByCity`, {
+    city: {
+      city,
+    },
+  });
   return res;
 }
