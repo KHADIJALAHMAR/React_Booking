@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector , useDispatch} from 'react-redux'
 import { Link } from 'react-router-dom'
-import Body from './Body'
 import NavBar from '../Shared_Elements/NavBar'
 import HeroHeader from './HeroHeader/HeroHeader'
 import Search from './Search/Search'

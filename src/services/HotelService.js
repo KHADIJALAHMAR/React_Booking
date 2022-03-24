@@ -74,5 +74,5 @@ export async function getHotelByCity(city) {
       city,
     },
   });
-  console.log(res);
+  return res;
 }
