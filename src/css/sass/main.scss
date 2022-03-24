@@ -285,6 +285,33 @@ $underlineColor: linear-gradient(90deg, #272770, #B83664);
                         @extend .first_group
                     }
 
+                    .search_select {
+                        padding: 0px 17px;
+                        height: 40.4px;
+                        width: 247.34px;
+                        border-radius: 8px;
+                        outline: none;
+                        border: .5px solid #C7C7C7;
+                        box-shadow: $cards_shadow;
+
+                        option {
+                            color: $colorPara !important;
+                        }
+                    }
+
+                    .search_select_choosed{
+                        font-size: 14px;
+                        font-family: 'poppins';
+                        font-weight: 500;
+                        color: $colorPara;
+                    }
+                    .search_select_init {
+                        font-size: 14px;
+                        font-family: 'poppins';
+                        font-weight: 500;
+                        color: #9E9E9E;
+                    }
+
                     input {
                         padding: 0px 17px;
                         height: 40.4px;
@@ -293,6 +320,10 @@ $underlineColor: linear-gradient(90deg, #272770, #B83664);
                         outline: none;
                         border: .5px solid #C7C7C7;
                         box-shadow: $cards_shadow;
+                        font-size: 14px;
+                        font-family: 'poppins';
+                        font-weight: 500;
+                        color: $colorPara;
 
                         &::placeholder{
                             font-size: 14px;
