@@ -9,7 +9,8 @@ const AddHotel = () => {
     descreption: "",
     image_cover: "",
     images: "",
-    stars: ""
+    stars: "",
+    id : ""
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -20,6 +21,7 @@ const AddHotel = () => {
   const handleDescreption = (e) => {
     setAddHotel({ ...AddHotel, descreption: e.target.value });
   };
+ 
   const handleImageCover = (e) => {
     console.log("e.target.files[0]", e.target.files[0]);
     setAddHotel({ ...AddHotel, image_cover: e.target.files[0] });
@@ -35,11 +37,13 @@ const AddHotel = () => {
     if (AddHotel) {
       createhotel(AddHotel).then((response) => {
         window.location = "/dashboard";
+      // } else {
+      //   console.log("error : not insert");
+      // }
       });
     }
     setSubmitted(true);
   };
-
   return (
     <>
       <NavBar title='Admin Dashboard' dashboard={false} />

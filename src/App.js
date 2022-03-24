@@ -18,8 +18,9 @@ import AdminUpdateHotel from "./components/Admin_Dashboard/Crud/Hotel/Update";
 import OwnerAddHotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
 import Home from "./components/Home/Home";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
-import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel";
-import ProfilOwner from "./components/Owner_Dashboard/Owner_Profile/Profile";
+import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
+import UpdateRoom from "./components/Owner_Dashboard/Crud/Room/UpdateRoom";
+import ProfilOwner from "./components/Owner_Dashboard/Owner_Profile/Profile"
 import AddRoom from "./components/Owner_Dashboard/Crud/Room/AddRoom";
 import SideBar from "./components/Shared_Elements/SideBar";
 import { setCities } from "./actions/citiesActions";
@@ -102,12 +103,6 @@ function App() {
               }
             />
             <Route
-              path="profile"
-              element={
-                !authenticated && !role ? <ProfilOwner /> : <Navigate to="/" />
-              }
-            />
-            <Route
               path="dashboard/create"
               element={
                 authenticated && role === "admin" ? (
@@ -168,6 +163,9 @@ function App() {
                 )
               }
             />
+            <Route path="/dashboardowner/updateHotel" element={!authenticated && !role ? <UpdateHotel /> : <Navigate to="/" />} />
+            <Route path="/dashboardowner/Room/update/:roomId" element={!authenticated && !role ? <UpdateRoom /> : <Navigate to="/" />} />
+            <Route path="owner/dashboard/addRoom" element={authenticated && role === 'owner' ? <AddRoom /> : <Navigate to="/" />} />
           </Routes>
         </Router>
       </div>
