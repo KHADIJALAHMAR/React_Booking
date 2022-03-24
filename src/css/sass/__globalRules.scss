@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -68,3 +79,41 @@
   color: black;
   font-weight: 600;
 }
+
+.main_button {
+  padding: 11px 28px;
+  background-color: $color10;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'poppins';
+  color: $colorButton;
+  width: 194px;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $colorButton;
+    background-color: $color10Hover;
+  }
+}
+
+.main_button_bordered {
+  padding: 11px 28px;
+  background-color: $color30;
+  border: 3px solid $color10;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-family: 'poppins';
+  color: $color10;
+  width: 194px;
+  transition: all .3s ease-in-out;
+
+  &:hover {
+    color: $colorButton;
+    background-color: $color10;
+  }
+}
+

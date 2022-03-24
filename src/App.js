@@ -16,7 +16,7 @@ import AddHotel from "./components/Admin_Dashboard/Crud/Hotel/AddHotel";
 import UpdateUser from "./components/Admin_Dashboard/Crud/User/Update";
 import AdminUpdateHotel from "./components/Admin_Dashboard/Crud/Hotel/Update";
 import OwnerAddHotels from "./components/Owner_Dashboard/Crud/Hotel/AddHotel";
-import Home from "./components/Home";
+import Home from "./components/Home/Home";
 import DashboardOwner from "./components/Owner_Dashboard/Dashboard";
 import UpdateHotel from "./components/Owner_Dashboard/Crud/Hotel/UpdateHotel"
 import ProfilOwner from "./components/Owner_Dashboard/Owner_Profile/Profile"
@@ -31,7 +31,7 @@ function App() {
   
   return (
       <React.Fragment>
-        <div className="vw-100 vh-100 pt-4" style={{backgroundColor: "#f8f9fa"}}>
+        <div className="vw-100 h-100 pt-4" style={{backgroundColor: "#f8f9fa"}}>
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />

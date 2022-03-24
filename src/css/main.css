@@ -4,6 +4,19 @@
   box-sizing: border-box;
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+* {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -63,87 +76,102 @@
   font-weight: 600;
 }
 
-.auth_right_bot_font,
-.auth_right_bot_s a,
-.auth .auth_register .auth_register_right .auth_right_bot a,
-.auth .auth_login .auth_login_right .auth_right_bot a,
-.auth_right_bot_s p,
-.auth .auth_register .auth_register_right .auth_right_bot p,
-.auth .auth_login .auth_login_right .auth_right_bot p {
+.main_button {
+  padding: 11px 28px;
+  background-color: #B83664;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "poppins";
+  color: #F7F7F7;
+  width: 194px;
+  transition: all 0.3s ease-in-out;
+}
+.main_button:hover {
+  color: #F7F7F7;
+  background-color: #a12e56;
+}
+
+.main_button_bordered {
+  padding: 11px 28px;
+  background-color: #FFFFFF;
+  border: 3px solid #B83664;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  font-family: "poppins";
+  color: #B83664;
+  width: 194px;
+  transition: all 0.3s ease-in-out;
+}
+.main_button_bordered:hover {
+  color: #F7F7F7;
+  background-color: #B83664;
+}
+
+.auth_right_bot_font, .auth_right_bot_s a, .auth .auth_register .auth_register_right .auth_right_bot a, .auth .auth_login .auth_login_right .auth_right_bot a, .auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
   font-size: 13px;
   font-weight: 500;
   font-family: "poppins";
-  color: #fafafa;
+  color: #FAFAFA;
 }
 
-.auth_panel,
-.auth .auth_register,
-.auth .auth_login {
+.auth_panel, .auth .auth_register, .auth .auth_login {
   position: absolute;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 865px;
   height: 451px;
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   border-radius: 10px;
   display: flex;
   -webkit-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
-.auth_right,
-.auth .auth_register .auth_register_right,
-.auth .auth_login .auth_login_right {
+.auth_right, .auth .auth_register .auth_register_right, .auth .auth_login .auth_login_right {
   width: 100%;
   max-width: 491px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: linear-gradient(45deg, #c33764, #1d2671);
+  background: linear-gradient(45deg, #C33764, #1D2671);
   border-radius: 10px 0 0 10px;
   padding: 20px;
 }
 
-.auth_logo,
-.auth .auth_register .auth_register_right .auth_register_logo,
-.auth .auth_login .auth_login_right .auth_login_logo {
+.auth_logo, .auth .auth_register .auth_register_right .auth_register_logo, .auth .auth_login .auth_login_right .auth_login_logo {
   display: flex;
   gap: 5px;
   align-items: center;
 }
-.auth_logo p,
-.auth .auth_register .auth_register_right .auth_register_logo p,
-.auth .auth_login .auth_login_right .auth_login_logo p {
+.auth_logo p, .auth .auth_register .auth_register_right .auth_register_logo p, .auth .auth_login .auth_login_right .auth_login_logo p {
   font-size: 20px;
   font-family: "poppins";
   font-weight: 700;
-  color: #fafafa;
+  color: #FAFAFA;
   cursor: default;
 }
 
-.auth_right_bot_s,
-.auth .auth_register .auth_register_right .auth_right_bot,
-.auth .auth_login .auth_login_right .auth_right_bot {
+.auth_right_bot_s, .auth .auth_register .auth_register_right .auth_right_bot, .auth .auth_login .auth_login_right .auth_right_bot {
   align-self: center;
   display: grid;
   place-items: center;
   gap: 5px;
 }
-.auth_right_bot_s p,
-.auth .auth_register .auth_register_right .auth_right_bot p,
-.auth .auth_login .auth_login_right .auth_right_bot p {
+.auth_right_bot_s p, .auth .auth_register .auth_register_right .auth_right_bot p, .auth .auth_login .auth_login_right .auth_right_bot p {
   cursor: default;
 }
-.auth_right_bot_s a,
-.auth .auth_register .auth_register_right .auth_right_bot a,
-.auth .auth_login .auth_login_right .auth_right_bot a {
+.auth_right_bot_s a, .auth .auth_register .auth_register_right .auth_right_bot a, .auth .auth_login .auth_login_right .auth_right_bot a {
   display: grid;
   place-items: center;
   background-color: transparent;
   border-radius: 10px;
-  border: solid 2px #fafafa;
+  border: solid 2px #FAFAFA;
   cursor: pointer;
   outline: none;
   width: 210px;
@@ -151,16 +179,12 @@
   text-decoration: none;
   transition: 0.4s;
 }
-.auth_right_bot_s a:hover,
-.auth .auth_register .auth_register_right .auth_right_bot a:hover,
-.auth .auth_login .auth_login_right .auth_right_bot a:hover {
-  background-color: #fafafa;
+.auth_right_bot_s a:hover, .auth .auth_register .auth_register_right .auth_right_bot a:hover, .auth .auth_login .auth_login_right .auth_right_bot a:hover {
+  background-color: #FAFAFA;
   color: black;
 }
 
-.auth_left,
-.auth .auth_register .auth_register_left,
-.auth .auth_login .auth_login_left {
+.auth_left, .auth .auth_register .auth_register_left, .auth .auth_login .auth_login_left {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -170,24 +194,10 @@
   max-width: 376px;
 }
 
-.auth_form_inputs,
-.auth .auth_register .auth_register_left .auth_register_form .auth_form_element,
-.auth .auth_login .auth_login_left .auth_login_form .auth_form_element {
+.auth_form_inputs, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element {
   position: relative;
 }
-.auth_form_inputs .icon_container,
-.auth
-  .auth_register
-  .auth_register_left
-  .auth_register_form
-  .auth_form_element
-  .icon_container,
-.auth
-  .auth_login
-  .auth_login_left
-  .auth_login_form
-  .auth_form_element
-  .icon_container {
+.auth_form_inputs .icon_container, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element .icon_container, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element .icon_container {
   display: grid;
   place-items: center;
   position: absolute;
@@ -195,17 +205,10 @@
   left: 0;
   height: 28px;
   width: 38px;
-  background: linear-gradient(45deg, #1d2671, #c33764);
+  background: linear-gradient(45deg, #1D2671, #C33764);
   border-radius: 8px 0 0 8px;
 }
-.auth_form_inputs input,
-.auth
-  .auth_register
-  .auth_register_left
-  .auth_register_form
-  .auth_form_element
-  input,
-.auth .auth_login .auth_login_left .auth_login_form .auth_form_element input {
+.auth_form_inputs input, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element input, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element input {
   height: 28px;
   width: 100%;
   border: none;
@@ -215,31 +218,12 @@
   -webkit-box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
 }
-.auth_form_inputs input::placeholder,
-.auth
-  .auth_register
-  .auth_register_left
-  .auth_register_form
-  .auth_form_element
-  input::placeholder,
-.auth
-  .auth_login
-  .auth_login_left
-  .auth_login_form
-  .auth_form_element
-  input::placeholder {
+.auth_form_inputs input::placeholder, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element input::placeholder, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element input::placeholder {
   font-family: "poppins";
   font-size: 12px;
-  color: #8f8f8f;
+  color: #8F8F8F;
 }
-.auth_form_inputs select,
-.auth
-  .auth_register
-  .auth_register_left
-  .auth_register_form
-  .auth_form_element
-  select,
-.auth .auth_login .auth_login_left .auth_login_form .auth_form_element select {
+.auth_form_inputs select, .auth .auth_register .auth_register_left .auth_register_form .auth_form_element select, .auth .auth_login .auth_login_left .auth_login_form .auth_form_element select {
   height: 28px;
   width: 100%;
   border: none;
@@ -251,12 +235,10 @@
   box-shadow: 0px 3px 6px 1px rgba(0, 0, 0, 0.2);
 }
 
-.auth_submit,
-.auth .auth_register .auth_register_left .auth_register_form button,
-.auth .auth_login .auth_login_left .auth_login_form button {
+.auth_submit, .auth .auth_register .auth_register_left .auth_register_form button, .auth .auth_login .auth_login_left .auth_login_form button {
   height: 34px;
   width: 295px;
-  background: linear-gradient(45deg, #1d2671, #c33764);
+  background: linear-gradient(45deg, #1D2671, #C33764);
   border-radius: 8px;
   border: none;
   cursor: pointer;
@@ -268,8 +250,7 @@
   position: relative;
 }
 
-.form_details,
-.auth .auth_login .auth_login_left .auth_login_form {
+.form_details, .auth .auth_login .auth_login_left .auth_login_form {
   display: flex;
   flex-direction: column;
   gap: 18px;
@@ -308,13 +289,13 @@
   font-family: "poppins";
   font-size: 20px;
   font-weight: 700;
-  color: #1d2671;
+  color: #1D2671;
 }
 .auth .auth_login .auth_login_left .auth_login_left_intro p:last-child {
   font-family: "poppins";
   font-size: 16px;
   font-weight: 500;
-  color: #c33764;
+  color: #C33764;
 }
 .auth .auth_login .auth_login_left .auth_login_form {
   width: 295px;
@@ -330,7 +311,7 @@
   border-radius: 8px;
   height: 100%;
   width: 100%;
-  background: linear-gradient(45deg, #c33764, #1d2671);
+  background: linear-gradient(45deg, #C33764, #1D2671);
   transition: 0.4s;
 }
 .auth .auth_login .auth_login_left .auth_login_form button:hover::before {
@@ -355,7 +336,7 @@
   font-family: "poppins";
   font-size: 20px;
   font-weight: 700;
-  color: #1d2671;
+  color: #1D2671;
 }
 .auth .auth_register .auth_register_left .auth_register_form {
   width: 295px;
@@ -374,15 +355,241 @@
   border-radius: 8px;
   height: 100%;
   width: 100%;
-  background: linear-gradient(45deg, #c33764, #1d2671);
+  background: linear-gradient(45deg, #C33764, #1D2671);
   transition: 0.4s;
 }
-.auth
-  .auth_register
-  .auth_register_left
-  .auth_register_form
-  button:hover::before {
+.auth .auth_register .auth_register_left .auth_register_form button:hover::before {
   opacity: 0;
+}
+
+.home_container {
+  padding: 0px 40px;
+  margin-top: 43px;
+  gap: 37px;
+}
+.home_container .hero_header {
+  height: 409px;
+  background: linear-gradient(45deg, #0D0D0D, #434343);
+  border-radius: 28px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  padding: 62px 54px;
+}
+.home_container .hero_header .left_side .logo {
+  width: 331px;
+}
+.home_container .hero_header .left_side .logo .app_name {
+  font-size: 40px;
+  font-family: "poppins";
+  font-weight: 700;
+  color: #F7F7F7;
+  margin: 0;
+}
+.home_container .hero_header .left_side .introduction {
+  font-size: 20px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #F7F7F7;
+}
+.home_container .title {
+  color: #0D0D0D;
+  font-size: 40px;
+  font-weight: 700;
+  position: relative;
+}
+.home_container .title::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #272770, #B83664);
+  height: 12px;
+  width: 160px;
+  border-radius: 10px;
+  bottom: -12px;
+}
+.home_container .main_section {
+  gap: 55px;
+  padding-bottom: 37px;
+}
+.home_container .main_section .left_side {
+  width: calc(100% - 55px - 485px);
+}
+.home_container .main_section .left_side .search_container {
+  height: 330px;
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 28px;
+  padding: 20px 40px;
+}
+.home_container .main_section .left_side .search_container .title {
+  color: #0D0D0D;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "poppins";
+  position: relative;
+}
+.home_container .main_section .left_side .search_container .title::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #272770, #B83664);
+  height: 8px;
+  width: 230px;
+  border-radius: 10px;
+  bottom: -8px;
+}
+.home_container .main_section .left_side .search_container .search_form {
+  gap: 12px;
+}
+.home_container .main_section .left_side .search_container .search_form .first_group, .home_container .main_section .left_side .search_container .search_form .second_group {
+  gap: 23px;
+  flex-wrap: wrap;
+}
+.home_container .main_section .left_side .search_container .search_form .search_select {
+  padding: 0px 17px;
+  height: 40.4px;
+  width: 247.34px;
+  border-radius: 8px;
+  outline: none;
+  border: 0.5px solid #C7C7C7;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.home_container .main_section .left_side .search_container .search_form .search_select option {
+  color: #434343 !important;
+}
+.home_container .main_section .left_side .search_container .search_form .search_select_choosed {
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #434343;
+}
+.home_container .main_section .left_side .search_container .search_form .search_select_init {
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #9E9E9E;
+}
+.home_container .main_section .left_side .search_container .search_form input {
+  padding: 0px 17px;
+  height: 40.4px;
+  width: 247.34px;
+  border-radius: 8px;
+  outline: none;
+  border: 0.5px solid #C7C7C7;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #434343;
+}
+.home_container .main_section .left_side .search_container .search_form input::placeholder {
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #9E9E9E;
+}
+.home_container .main_section .left_side .search_container .search_form .price_line {
+  gap: 10px;
+}
+.home_container .main_section .left_side .search_container .search_form .price_line p {
+  margin: 0;
+  align-self: center;
+  height: fit-content;
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #0D0D0D;
+}
+.home_container .main_section .left_side .search_container .search_form .price_line hr {
+  height: 1.2px;
+}
+.home_container .main_section .left_side .guide_paragraph {
+  color: #434343;
+  font-size: 16px;
+  font-weight: 600;
+}
+.home_container .main_section .left_side .hotels_list {
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 28px;
+  padding: 32px 40px;
+  gap: 21px;
+}
+.home_container .main_section .left_side .hotels_list .hotel_card {
+  height: 176px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 18px;
+  background-color: #F8F9FA;
+  overflow: hidden;
+  gap: 20px;
+  cursor: pointer;
+}
+.home_container .main_section .left_side .hotels_list .hotel_card .image_container {
+  background-color: #1b0909;
+  width: 223px;
+}
+.home_container .main_section .left_side .hotels_list .hotel_card .hotel_informations {
+  max-width: 502px;
+  padding: 24px 0px;
+  gap: 14px;
+}
+.home_container .main_section .left_side .hotels_list .hotel_card .hotel_informations .hotel_name {
+  font-size: 20px;
+  font-family: "poppins";
+  font-weight: 600;
+  color: #0D0D0D;
+}
+.home_container .main_section .left_side .hotels_list .hotel_card .hotel_informations .hotel_description {
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #434343;
+  margin: 0;
+}
+.home_container .main_section .left_side .hotels_list .hotel_card .hotel_informations .tags_container {
+  gap: 9px;
+}
+.home_container .main_section .left_side .hotels_list .hotel_card .hotel_informations .tags_container .hotel_city_tag, .home_container .main_section .left_side .hotels_list .hotel_card .hotel_informations .tags_container .hotel_stars_tag {
+  background-color: #B83664;
+  padding: 3px 26px;
+  border-radius: 20px;
+  color: #F7F7F7;
+  font-size: 12px;
+  font-family: "poppins";
+  font-weight: 500;
+}
+.home_container .main_section .right_side .premium_announcement {
+  background-color: #FFFFFF;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border-radius: 28px;
+  width: 485px;
+  padding: 18px 35px;
+  gap: 35px;
+}
+.home_container .main_section .right_side .premium_announcement .title {
+  color: #0D0D0D;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: "poppins";
+  position: relative;
+}
+.home_container .main_section .right_side .premium_announcement .title::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(90deg, #272770, #B83664);
+  height: 8px;
+  width: 100px;
+  border-radius: 10px;
+  bottom: -8px;
+}
+.home_container .main_section .right_side .premium_announcement .premium_content {
+  gap: 13px;
+}
+.home_container .main_section .right_side .premium_announcement .premium_content .premium_description {
+  color: #434343;
+  font-size: 14px;
+  font-weight: 500;
+}
+.home_container .main_section .right_side .premium_announcement .premium_content .premium_button {
+  width: fit-content !important;
 }
 
 /*# sourceMappingURL=main.css.map */
