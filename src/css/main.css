@@ -442,6 +442,30 @@
   gap: 23px;
   flex-wrap: wrap;
 }
+.home_container .main_section .left_side .search_container .search_form .search_select {
+  padding: 0px 17px;
+  height: 40.4px;
+  width: 247.34px;
+  border-radius: 8px;
+  outline: none;
+  border: 0.5px solid #C7C7C7;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.home_container .main_section .left_side .search_container .search_form .search_select option {
+  color: #434343 !important;
+}
+.home_container .main_section .left_side .search_container .search_form .search_select_choosed {
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #434343;
+}
+.home_container .main_section .left_side .search_container .search_form .search_select_init {
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #9E9E9E;
+}
 .home_container .main_section .left_side .search_container .search_form input {
   padding: 0px 17px;
   height: 40.4px;
@@ -450,6 +474,10 @@
   outline: none;
   border: 0.5px solid #C7C7C7;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  font-size: 14px;
+  font-family: "poppins";
+  font-weight: 500;
+  color: #434343;
 }
 .home_container .main_section .left_side .search_container .search_form input::placeholder {
   font-size: 14px;
