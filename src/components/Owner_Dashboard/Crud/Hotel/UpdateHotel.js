@@ -70,8 +70,8 @@ function UpdateHotel() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     getUpdatedValues(values);
-    await updateHotel(HotelId, getUpdatedValues(values));
-    // await updateHotelByOwner(HotelId, getUpdatedValues(values));
+    // await updateHotel(HotelId, getUpdatedValues(values));
+    await updateHotelByOwner(HotelId, getUpdatedValues(values));
 
     window.location = "/owner/dashboard";
     setSubmitted(true);
