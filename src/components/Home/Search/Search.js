@@ -34,6 +34,7 @@ function Search() {
       {/* Search form */}
       <form
         className="search_form d-flex flex-column"
+        method="post"
         onSubmit={(e) => {
           e.preventDefault();
           handleSubmit();
@@ -44,21 +45,22 @@ function Search() {
           <input type="text" className="px-2" placeholder="Hotel name" />
 
           <select
-            className={"search_select " + citiesSelectStyle}
+            className={"search_select "  + citiesSelectStyle}
             onChange={(e) => {
-              setCitiesSelectStyle("search_select_choosed");
               handleCity();
+              setCitiesSelectStyle("search_select_choosed");
             }}
+            // onChange={handleCity}
           >
             <option value="none" disabled selected hidden>
               Choose a city
             </option>
             <option value="none">none</option>
             {cities &&
-              cities.length > 0 &&
-              cities.map((item) => (
-                <option value={item.city}>{item.city}</option>
-              ))}
+                cities.length > 0 &&
+                cities.map((item) => (
+                  <option value={item.city}>{item.city}</option>
+                ))}
           </select>
 
           <select
@@ -90,7 +92,7 @@ function Search() {
           <input type="number" className="px-2" placeholder="Price min" />
           <input type="number" className="px-2" placeholder="Price max" />
         </div>
-      </form>
+        </form>
 
       {/* Search button */}
       <button className="main_button_bordered align-self-end">Search</button>
