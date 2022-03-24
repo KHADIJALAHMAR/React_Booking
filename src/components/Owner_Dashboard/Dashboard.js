@@ -4,6 +4,7 @@ import Panel from "./Panels/Panel";
 import Delete from "./Crud/Delete";
 import NavBar from '../Shared_Elements/NavBar';
 
+
 function Dashboard() {
   const [visible_popup, setPopupVisibility] = useState(false);
   const [panel, setPanel] = useState("Hotels")
@@ -12,12 +13,12 @@ function Dashboard() {
   const handlePanel = (panel) => {
     setPanel(panel);
   };
+ 
 
   const handleDeleteObject = async (type, id) => {
     await setDeleteObject([type, id]);
     handlePopupVisibility();
   };
-
   const handlePopupVisibility = () => {
     setPopupVisibility(!visible_popup);
   };
@@ -38,5 +39,6 @@ function Dashboard() {
     </>
   );
 }
+
 
 export default Dashboard;

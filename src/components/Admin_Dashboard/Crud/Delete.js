@@ -1,6 +1,7 @@
 import React from 'react'
 import {deleteHotel} from '../../../services/HotelService'
 import {deleteUser} from '../../../services/UserService'
+import deleteRoom from '../../../services/RoomService'
 
 function Delete({type,id, visible , handlePopupVisibility}) {
 
@@ -9,6 +10,8 @@ function Delete({type,id, visible , handlePopupVisibility}) {
             deleteHotel(id);
         }else if(type === "user") {
             deleteUser(id);
+        }else if(type ==="Room"){
+            deleteRoom(id);
         }
     };
 
