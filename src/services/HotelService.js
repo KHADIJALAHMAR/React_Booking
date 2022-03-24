@@ -9,7 +9,7 @@ export async function getHotelsByStars (stars){
   )}
 // Delete Hotel 
 export async function deleteHotel(HotelId) {
-  await axios.delete(`${Hotels_URL}/`, {
+  await axios.delete(`${Hotels_URL}`, {
       data :{
           HotelId
       }
