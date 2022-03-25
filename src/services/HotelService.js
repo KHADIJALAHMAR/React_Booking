@@ -2,8 +2,8 @@ import axios from "axios";
 const Hotels_URL = "http://localhost:4000/hotels";
 const Owners_URL = "http://localhost:4000/owners";
 //  
-export async function getHotelsByStars (stars){
-  await axios.post(`${Hotels_URL}/filterByStars`,{
+export async function GetHotelsByStars (stars){
+  return await axios.post(`${Hotels_URL}/filterByStars`,{
     stars : stars,
   }
   )}
